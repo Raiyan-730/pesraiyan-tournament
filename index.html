@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PesRaiyan | eFootball Friendly Tournament</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080b12;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0d111c;
+      border-bottom: 1px solid #252b3a;
+      padding: 15px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #00e5ff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        radial-gradient(circle at top, #12304b 0%, #080b12 55%);
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 10vw, 90px);
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: #00e5ff;
+    }
+
+    .hero p {
+      color: #b8c0cf;
+      font-size: 19px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00e5ff;
+      color: #061018;
+      padding: 13px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 70px 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 40px;
+    }
+
+    .section-title span {
+      color: #00e5ff;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #101521;
+      border: 1px solid #252d3d;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #00e5ff;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #b8c0cf;
+    }
+
+    /* REGISTRATION */
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      background: #101521;
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid #252d3d;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 13px;
+      border-radius: 7px;
+      border: 1px solid #303849;
+      background: #080b12;
+      color: white;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #00e5ff;
+    }
+
+    .success {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #103b32;
+      color: #65ffc9;
+      text-align: center;
+    }
+
+    /* TABLE */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #101521;
+      min-width: 600px;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #293142;
+    }
+
+    th {
+      color: #00e5ff;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #05070c;
+      color: #8993a6;
+    }
+
+    footer strong {
+      color: #00e5ff;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav ul {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .section-title {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      <span>Pes</span>Raiyan
+    </div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#teams">Teams</a></li>
+      <li><a href="#matches">Matches</a></li>
+      <li><a href="#leaderboard">Leaderboard</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div>
+      <h1><span>Pes</span>Raiyan</h1>
+
+      <p>
+        eFootball Friendly Tournament
+      </p>
+
+      <a href="#register" class="btn">
+        Register Now
+      </a>
+    </div>
+  </section>
+
+
+  <!-- TOURNAMENT INFO -->
+  <section>
+    <h2 class="section-title">
+      Tournament <span>Info</span>
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>🎮 Game</h3>
+        <p>eFootball</p>
+      </div>
+
+      <div class="card">
+        <h3>👥 Participants</h3>
+        <p>Unlimited</p>
+      </div>
+
+      <div class="card">
+        <h3>📝 Registration</h3>
+        <p>Open</p>
+      </div>
+
+      <div class="card">
+        <h3>🏆 Tournament</h3>
+        <p>Friendly Tournament</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- REGISTRATION -->
+  <section id="register">
+
+    <h2 class="section-title">
+      Player <span>Registration</span>
+    </h2>
+
+    <div class="form-container">
+
+      <form id="registrationForm">
+
+        <div class="form-group">
+          <label for="name">Player Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="gameId">eFootball ID</label>
+          <input
+            type="text"
+            id="gameId"
+            placeholder="Enter your eFootball ID"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="team">Team Name</label>
+          <input
+            type="text"
+            id="team"
+            placeholder="Enter your team name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact</label>
+          <input
+            type="text"
+            id="contact"
+            placeholder="WhatsApp / Phone"
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn">
+          Submit Registration
+        </button>
+
+      </form>
+
+      <div class="success" id="successMessage">
+        ✅ Registration submitted successfully!
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- TEAMS -->
+  <section id="teams">
+
+    <h2 class="section-title">
+      Registered <span>Teams</span>
+    </h2>
+
+    <div class="cards" id="teamList">
+
+      <div class="card">
+        <h3>Team 01</h3>
+        <p>Coming Soon</p>
+      </div>
+
+      <div class="card">
+        <h3>Team 02</h3>
+        <p>Coming Soon</p>
+      </div>
+
+      <div class="card">
+        <h3>Team 03</h3>
+        <p>Coming Soon</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MATCHES -->
+  <section id="matches">
+
+    <h2 class="section-title">
+      Upcoming <span>Matches</span>
+    </h2>
+
+    <div class="table-container">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Match</th>
+            <th>Player 1</th>
+            <th>Player 2</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>01</td>
+            <td>TBD</td>
+            <td>TBD</td>
+            <td>Upcoming</td>
+          </tr>
+
+          <tr>
+            <td>02</td>
+            <td>TBD</td>
+            <td>TBD</td>
+            <td>Upcoming</td>
+          </tr>
+
+          <tr>
+            <td>03</td>
+            <td>TBD</td>
+            <td>TBD</td>
+            <td>Upcoming</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+
+  <!-- LEADERBOARD -->
+  <section id="leaderboard">
+
+    <h2 class="section-title">
+      <span>Leaderboard</span>
+    </h2>
+
+    <div class="table-container">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Player</th>
+            <th>P</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
+            <th>Pts</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>1</td>
+            <td>TBD</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>TBD</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>TBD</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 <strong>PesRaiyan</strong> | eFootball Friendly Tournament
+    </p>
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    const form = document.getElementById("registrationForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const playerName =
+        document.getElementById("name").value;
+
+      const gameId =
+        document.getElementById("gameId").value;
+
+      const team =
+        document.getElementById("team").value;
+
+      const contact =
+        document.getElementById("contact").value;
+
+
+      /*
+        Registration data is currently saved
+        only in the browser.
+
+        Later we can connect this form
+        to Google Sheets / Firebase.
+      */
+
+      const registration = {
+        playerName: playerName,
+        gameId: gameId,
+        team: team,
+        contact: contact
+      };
+
+      console.log("Registration:", registration);
+
+
+      successMessage.style.display = "block";
+
+      form.reset();
+
+
+      setTimeout(function() {
+        successMessage.style.display = "none";
+      }, 5000);
+
+    });
+
+  </script>
+
+</body>
+</html>
