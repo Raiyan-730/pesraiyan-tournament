@@ -523,7 +523,7 @@
   </section>
 
 
-<!-- PLAYER RANKING -->
+<!-- GOOGLE SHEET PLAYER RANKING -->
 <section id="leaderboard">
 
   <h2 class="section-title">
@@ -532,7 +532,7 @@
 
   <div class="table-container">
 
-    <table>
+    <table id="rankingTable">
 
       <thead>
         <tr>
@@ -546,38 +546,10 @@
         </tr>
       </thead>
 
-      <tbody>
-
+      <tbody id="rankingBody">
         <tr>
-          <td>🥇</td>
-          <td>Player 1</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
+          <td colspan="7">Loading players...</td>
         </tr>
-
-        <tr>
-          <td>🥈</td>
-          <td>Player 2</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-
-        <tr>
-          <td>🥉</td>
-          <td>Player 3</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-
       </tbody>
 
     </table>
@@ -595,6 +567,143 @@
   </div>
 
 </section>
+
+
+<script>
+
+const GOOGLE_SHEET_ID =
+"1tiq4kQRs1gt4z735OrlqozPkDNQCmJpp-9i9GKVeGvE";
+
+const SHEET_NAME = "Form responses 1";
+
+const GOOGLE_SHEET_URL =
+`https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
+
+
+async function loadPlayerRanking() {
+
+  const rankingBody = document.getElementById("rankingBody");
+
+  try {
+
+    const response = await fetch(GOOGLE_SHEET_URL);
+
+    const text = await response.text();
+
+    const jsonText = text.substring(
+      text.indexOf("{"),
+      text.lastIndexOf("}") + 1
+    );
+
+    const data = JSON.parse(jsonText);
+
+    const rows = data.table.rows;
+
+    let players = [];
+
+    rows.forEach(row => {
+
+      const cells = row.c || [];
+
+      const playerName = cells[2]?.v || "";
+
+      if (!playerName) return;
+
+      const played = Number(cells[5]?.v || 0);
+      const wins = Number(cells[6]?.v || 0);
+      const draws = Number(cells[7]?.v || 0);
+      const losses = Number(cells[8]?.v || 0);
+      const bonus = Number(cells[9]?.v || 0);
+
+      const points = (wins * 3) + draws + bonus;
+
+      players.push({
+        name: playerName,
+        played: played,
+        wins: wins,
+        draws: draws,
+        losses: losses,
+        points: points
+      });
+
+    });
+
+
+    // Highest points first
+    players.sort((a, b) => b.points - a.points);
+
+
+    rankingBody.innerHTML = "";
+
+
+    if (players.length === 0) {
+
+      rankingBody.innerHTML = `
+        <tr>
+          <td colspan="7">No players registered yet.</td>
+        </tr>
+      `;
+
+      return;
+    }
+
+
+    players.forEach((player, index) => {
+
+      let rank;
+
+      if (index === 0) {
+        rank = "🥇";
+      } else if (index === 1) {
+        rank = "🥈";
+      } else if (index === 2) {
+        rank = "🥉";
+      } else {
+        rank = index + 1;
+      }
+
+
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>${rank}</td>
+        <td>${player.name}</td>
+        <td>${player.played}</td>
+        <td>${player.wins}</td>
+        <td>${player.draws}</td>
+        <td>${player.losses}</td>
+        <td><strong>${player.points}</strong></td>
+      `;
+
+      rankingBody.appendChild(row);
+
+    });
+
+  } catch (error) {
+
+    console.error("Ranking error:", error);
+
+    rankingBody.innerHTML = `
+      <tr>
+        <td colspan="7">
+          Unable to load ranking.
+        </td>
+      </tr>
+    `;
+
+  }
+
+}
+
+
+// Load ranking
+loadPlayerRanking();
+
+
+// Automatically refresh every 30 seconds
+setInterval(loadPlayerRanking, 30000);
+
+</script>
   <!-- FOOTER -->
   <footer>
     <p>
