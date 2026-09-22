@@ -910,46 +910,54 @@
 </p>
 
 <script>
+const SHEET_ID = "1tiq4kQRs1gt4z735OrlqozPkDNQCmJpp-9i9GKVeGvE";
+const SHEET_NAME = "Form responses 4";
 
-const players = [
-  {
-    name: "Raiyan Ahmed Adnan",
-    efootballId: "RAIYAN_-7",
-    team: "Hala madrid"
-  },
-  {
-    name: "RR-RaNa",
-    efootballId: "RR-RaNa_17",
-    team: "FORCA BARCA"
+async function loadPlayers() {
+  const teamList = document.getElementById("teamList");
+
+  try {
+    const url =
+      `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
+
+    const response = await fetch(url);
+    const text = await response.text();
+
+    const json = JSON.parse(
+      text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1)
+    );
+
+    const rows = json.table.rows;
+
+    teamList.innerHTML = "";
+
+    rows.forEach((row) => {
+      const playerName = row.c[1]?.v || "";
+      const efootballId = row.c[2]?.v || "";
+      const teamName = row.c[3]?.v || "";
+
+      if (!playerName) return;
+
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <h3>🎮 ${playerName}</h3>
+        <p><strong>eFootball ID:</strong> ${efootballId}</p>
+        <p><strong>Team:</strong> ${teamName}</p>
+      `;
+
+      teamList.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error("Error loading players:", error);
   }
-];
-
-const teamList = document.getElementById("teamList");
-
-function loadPlayers() {
-
-  teamList.innerHTML = "";
-
-  players.forEach((player) => {
-
-    const card = document.createElement("div");
-
-    card.className = "card";
-
-    card.innerHTML = `
-      <h3>🎮 ${player.name}</h3>
-      <p><strong>eFootball ID:</strong> ${player.efootballId}</p>
-      <p><strong>Team:</strong> ${player.team}</p>
-    `;
-
-    teamList.appendChild(card);
-
-  });
-
 }
 
 loadPlayers();
 
+setInterval(loadPlayers, 30000);
 </script>
   </footer>
 
