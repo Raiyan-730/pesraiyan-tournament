@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>PesRaiyan | eFootball Tournament</title>
 
 <style>
-
 *{
   margin:0;
   padding:0;
@@ -29,12 +24,10 @@ body{
   line-height:1.6;
 }
 
-/* ================= NAVBAR ================= */
-
 nav{
   position:sticky;
   top:0;
-  z-index:9999;
+  z-index:999;
   background:#0d111c;
   border-bottom:1px solid #252d3d;
   padding:15px 5%;
@@ -45,7 +38,7 @@ nav{
 }
 
 .logo{
-  font-size:28px;
+  font-size:27px;
   font-weight:800;
 }
 
@@ -71,23 +64,15 @@ nav a:hover{
   color:#00e5ff;
 }
 
-
-/* ================= HERO ================= */
-
 .hero{
   min-height:88vh;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   text-align:center;
-  padding:60px 20px;
-
+  padding:50px 20px;
   background:
-  radial-gradient(
-    circle at top,
-    #123451 0%,
-    #080b12 55%
-  );
+  radial-gradient(circle at top,#123451 0%,#080b12 55%);
 }
 
 .hero-content{
@@ -98,14 +83,15 @@ nav a:hover{
   display:inline-block;
   color:#00e5ff;
   border:1px solid #00e5ff;
-  padding:8px 18px;
+  padding:7px 16px;
   border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
   margin-bottom:20px;
 }
 
 .hero h1{
   font-size:clamp(50px,10vw,90px);
-  line-height:1.1;
 }
 
 .hero h1 span{
@@ -120,8 +106,6 @@ nav a:hover{
 .hero p{
   color:#aeb8c9;
   font-size:18px;
-  max-width:700px;
-  margin:auto;
 }
 
 .buttons{
@@ -151,7 +135,7 @@ nav a:hover{
 .stats{
   display:flex;
   justify-content:center;
-  gap:60px;
+  gap:50px;
   flex-wrap:wrap;
   margin-top:45px;
 }
@@ -159,15 +143,12 @@ nav a:hover{
 .stats strong{
   display:block;
   color:#00e5ff;
-  font-size:32px;
+  font-size:30px;
 }
 
 .stats span{
   color:#aeb8c9;
 }
-
-
-/* ================= SECTION ================= */
 
 section{
   padding:75px 5%;
@@ -190,9 +171,6 @@ section{
   margin-bottom:35px;
 }
 
-
-/* ================= TOURNAMENT ================= */
-
 .tournament-info{
   max-width:1100px;
   margin:auto;
@@ -208,7 +186,6 @@ section{
 
 .format-box h3{
   color:#00e5ff;
-  font-size:24px;
   margin-bottom:15px;
 }
 
@@ -240,18 +217,13 @@ section{
   padding:10px;
   margin:7px 0;
   border-radius:7px;
-  color:#d9e1ed;
 }
-
-
-/* ================= PLAYERS ================= */
 
 .player-grid{
   max-width:1200px;
   margin:auto;
   display:grid;
-  grid-template-columns:
-  repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
 }
 
@@ -267,21 +239,20 @@ section{
   border-color:#00e5ff;
 }
 
-.profile-img{
-  width:105px;
-  height:105px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #00e5ff;
-  margin:auto auto 15px;
-  display:block;
-}
-
+.profile-img,
 .avatar{
   width:105px;
   height:105px;
   border-radius:50%;
-  margin:auto auto 15px;
+  margin:0 auto 15px;
+}
+
+.profile-img{
+  object-fit:cover;
+  border:3px solid #00e5ff;
+}
+
+.avatar{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -294,7 +265,7 @@ section{
   font-size:22px;
 }
 
-.player-card .team{
+.team{
   color:#00e5ff;
   margin-bottom:15px;
 }
@@ -321,16 +292,13 @@ section{
 .stat-box strong{
   display:block;
   color:#00e5ff;
-  font-size:20px;
+  font-size:19px;
 }
 
 .stat-box span{
   color:#8993a6;
   font-size:12px;
 }
-
-
-/* ================= LEADERBOARD ================= */
 
 .table-wrap{
   max-width:1100px;
@@ -345,8 +313,7 @@ table{
   background:#101521;
 }
 
-th,
-td{
+th,td{
   padding:15px;
   text-align:center;
   border-bottom:1px solid #293142;
@@ -365,15 +332,11 @@ td{
   font-size:20px;
 }
 
-
-/* ================= BRACKET ================= */
-
 .bracket{
   max-width:1200px;
   margin:auto;
   display:grid;
-  grid-template-columns:
-  repeat(4,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:18px;
 }
 
@@ -411,15 +374,11 @@ td{
   color:#687487;
 }
 
-
-/* ================= DASHBOARD ================= */
-
 .dashboard{
   max-width:1100px;
   margin:auto;
   display:grid;
-  grid-template-columns:
-  repeat(4,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:18px;
 }
 
@@ -440,9 +399,6 @@ td{
 .dashboard-card p{
   color:#8993a6;
 }
-
-
-/* ================= PROFILE ================= */
 
 .profile-search{
   max-width:500px;
@@ -474,23 +430,13 @@ td{
   border-radius:50%;
   object-fit:cover;
   border:3px solid #00e5ff;
-  margin-bottom:15px;
-}
-
-.profile-box h2{
-  font-size:28px;
-}
-
-.profile-box .team{
-  color:#00e5ff;
-  margin-bottom:25px;
 }
 
 .profile-stat-grid{
   display:grid;
-  grid-template-columns:
-  repeat(2,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:12px;
+  margin-top:20px;
 }
 
 .profile-stat{
@@ -502,22 +448,18 @@ td{
 .profile-stat strong{
   display:block;
   color:#00e5ff;
-  font-size:22px;
+  font-size:23px;
 }
 
 .profile-stat span{
   color:#8993a6;
 }
 
-
-/* ================= RULES ================= */
-
 .rules{
   max-width:1000px;
   margin:auto;
   display:grid;
-  grid-template-columns:
-  repeat(2,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:18px;
 }
 
@@ -530,24 +472,17 @@ td{
 
 .rule h3{
   color:#00e5ff;
-  margin-bottom:7px;
 }
 
 .rule p{
   color:#aeb8c9;
 }
 
-
-/* ================= LOADING ================= */
-
 .loading{
   text-align:center;
   padding:40px;
   color:#8993a6;
 }
-
-
-/* ================= FOOTER ================= */
 
 footer{
   background:#05070c;
@@ -559,9 +494,6 @@ footer{
 footer strong{
   color:#00e5ff;
 }
-
-
-/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
@@ -592,26 +524,9 @@ footer strong{
   .rules{
     grid-template-columns:1fr;
   }
-
 }
 
 @media(max-width:500px){
-
-  .hero h2{
-    font-size:22px;
-  }
-
-  .hero p{
-    font-size:15px;
-  }
-
-  section{
-    padding:55px 4%;
-  }
-
-  .section-title{
-    font-size:29px;
-  }
 
   .groups{
     grid-template-columns:1fr;
@@ -621,17 +536,14 @@ footer strong{
     grid-template-columns:1fr 1fr;
   }
 
+  .section-title{
+    font-size:29px;
+  }
 }
-
 </style>
-
 </head>
 
-
 <body>
-
-
-<!-- ================= NAVBAR ================= -->
 
 <nav>
 
@@ -640,46 +552,19 @@ footer strong{
 </div>
 
 <ul>
-
-<li>
-<a href="#home">Home</a>
-</li>
-
-<li>
-<a href="#tournaments">Tournaments</a>
-</li>
-
-<li>
-<a href="#players">Players</a>
-</li>
-
-<li>
-<a href="#leaderboard">Leaderboard</a>
-</li>
-
-<li>
-<a href="#dashboard">Dashboard</a>
-</li>
-
-<li>
-<a href="#profile">Profile</a>
-</li>
-
-<li>
-<a href="#rules">Rules</a>
-</li>
-
+<li><a href="#home">Home</a></li>
+<li><a href="#tournaments">Tournaments</a></li>
+<li><a href="#players">Players</a></li>
+<li><a href="#leaderboard">Leaderboard</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+<li><a href="#profile">Profile</a></li>
+<li><a href="#rules">Rules</a></li>
 </ul>
 
 </nav>
 
 
-<!-- ================= HOME ================= -->
-
-<section
-class="hero"
-id="home"
->
+<section class="hero" id="home">
 
 <div class="hero-content">
 
@@ -696,71 +581,40 @@ Compete. Play. Win.
 </h2>
 
 <p>
-Welcome to PesRaiyan — a competitive
-eFootball tournament platform where
-players can register, compete, track
-results and follow rankings.
+Welcome to PesRaiyan — a competitive eFootball tournament
+platform where players can register, compete and track rankings.
 </p>
-
 
 <div class="buttons">
 
 <a
 class="btn"
 href="https://docs.google.com/forms/d/e/1FAIpQLSetuClRBuq-zyTimnVsYYhP4dH3N2b-1cdETD-sLGBjfMqzBg/viewform?usp=header"
-target="_blank"
->
+target="_blank">
 📝 Register Now
 </a>
 
-<a
-class="btn secondary"
-href="#tournaments"
->
+<a class="btn secondary" href="#tournaments">
 🏆 View Tournament
 </a>
 
 </div>
 
-
 <div class="stats">
 
 <div>
-
-<strong id="homePlayers">
-0
-</strong>
-
-<span>
-Registered Players
-</span>
-
+<strong id="homePlayers">0</strong>
+<span>Registered Players</span>
 </div>
 
-
 <div>
-
-<strong>
-16
-</strong>
-
-<span>
-Tournament Slots
-</span>
-
+<strong>16</strong>
+<span>Tournament Slots</span>
 </div>
 
-
 <div>
-
-<strong>
-31
-</strong>
-
-<span>
-Total Matches
-</span>
-
+<strong>31</strong>
+<span>Total Matches</span>
 </div>
 
 </div>
@@ -769,9 +623,6 @@ Total Matches
 
 </section>
 
-
-
-<!-- ================= TOURNAMENT ================= -->
 
 <section id="tournaments">
 
@@ -783,142 +634,59 @@ Total Matches
 16 players • Group Stage • Knockout Stage
 </p>
 
-
 <div class="tournament-info">
-
 
 <div class="format-box">
 
-<h3>
-🏆 16 Player Tournament
-</h3>
+<h3>🏆 16 Player Tournament</h3>
 
 <p>
-16 players will be divided into
-4 groups. Each group contains
-4 players. Every player plays
-3 group-stage matches.
-The top 2 players from each group
-qualify for the knockout stage.
+16 players will be divided into 4 groups.
+Each group contains 4 players.
+Every player plays 3 group-stage matches.
+Top 2 players from each group qualify for knockout.
 </p>
 
 </div>
 
-
 <div class="groups">
 
+<div class="group">
+<h3>GROUP A</h3>
+<div class="player-slot" id="a1">TBD</div>
+<div class="player-slot" id="a2">TBD</div>
+<div class="player-slot" id="a3">TBD</div>
+<div class="player-slot" id="a4">TBD</div>
+</div>
 
 <div class="group">
-
-<h3>
-GROUP A
-</h3>
-
-<div class="player-slot" id="a1">
-TBD
+<h3>GROUP B</h3>
+<div class="player-slot" id="b1">TBD</div>
+<div class="player-slot" id="b2">TBD</div>
+<div class="player-slot" id="b3">TBD</div>
+<div class="player-slot" id="b4">TBD</div>
 </div>
-
-<div class="player-slot" id="a2">
-TBD
-</div>
-
-<div class="player-slot" id="a3">
-TBD
-</div>
-
-<div class="player-slot" id="a4">
-TBD
-</div>
-
-</div>
-
-
 
 <div class="group">
-
-<h3>
-GROUP B
-</h3>
-
-<div class="player-slot" id="b1">
-TBD
+<h3>GROUP C</h3>
+<div class="player-slot" id="c1">TBD</div>
+<div class="player-slot" id="c2">TBD</div>
+<div class="player-slot" id="c3">TBD</div>
+<div class="player-slot" id="c4">TBD</div>
 </div>
-
-<div class="player-slot" id="b2">
-TBD
-</div>
-
-<div class="player-slot" id="b3">
-TBD
-</div>
-
-<div class="player-slot" id="b4">
-TBD
-</div>
-
-</div>
-
-
 
 <div class="group">
-
-<h3>
-GROUP C
-</h3>
-
-<div class="player-slot" id="c1">
-TBD
-</div>
-
-<div class="player-slot" id="c2">
-TBD
-</div>
-
-<div class="player-slot" id="c3">
-TBD
-</div>
-
-<div class="player-slot" id="c4">
-TBD
+<h3>GROUP D</h3>
+<div class="player-slot" id="d1">TBD</div>
+<div class="player-slot" id="d2">TBD</div>
+<div class="player-slot" id="d3">TBD</div>
+<div class="player-slot" id="d4">TBD</div>
 </div>
 
 </div>
-
-
-
-<div class="group">
-
-<h3>
-GROUP D
-</h3>
-
-<div class="player-slot" id="d1">
-TBD
 </div>
-
-<div class="player-slot" id="d2">
-TBD
-</div>
-
-<div class="player-slot" id="d3">
-TBD
-</div>
-
-<div class="player-slot" id="d4">
-TBD
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-
-
-<!-- ================= PLAYERS ================= -->
 
 <section id="players">
 
@@ -927,14 +695,10 @@ TBD
 </h2>
 
 <p class="section-subtitle">
-Players registered through Google Form
+Players automatically loaded from Form Responses 4
 </p>
 
-
-<div
-id="playerGrid"
-class="player-grid"
->
+<div id="playerGrid" class="player-grid">
 
 <div class="loading">
 Loading players...
@@ -945,69 +709,35 @@ Loading players...
 </section>
 
 
-
-<!-- ================= LEADERBOARD ================= -->
-
 <section id="leaderboard">
 
 <h2 class="section-title">
 Player <span>Leaderboard</span>
 </h2>
 
-
 <div class="table-wrap">
 
 <table>
 
 <thead>
-
 <tr>
-
-<th>
-Rank
-</th>
-
-<th>
-Player
-</th>
-
-<th>
-W
-</th>
-
-<th>
-D
-</th>
-
-<th>
-L
-</th>
-
-<th>
-Goals
-</th>
-
-<th>
-Win Rate
-</th>
-
-<th>
-Points
-</th>
-
+<th>Rank</th>
+<th>Player</th>
+<th>W</th>
+<th>D</th>
+<th>L</th>
+<th>Goals</th>
+<th>Win Rate</th>
+<th>Points</th>
 </tr>
-
 </thead>
-
 
 <tbody id="leaderboardBody">
 
 <tr>
-
 <td colspan="8">
 Loading leaderboard...
 </td>
-
 </tr>
 
 </tbody>
@@ -1019,28 +749,17 @@ Loading leaderboard...
 </section>
 
 
-
-<!-- ================= BRACKET ================= -->
-
 <section>
 
 <h2 class="section-title">
 Knockout <span>Bracket</span>
 </h2>
 
-<p class="section-subtitle">
-Top 2 from each group qualify
-</p>
-
-
 <div class="bracket">
-
 
 <div class="round">
 
-<h3>
-Quarter Final
-</h3>
+<h3>Quarter Final</h3>
 
 <div class="match">
 <div>A1</div>
@@ -1064,77 +783,39 @@ Quarter Final
 
 </div>
 
+<div class="round">
 
+<h3>Semi Final</h3>
+
+<div class="match">
+<div class="tbd">QF 1 Winner</div>
+<div class="tbd">QF 2 Winner</div>
+</div>
+
+<div class="match">
+<div class="tbd">QF 3 Winner</div>
+<div class="tbd">QF 4 Winner</div>
+</div>
+
+</div>
 
 <div class="round">
 
-<h3>
-Semi Final
-</h3>
+<h3>Final</h3>
 
 <div class="match">
-
-<div class="tbd">
-QF 1 Winner
-</div>
-
-<div class="tbd">
-QF 2 Winner
+<div class="tbd">Semi Final 1 Winner</div>
+<div class="tbd">Semi Final 2 Winner</div>
 </div>
 
 </div>
-
-
-<div class="match">
-
-<div class="tbd">
-QF 3 Winner
-</div>
-
-<div class="tbd">
-QF 4 Winner
-</div>
-
-</div>
-
-</div>
-
-
 
 <div class="round">
 
-<h3>
-Final
-</h3>
+<h3>🏆 Champion</h3>
 
 <div class="match">
-
-<div class="tbd">
-Semi Final 1 Winner
-</div>
-
-<div class="tbd">
-Semi Final 2 Winner
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="round">
-
-<h3>
-🏆 Champion
-</h3>
-
-<div class="match">
-
-<div class="tbd">
-Tournament Winner
-</div>
-
+<div class="tbd">Tournament Winner</div>
 </div>
 
 </div>
@@ -1143,9 +824,6 @@ Tournament Winner
 
 </section>
 
-
-
-<!-- ================= DASHBOARD ================= -->
 
 <section id="dashboard">
 
@@ -1153,62 +831,26 @@ Tournament Winner
 Tournament <span>Dashboard</span>
 </h2>
 
-
 <div class="dashboard">
 
+<div class="dashboard-card">
+<div class="number" id="dashPlayers">0</div>
+<p>Players</p>
+</div>
 
 <div class="dashboard-card">
-
-<div
-class="number"
-id="dashPlayers"
->
-0
+<div class="number">16</div>
+<p>Tournament Slots</p>
 </div>
-
-<p>
-Registered Players
-</p>
-
-</div>
-
 
 <div class="dashboard-card">
-
-<div class="number">
-16
+<div class="number">31</div>
+<p>Total Matches</p>
 </div>
-
-<p>
-Tournament Slots
-</p>
-
-</div>
-
 
 <div class="dashboard-card">
-
-<div class="number">
-31
-</div>
-
-<p>
-Total Matches
-</p>
-
-</div>
-
-
-<div class="dashboard-card">
-
-<div class="number">
-3
-</div>
-
-<p>
-Group Matches / Player
-</p>
-
+<div class="number">3</div>
+<p>Group Matches / Player</p>
 </div>
 
 </div>
@@ -1216,15 +858,11 @@ Group Matches / Player
 </section>
 
 
-
-<!-- ================= PROFILE ================= -->
-
 <section id="profile">
 
 <h2 class="section-title">
 Player <span>Profile</span>
 </h2>
-
 
 <div class="profile-search">
 
@@ -1238,11 +876,7 @@ Select a player
 
 </div>
 
-
-<div
-id="profileBox"
-class="profile-box"
->
+<div id="profileBox" class="profile-box">
 
 <p style="color:#8993a6;">
 Select a player to view profile
@@ -1253,128 +887,42 @@ Select a player to view profile
 </section>
 
 
-
-<!-- ================= RULES ================= -->
-
 <section id="rules">
 
 <h2 class="section-title">
 Tournament <span>Rules</span>
 </h2>
 
-
 <div class="rules">
 
-
 <div class="rule">
-
-<h3>
-📝 Registration
-</h3>
-
-<p>
-Players must register with correct
-name, eFootball ID and team information.
-</p>
-
+<h3>📝 Registration</h3>
+<p>Player must register with correct information.</p>
 </div>
 
-
 <div class="rule">
-
-<h3>
-⚽ Group Stage
-</h3>
-
-<p>
-Each player plays 3 matches
-in the group stage.
-</p>
-
+<h3>⚽ Group Stage</h3>
+<p>Each player plays 3 group-stage matches.</p>
 </div>
 
-
 <div class="rule">
-
-<h3>
-🏆 Knockout
-</h3>
-
-<p>
-Top 2 players from each group
-qualify for the knockout stage.
-</p>
-
+<h3>🏆 Knockout</h3>
+<p>Top 2 players from each group qualify.</p>
 </div>
 
-
 <div class="rule">
-
-<h3>
-⏱️ Match Duration
-</h3>
-
-<p>
-Matches will follow the
-tournament match settings.
-</p>
-
+<h3>📸 Result Screenshot</h3>
+<p>Match result screenshot should be submitted.</p>
 </div>
 
-
 <div class="rule">
-
-<h3>
-📸 Result Screenshot
-</h3>
-
-<p>
-Match result screenshot should
-be submitted after the match.
-</p>
-
+<h3>⚡ Fair Play</h3>
+<p>Cheats, hacks and exploits are prohibited.</p>
 </div>
 
-
 <div class="rule">
-
-<h3>
-⚡ Fair Play
-</h3>
-
-<p>
-Cheats, hacks and unfair methods
-are prohibited.
-</p>
-
-</div>
-
-
-<div class="rule">
-
-<h3>
-🤝 Respect
-</h3>
-
-<p>
-Players must respect opponents
-and tournament organizers.
-</p>
-
-</div>
-
-
-<div class="rule">
-
-<h3>
-🚫 No Abuse
-</h3>
-
-<p>
-Abuse, harassment and toxic
-behaviour are not allowed.
-</p>
-
+<h3>🤝 Respect</h3>
+<p>Players must respect opponents and organizers.</p>
 </div>
 
 </div>
@@ -1382,1080 +930,671 @@ behaviour are not allowed.
 </section>
 
 
-
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
 <p>
-© 2026
-<strong>PesRaiyan</strong>
-|
-eFootball Tournament
+© 2026 <strong>PesRaiyan</strong> | eFootball Tournament
 </p>
 
 </footer>
 
 
-
 <script>
 
-/* =====================================================
-   GOOGLE SHEET SETTINGS
-===================================================== */
+/* =================================================
+   GOOGLE SHEET
+================================================= */
 
 const SHEET_ID =
 "1tiq4kQRs1gt4z735OrlqozPkDNQCmJpp-9i9GKVeGvE";
 
+/* IMPORTANT */
 
-/*
-   IMPORTANT
+const PLAYERS_SHEET = "Form Responses 4";
 
-   এই নামগুলো Google Sheet-এর নিচের tab
-   নামের সাথে EXACTLY মিলতে হবে।
-*/
-
-const FORM_SHEET =
-"Form Responses 1";
-
-const RANKING_SHEET =
-"Ranking";
+const RANKING_SHEET = "Ranking";
 
 
-/* =====================================================
-   DATA
-===================================================== */
+/* =================================================
+   GOOGLE SHEET LOADER
+================================================= */
+
+async function getSheet(sheetName){
+
+const url =
+`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}`;
+
+const response = await fetch(url);
+
+if(!response.ok){
+throw new Error("Google Sheet load failed");
+}
+
+const text = await response.text();
+
+const start = text.indexOf("{");
+const end = text.lastIndexOf("}");
+
+if(start === -1 || end === -1){
+throw new Error("Invalid Google Sheet data");
+}
+
+return JSON.parse(
+text.substring(start,end + 1)
+);
+
+}
+
+
+/* =================================================
+   PLAYERS
+================================================= */
 
 let players = [];
+
+
+async function loadPlayers(){
+
+const grid =
+document.getElementById("playerGrid");
+
+try{
+
+const data =
+await getSheet(PLAYERS_SHEET);
+
+const rows =
+data.table.rows || [];
+
+players = [];
+
+
+/*
+FORM RESPONSES 4
+
+A = Timestamp
+B = Player Name
+C = eFootball ID
+D = Team Name
+E = Contact
+F = Profile Picture
+*/
+
+rows.forEach(row => {
+
+const c = row.c || [];
+
+const name =
+c[1]?.v || "";
+
+if(!name) return;
+
+players.push({
+
+name:String(name),
+
+id:String(c[2]?.v || "N/A"),
+
+team:String(c[3]?.v || "N/A"),
+
+contact:String(c[4]?.v || ""),
+
+photo:String(c[5]?.v || ""),
+
+goals:0,
+
+winRate:"0%"
+
+});
+
+});
+
+
+displayPlayers();
+
+updateHomeStats();
+
+createProfileOptions();
+
+updateGroups();
+
+}
+catch(error){
+
+console.error(error);
+
+grid.innerHTML = `
+<div class="loading">
+Unable to load players.
+</div>
+`;
+
+}
+
+}
+
+
+/* =================================================
+   DISPLAY PLAYERS
+================================================= */
+
+function displayPlayers(){
+
+const grid =
+document.getElementById("playerGrid");
+
+grid.innerHTML = "";
+
+
+if(players.length === 0){
+
+grid.innerHTML = `
+<div class="loading">
+No players registered yet.
+</div>
+`;
+
+return;
+
+}
+
+
+players.forEach(player => {
+
+const card =
+document.createElement("div");
+
+card.className =
+"player-card";
+
+
+let photoHTML = `
+<div class="avatar">
+🎮
+</div>
+`;
+
+
+if(player.photo){
+
+photoHTML = `
+
+<img
+class="profile-img"
+src="${escapeHTML(player.photo)}"
+alt="Player"
+onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+>
+
+<div class="avatar" style="display:none;">
+🎮
+</div>
+
+`;
+
+}
+
+
+card.innerHTML = `
+
+${photoHTML}
+
+<h3>
+${escapeHTML(player.name)}
+</h3>
+
+<div class="team">
+${escapeHTML(player.team)}
+</div>
+
+<div class="player-details">
+
+<div>
+🆔 eFootball ID:
+<strong>
+${escapeHTML(player.id)}
+</strong>
+</div>
+
+</div>
+
+<div class="player-stats">
+
+<div class="stat-box">
+<strong>0</strong>
+<span>Goals</span>
+</div>
+
+<div class="stat-box">
+<strong>0%</strong>
+<span>Win Rate</span>
+</div>
+
+</div>
+
+`;
+
+grid.appendChild(card);
+
+});
+
+}
+
+
+/* =================================================
+   RANKING
+================================================= */
+
+async function loadRanking(){
+
+const body =
+document.getElementById("leaderboardBody");
+
+try{
+
+const data =
+await getSheet(RANKING_SHEET);
+
+const rows =
+data.table.rows || [];
 
 let ranking = [];
 
 
-/* =====================================================
-   GET GOOGLE SHEET DATA
-===================================================== */
+rows.forEach(row => {
 
-async function getSheet(sheetName){
+const c =
+row.c || [];
 
-  const url =
-  `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}`;
+const name =
+c[0]?.v || "";
 
+if(!name) return;
 
-  const response =
-  await fetch(url);
+const wins =
+Number(c[1]?.v || 0);
 
+const draws =
+Number(c[2]?.v || 0);
 
-  if(!response.ok){
+const losses =
+Number(c[3]?.v || 0);
 
-    throw new Error(
-      "Google Sheet load failed"
-    );
+const bonus =
+Number(c[4]?.v || 0);
 
-  }
+const points =
+Number(
+c[5]?.v ||
+(
+wins * 3 +
+draws +
+bonus
+)
+);
 
+const goals =
+Number(c[8]?.v || 0);
 
-  const text =
-  await response.text();
-
-
-  const start =
-  text.indexOf("{");
-
-
-  const end =
-  text.lastIndexOf("}");
-
-
-  if(start === -1 || end === -1){
-
-    throw new Error(
-      "Invalid Google Sheet data"
-    );
-
-  }
+let winRate =
+c[9]?.v || "";
 
 
-  return JSON.parse(
-    text.substring(
-      start,
-      end + 1
-    )
-  );
+if(!winRate){
+
+const played =
+wins + draws + losses;
+
+winRate =
+played > 0
+? Math.round((wins / played) * 100) + "%"
+: "0%";
 
 }
 
 
-/* =====================================================
-   LOAD REGISTERED PLAYERS
-===================================================== */
+ranking.push({
 
-async function loadPlayers(){
+name:String(name),
 
-  const grid =
-  document.getElementById(
-    "playerGrid"
-  );
+wins,
 
+draws,
 
-  try{
+losses,
 
+goals,
 
-    const data =
-    await getSheet(
-      FORM_SHEET
-    );
+winRate:String(winRate),
 
+points
 
-    const rows =
-    data.table.rows || [];
+});
+
+});
 
 
-    players = [];
+ranking.sort((a,b) => {
+
+if(b.points !== a.points)
+return b.points - a.points;
+
+return b.wins - a.wins;
+
+});
 
 
-    rows.forEach(row => {
-
-      const c =
-      row.c || [];
+body.innerHTML = "";
 
 
-      /*
-        Form Responses:
+ranking.forEach((player,index) => {
 
-        A = Timestamp
-        B = Player Name
-        C = eFootball ID
-        D = Team Name
-        E = Contact
-        F = Profile Picture
-      */
+let rank =
+index + 1;
+
+if(index === 0) rank = "🥇";
+if(index === 1) rank = "🥈";
+if(index === 2) rank = "🥉";
 
 
-      const name =
-      c[1]?.v || "";
+const row =
+document.createElement("tr");
+
+row.innerHTML = `
+
+<td class="rank">
+${rank}
+</td>
+
+<td>
+<strong>
+${escapeHTML(player.name)}
+</strong>
+</td>
+
+<td>${player.wins}</td>
+
+<td>${player.draws}</td>
+
+<td>${player.losses}</td>
+
+<td>${player.goals}</td>
+
+<td>${escapeHTML(player.winRate)}</td>
+
+<td>
+<strong>
+${player.points}
+</strong>
+</td>
+
+`;
+
+body.appendChild(row);
+
+});
 
 
-      if(!name){
-        return;
-      }
+if(ranking.length === 0){
 
+body.innerHTML = `
+<tr>
+<td colspan="8">
+No ranking data available.
+</td>
+</tr>
+`;
 
-      players.push({
+}
 
-        name:
-        String(name),
+}
+catch(error){
 
-        id:
-        String(
-          c[2]?.v || "N/A"
-        ),
+console.error(error);
 
-        team:
-        String(
-          c[3]?.v || "N/A"
-        ),
+body.innerHTML = `
+<tr>
+<td colspan="8">
+Ranking unavailable.
+</td>
+</tr>
+`;
 
-        contact:
-        String(
-          c[4]?.v || ""
-        ),
-
-        photo:
-        String(
-          c[5]?.v || ""
-        ),
-
-        goals:0,
-
-        winRate:"0%"
-
-      });
-
-    });
-
-
-    /*
-      Ranking-এর statistics
-      player-এর সাথে মিলানো হবে।
-    */
-
-    await attachRankingStats();
-
-
-    displayPlayers();
-
-    updateHomeStats();
-
-    createProfileOptions();
-
-    updateGroups();
-
-    updateLeaderboard();
-
-
-  }catch(error){
-
-    console.error(error);
-
-
-    grid.innerHTML = `
-
-      <div class="loading">
-
-        Unable to load registered players.
-
-        <br><br>
-
-        Please check Google Sheet
-        sharing settings.
-
-      </div>
-
-    `;
-
-  }
+}
 
 }
 
 
-/* =====================================================
-   CONNECT RANKING WITH PLAYERS
-===================================================== */
-
-async function attachRankingStats(){
-
-  try{
-
-    const data =
-    await getSheet(
-      RANKING_SHEET
-    );
-
-
-    const rows =
-    data.table.rows || [];
-
-
-    ranking = [];
-
-
-    rows.forEach(row => {
-
-      const c =
-      row.c || [];
-
-
-      /*
-        Ranking sheet:
-
-        A = Player Name
-        B = W
-        C = D
-        D = L
-        E = Bonus
-        F = Points
-        G = Rank
-        H = Profile Picture
-        I = Goals
-        J = Win Rate
-      */
-
-
-      const name =
-      c[0]?.v || "";
-
-
-      if(!name){
-        return;
-      }
-
-
-      const wins =
-      Number(
-        c[1]?.v || 0
-      );
-
-
-      const draws =
-      Number(
-        c[2]?.v || 0
-      );
-
-
-      const losses =
-      Number(
-        c[3]?.v || 0
-      );
-
-
-      const bonus =
-      Number(
-        c[4]?.v || 0
-      );
-
-
-      const points =
-      Number(
-        c[5]?.v ||
-        (
-          wins * 3
-          + draws
-          + bonus
-        )
-      );
-
-
-      const goals =
-      Number(
-        c[8]?.v || 0
-      );
-
-
-      let winRate =
-      c[9]?.v || "";
-
-
-      if(!winRate){
-
-        const played =
-        wins +
-        draws +
-        losses;
-
-
-        winRate =
-        played > 0
-
-        ? Math.round(
-            wins / played * 100
-          ) + "%"
-
-        : "0%";
-
-      }
-
-
-      ranking.push({
-
-        name:
-        String(name),
-
-        wins,
-
-        draws,
-
-        losses,
-
-        bonus,
-
-        points,
-
-        goals,
-
-        winRate:
-        String(winRate)
-
-      });
-
-    });
-
-
-    /*
-      Registered player-এর সাথে
-      ranking statistics মিলানো।
-    */
-
-    players.forEach(player => {
-
-      const stats =
-      ranking.find(
-        r =>
-        r.name.toLowerCase()
-        ===
-        player.name.toLowerCase()
-      );
-
-
-      if(stats){
-
-        player.goals =
-        stats.goals;
-
-        player.winRate =
-        stats.winRate;
-
-      }
-
-    });
-
-
-  }catch(error){
-
-    console.log(
-      "Ranking unavailable",
-      error
-    );
-
-  }
-
-}
-
-
-/* =====================================================
-   DISPLAY PLAYERS
-===================================================== */
-
-function displayPlayers(){
-
-  const grid =
-  document.getElementById(
-    "playerGrid"
-  );
-
-
-  grid.innerHTML = "";
-
-
-  if(players.length === 0){
-
-    grid.innerHTML = `
-
-      <div class="loading">
-
-        No players registered yet.
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  players.forEach(player => {
-
-
-    const card =
-    document.createElement(
-      "div"
-    );
-
-
-    card.className =
-    "player-card";
-
-
-    let photoHTML = "";
-
-
-    if(player.photo){
-
-      photoHTML = `
-
-        <img
-          class="profile-img"
-          src="${escapeHTML(player.photo)}"
-          alt="${escapeHTML(player.name)}"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-        >
-
-        <div
-          class="avatar"
-          style="display:none;"
-        >
-          🎮
-        </div>
-
-      `;
-
-    }else{
-
-      photoHTML = `
-
-        <div class="avatar">
-          🎮
-        </div>
-
-      `;
-
-    }
-
-
-    card.innerHTML = `
-
-      ${photoHTML}
-
-      <h3>
-        ${escapeHTML(player.name)}
-      </h3>
-
-      <div class="team">
-        ${escapeHTML(player.team)}
-      </div>
-
-      <div class="player-details">
-
-        <div>
-
-          🆔 eFootball ID:
-
-          <strong>
-            ${escapeHTML(player.id)}
-          </strong>
-
-        </div>
-
-      </div>
-
-
-      <div class="player-stats">
-
-
-        <div class="stat-box">
-
-          <strong>
-            ${player.goals}
-          </strong>
-
-          <span>
-            Goals
-          </span>
-
-        </div>
-
-
-        <div class="stat-box">
-
-          <strong>
-            ${escapeHTML(
-              player.winRate
-            )}
-          </strong>
-
-          <span>
-            Win Rate
-          </span>
-
-        </div>
-
-
-      </div>
-
-    `;
-
-
-    grid.appendChild(card);
-
-  });
-
-}
-
-
-/* =====================================================
-   LEADERBOARD
-===================================================== */
-
-function updateLeaderboard(){
-
-  const body =
-  document.getElementById(
-    "leaderboardBody"
-  );
-
-
-  /*
-    সব registered player leaderboard-এ থাকবে।
-    Ranking না থাকলে statistics 0 থাকবে।
-  */
-
-  const list =
-  players.map(player => {
-
-    const stats =
-    ranking.find(
-      r =>
-      r.name.toLowerCase()
-      ===
-      player.name.toLowerCase()
-    );
-
-
-    return {
-
-      name:
-      player.name,
-
-      wins:
-      stats?.wins || 0,
-
-      draws:
-      stats?.draws || 0,
-
-      losses:
-      stats?.losses || 0,
-
-      goals:
-      stats?.goals || 0,
-
-      winRate:
-      stats?.winRate || "0%",
-
-      points:
-      stats?.points || 0
-
-    };
-
-  });
-
-
-  list.sort((a,b) => {
-
-    if(b.points !== a.points){
-
-      return b.points - a.points;
-
-    }
-
-
-    if(b.wins !== a.wins){
-
-      return b.wins - a.wins;
-
-    }
-
-
-    return b.goals - a.goals;
-
-  });
-
-
-  body.innerHTML = "";
-
-
-  if(list.length === 0){
-
-    body.innerHTML = `
-
-      <tr>
-
-        <td colspan="8">
-
-          No players registered yet.
-
-        </td>
-
-      </tr>
-
-    `;
-
-    return;
-
-  }
-
-
-  list.forEach(
-    (player,index) => {
-
-
-      let rank =
-      index + 1;
-
-
-      if(index === 0)
-        rank = "🥇";
-
-
-      else if(index === 1)
-        rank = "🥈";
-
-
-      else if(index === 2)
-        rank = "🥉";
-
-
-      const row =
-      document.createElement(
-        "tr"
-      );
-
-
-      row.innerHTML = `
-
-        <td class="rank">
-          ${rank}
-        </td>
-
-        <td>
-          <strong>
-            ${escapeHTML(
-              player.name
-            )}
-          </strong>
-        </td>
-
-        <td>
-          ${player.wins}
-        </td>
-
-        <td>
-          ${player.draws}
-        </td>
-
-        <td>
-          ${player.losses}
-        </td>
-
-        <td>
-          ${player.goals}
-        </td>
-
-        <td>
-          ${escapeHTML(
-            player.winRate
-          )}
-        </td>
-
-        <td>
-          <strong>
-            ${player.points}
-          </strong>
-        </td>
-
-      `;
-
-
-      body.appendChild(row);
-
-    }
-  );
-
-}
-
-
-/* =====================================================
+/* =================================================
    PROFILE OPTIONS
-===================================================== */
+================================================= */
 
 function createProfileOptions(){
 
-  const select =
-  document.getElementById(
-    "profileSelect"
-  );
+const select =
+document.getElementById("profileSelect");
+
+select.innerHTML = `
+<option value="">
+Select a player
+</option>
+`;
 
 
-  select.innerHTML = `
+players.forEach((player,index) => {
 
-    <option value="">
-      Select a player
-    </option>
+const option =
+document.createElement("option");
 
-  `;
+option.value = index;
 
+option.textContent =
+player.name;
 
-  players.forEach(
-    (player,index) => {
+select.appendChild(option);
 
-
-      const option =
-      document.createElement(
-        "option"
-      );
-
-
-      option.value =
-      index;
-
-
-      option.textContent =
-      player.name;
-
-
-      select.appendChild(
-        option
-      );
-
-    }
-  );
+});
 
 }
 
 
-/* =====================================================
-   PROFILE VIEW
-===================================================== */
+/* =================================================
+   PROFILE
+================================================= */
 
 document
-.getElementById(
-  "profileSelect"
-)
-.addEventListener(
-  "change",
-  function(){
+.getElementById("profileSelect")
+.addEventListener("change",function(){
 
-    const index =
-    this.value;
+const index =
+this.value;
 
-
-    const box =
-    document.getElementById(
-      "profileBox"
-    );
+const box =
+document.getElementById("profileBox");
 
 
-    if(index === ""){
+if(index === ""){
 
-      box.innerHTML = `
+box.innerHTML = `
+<p style="color:#8993a6;">
+Select a player to view profile
+</p>
+`;
 
-        <p style="color:#8993a6;">
+return;
 
-          Select a player
-          to view profile
-
-        </p>
-
-      `;
-
-      return;
-
-    }
+}
 
 
-    const player =
-    players[index];
+const player =
+players[index];
 
 
-    const photo =
-    player.photo
-
-    ? `
-
-      <img
-        class="profile-big-img"
-        src="${escapeHTML(
-          player.photo
-        )}"
-      >
-
-    `
-
-    : `
-
-      <div
-        class="avatar"
-        style="margin:0 auto 15px;"
-      >
-        🎮
-      </div>
-
-    `;
+let photo = `
+<div class="avatar"
+style="margin:0 auto 15px;">
+🎮
+</div>
+`;
 
 
-    box.innerHTML = `
+if(player.photo){
 
-      ${photo}
+photo = `
+<img
+class="profile-big-img"
+src="${escapeHTML(player.photo)}"
+>
+`;
 
-      <h2>
-        ${escapeHTML(
-          player.name
-        )}
-      </h2>
-
-      <div class="team">
-        ${escapeHTML(
-          player.team
-        )}
-      </div>
+}
 
 
-      <div class="profile-stat-grid">
+box.innerHTML = `
+
+${photo}
+
+<h2>
+${escapeHTML(player.name)}
+</h2>
+
+<div class="team">
+${escapeHTML(player.team)}
+</div>
+
+<div class="profile-stat-grid">
+
+<div class="profile-stat">
+<strong>
+${escapeHTML(player.id)}
+</strong>
+<span>eFootball ID</span>
+</div>
+
+<div class="profile-stat">
+<strong>0</strong>
+<span>Goals</span>
+</div>
+
+<div class="profile-stat">
+<strong>0%</strong>
+<span>Win Rate</span>
+</div>
+
+<div class="profile-stat">
+<strong>Active</strong>
+<span>Status</span>
+</div>
+
+</div>
+
+`;
+
+});
 
 
-        <div class="profile-stat">
-
-          <strong>
-            ${escapeHTML(
-              player.id
-            )}
-          </strong>
-
-          <span>
-            eFootball ID
-          </span>
-
-        </div>
-
-
-        <div class="profile-stat">
-
-          <strong>
-            ${player.goals}
-          </strong>
-
-          <span>
-            Goals
-          </span>
-
-        </div>
-
-
-        <div class="profile-stat">
-
-          <strong>
-            ${escapeHTML(
-              player.winRate
-            )}
-          </strong>
-
-          <span>
-            Win Rate
-          </span>
-
-        </div>
-
-
-        <div class="profile-stat">
-
-          <strong>
-            Active
-          </strong>
-
-          <span>
-            Status
-          </span>
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-);
-
-
-/* =====================================================
-   UPDATE GROUPS
-===================================================== */
+/* =================================================
+   GROUPS
+================================================= */
 
 function updateGroups(){
 
-  const slots = [
+const slots = [
 
-    "a1","a2","a3","a4",
-    "b1","b2","b3","b4",
-    "c1","c2","c3","c4",
-    "d1","d2","d3","d4"
+"a1","a2","a3","a4",
+"b1","b2","b3","b4",
+"c1","c2","c3","c4",
+"d1","d2","d3","d4"
 
-  ];
-
-
-  slots.forEach(
-    (id,index) => {
-
-      const element =
-      document.getElementById(
-        id
-      );
+];
 
 
-      if(players[index]){
+slots.forEach((id,index) => {
 
-        element.textContent =
-        players[index].name;
+const element =
+document.getElementById(id);
 
-      }else{
+if(players[index]){
 
-        element.textContent =
-        "TBD";
+element.textContent =
+players[index].name;
 
-      }
+}
+else{
 
-    }
-  );
+element.textContent =
+"TBD";
+
+}
+
+});
 
 }
 
 
-/* =====================================================
-   HOME STATISTICS
-===================================================== */
+/* =================================================
+   PLAYER COUNT
+================================================= */
 
 function updateHomeStats(){
 
-  const count =
-  players.length;
+const count =
+players.length;
 
+document.getElementById(
+"homePlayers"
+).textContent = count;
 
-  document.getElementById(
-    "homePlayers"
-  ).textContent =
-  count;
-
-
-  document.getElementById(
-    "dashPlayers"
-  ).textContent =
-  count;
+document.getElementById(
+"dashPlayers"
+).textContent = count;
 
 }
 
 
-/* =====================================================
+/* =================================================
    SECURITY
-===================================================== */
+================================================= */
 
 function escapeHTML(value){
 
-  return String(value)
+return String(value)
 
-  .replace(
-    /&/g,
-    "&amp;"
-  )
+.replace(/&/g,"&amp;")
 
-  .replace(
-    /</g,
-    "&lt;"
-  )
+.replace(/</g,"&lt;")
 
-  .replace(
-    />/g,
-    "&gt;"
-  )
+.replace(/>/g,"&gt;")
 
-  .replace(
-    /"/g,
-    "&quot;"
-  )
+.replace(/"/g,"&quot;")
 
-  .replace(
-    /'/g,
-    "&#039;"
-  );
+.replace(/'/g,"&#039;");
 
 }
 
 
-/* =====================================================
+/* =================================================
    START
-===================================================== */
+================================================= */
 
 loadPlayers();
 
+loadRanking();
 
-/* =====================================================
-   AUTO REFRESH
-===================================================== */
 
-setInterval(
-  loadPlayers,
-  30000
-);
+/* =================================================
+   AUTO UPDATE
+================================================= */
+
+setInterval(() => {
+
+loadPlayers();
+
+loadRanking();
+
+},30000);
 
 </script>
 
 </body>
-
 </html>
