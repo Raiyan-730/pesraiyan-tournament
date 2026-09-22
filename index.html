@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -74,6 +74,21 @@
         radial-gradient(circle at top, #12304b 0%, #080b12 55%);
     }
 
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      color: #00e5ff;
+      border: 1px solid #00e5ff;
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
     .hero h1 {
       font-size: clamp(45px, 10vw, 90px);
       margin-bottom: 10px;
@@ -83,10 +98,23 @@
       color: #00e5ff;
     }
 
-    .hero p {
+    .hero-subtitle {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .hero-description {
       color: #b8c0cf;
-      font-size: 19px;
+      font-size: 18px;
       margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -105,6 +133,34 @@
     .btn:hover {
       transform: translateY(-2px);
       opacity: 0.85;
+    }
+
+    .secondary-btn {
+      background: transparent;
+      color: #00e5ff;
+      border: 1px solid #00e5ff;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 45px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-stats strong {
+      font-size: 30px;
+      color: #00e5ff;
+    }
+
+    .hero-stats span {
+      color: #b8c0cf;
     }
 
     /* SECTIONS */
@@ -192,6 +248,13 @@
       text-align: center;
     }
 
+    .registration-note {
+      margin-top: 15px;
+      color: #8993a6;
+      font-size: 13px;
+      text-align: center;
+    }
+
     /* TABLE */
     .table-container {
       overflow-x: auto;
@@ -215,6 +278,62 @@
       color: #00e5ff;
     }
 
+    /* PLAYER RULES */
+    .rules-container {
+      max-width: 950px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .rule-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 20px;
+      background: #101521;
+      border: 1px solid #252d3d;
+      border-radius: 14px;
+      transition: 0.3s ease;
+    }
+
+    .rule-card:hover {
+      transform: translateY(-3px);
+      border-color: #00e5ff;
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+    }
+
+    .rule-icon {
+      font-size: 28px;
+      min-width: 35px;
+    }
+
+    .rule-card h3 {
+      margin: 0 0 7px;
+      color: #00e5ff;
+      font-size: 18px;
+    }
+
+    .rule-card p {
+      margin: 0;
+      color: #b8c0cf;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* RANKING RULES */
+    .ranking-rules {
+      max-width: 600px;
+      margin: 25px auto 0;
+      text-align: center;
+      color: #b8c0cf;
+    }
+
+    .ranking-rules p {
+      margin: 5px 0;
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
@@ -229,15 +348,20 @@
 
     /* MOBILE */
     @media (max-width: 700px) {
+
       nav {
         flex-direction: column;
         gap: 12px;
       }
 
       nav ul {
-        gap: 13px;
+        gap: 12px;
         flex-wrap: wrap;
         justify-content: center;
+      }
+
+      nav a {
+        font-size: 14px;
       }
 
       .hero {
@@ -251,6 +375,18 @@
       .section-title {
         font-size: 29px;
       }
+
+      .rules-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        gap: 30px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -259,6 +395,7 @@
 
   <!-- NAVBAR -->
   <nav>
+
     <div class="logo">
       <span>Pes</span>Raiyan
     </div>
@@ -269,84 +406,78 @@
       <li><a href="#teams">Teams</a></li>
       <li><a href="#matches">Matches</a></li>
       <li><a href="#leaderboard">Leaderboard</a></li>
+      <li><a href="#rules">Rules</a></li>
     </ul>
+
   </nav>
 
 
   <!-- HOME -->
-<section class="hero" id="home">
-  <div class="hero-content">
+  <section class="hero" id="home">
 
-    <div class="hero-badge">
-      🏆 eFOOTBALL FRIENDLY TOURNAMENT
-    </div>
+    <div class="hero-content">
 
-    <h1>
-      <span>Pes</span>Raiyan
-    </h1>
-
-    <p class="hero-subtitle">
-      Compete. Play. Win.
-    </p>
-
-    <p class="hero-description">
-      Welcome to PesRaiyan — a friendly eFootball tournament
-      where players come together to compete and enjoy the game.
-    </p>
-
-    <div class="hero-buttons">
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSetuClRBuq-zyTimnVsYYhP4dH3N2b-1cdETD-sLGBjfMqzBg/viewform?usp=header"
-        class="btn"
-        target="_blank"
-      >
-        📝 Register Now
-      </a>
-
-      <a href="#matches" class="btn secondary-btn">
-        ⚽ View Matches
-      </a>
-    </div>
-
-    <div class="hero-stats">
-
-      <div>
-        <strong>∞</strong>
-        <span>Players</span>
+      <div class="hero-badge">
+        🏆 eFOOTBALL FRIENDLY TOURNAMENT
       </div>
 
-      <div>
-        <strong>🎮</strong>
-        <span>eFootball</span>
-      </div>
+      <h1>
+        <span>Pes</span>Raiyan
+      </h1>
 
-      <div>
-        <strong>🏆</strong>
-        <span>Friendly</span>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-  
-    <div>
-      <h1><span>Pes</span>Raiyan</h1>
-
-      <p>
-        eFootball Friendly Tournament
+      <p class="hero-subtitle">
+        Compete. Play. Win.
       </p>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSetuClRBuq-zyTimnVsYYhP4dH3N2b-1cdETD-sLGBjfMqzBg/viewform?usp=header"
-   class="btn"
-   target="_blank">
-  Register Now
-</a>
+
+      <p class="hero-description">
+        Welcome to PesRaiyan — a friendly eFootball tournament
+        where players come together to compete and enjoy the game.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSetuClRBuq-zyTimnVsYYhP4dH3N2b-1cdETD-sLGBjfMqzBg/viewform?usp=header"
+          class="btn"
+          target="_blank"
+          rel="noopener"
+        >
+          📝 Register Now
+        </a>
+
+        <a href="#matches" class="btn secondary-btn">
+          ⚽ View Matches
+        </a>
+
+      </div>
+
+      <div class="hero-stats">
+
+        <div>
+          <strong>∞</strong>
+          <span>Players</span>
+        </div>
+
+        <div>
+          <strong>🎮</strong>
+          <span>eFootball</span>
+        </div>
+
+        <div>
+          <strong>🏆</strong>
+          <span>Friendly</span>
+        </div>
+
+      </div>
+
     </div>
+
   </section>
 
 
   <!-- TOURNAMENT INFO -->
   <section>
+
     <h2 class="section-title">
       Tournament <span>Info</span>
     </h2>
@@ -374,6 +505,7 @@
       </div>
 
     </div>
+
   </section>
 
 
@@ -390,6 +522,7 @@
 
         <div class="form-group">
           <label for="name">Player Name</label>
+
           <input
             type="text"
             id="name"
@@ -398,8 +531,10 @@
           >
         </div>
 
+
         <div class="form-group">
           <label for="gameId">eFootball ID</label>
+
           <input
             type="text"
             id="gameId"
@@ -408,8 +543,10 @@
           >
         </div>
 
+
         <div class="form-group">
           <label for="team">Team Name</label>
+
           <input
             type="text"
             id="team"
@@ -418,8 +555,10 @@
           >
         </div>
 
+
         <div class="form-group">
           <label for="contact">Contact</label>
+
           <input
             type="text"
             id="contact"
@@ -428,17 +567,26 @@
           >
         </div>
 
+
         <button type="submit" class="btn">
           Submit Registration
         </button>
 
       </form>
 
+
       <div class="success" id="successMessage">
         ✅ Registration submitted successfully!
       </div>
 
+
+      <p class="registration-note">
+        For official tournament registration, please use the
+        <strong>Register Now</strong> button above.
+      </p>
+
     </div>
+
   </section>
 
 
@@ -523,248 +671,637 @@
   </section>
 
 
-<!-- GOOGLE SHEET PLAYER RANKING -->
-<section id="leaderboard">
+  <!-- PLAYER RANKING -->
+  <section id="leaderboard">
 
-  <h2 class="section-title">
-    <span>Player Ranking</span>
-  </h2>
+    <h2 class="section-title">
+      <span>Player Ranking</span>
+    </h2>
 
-  <div class="table-container">
+    <div class="table-container">
 
-    <table id="rankingTable">
+      <table id="rankingTable">
 
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Player</th>
-          <th>P</th>
-          <th>W</th>
-          <th>D</th>
-          <th>L</th>
-          <th>Pts</th>
-        </tr>
-      </thead>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Player</th>
+            <th>P</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
+            <th>Pts</th>
+          </tr>
+        </thead>
 
-      <tbody id="rankingBody">
-        <tr>
-          <td colspan="7">Loading players...</td>
-        </tr>
-      </tbody>
+        <tbody id="rankingBody">
 
-    </table>
+          <tr>
+            <td colspan="7">
+              Loading players...
+            </td>
+          </tr>
 
-  </div>
+        </tbody>
 
-  <div class="ranking-rules">
+      </table>
 
-    <p>⚽ Win = <strong>3 Points</strong></p>
-    <p>🤝 Draw = <strong>1 Point</strong></p>
-    <p>❌ Loss = <strong>0 Points</strong></p>
-    <p>🏆 Final Winner = <strong>+10 Bonus</strong></p>
-    <p>🥈 Runner-up = <strong>+5 Bonus</strong></p>
-
-  </div>
-
-</section>
+    </div>
 
 
-<script>
+    <div class="ranking-rules">
 
-const GOOGLE_SHEET_ID =
-"1tiq4kQRs1gt4z735OrlqozPkDNQCmJpp-9i9GKVeGvE";
+      <p>⚽ Win = <strong>3 Points</strong></p>
+      <p>🤝 Draw = <strong>1 Point</strong></p>
+      <p>❌ Loss = <strong>0 Points</strong></p>
+      <p>🏆 Final Winner = <strong>+10 Bonus</strong></p>
+      <p>🥈 Runner-up = <strong>+5 Bonus</strong></p>
 
-const SHEET_NAME = "Form responses 1";
+    </div>
 
-const GOOGLE_SHEET_URL =
-`https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
-
-
-async function loadPlayerRanking() {
-
-  const rankingBody = document.getElementById("rankingBody");
-
-  try {
-
-    const response = await fetch(GOOGLE_SHEET_URL);
-
-    const text = await response.text();
-
-    const jsonText = text.substring(
-      text.indexOf("{"),
-      text.lastIndexOf("}") + 1
-    );
-
-    const data = JSON.parse(jsonText);
-
-    const rows = data.table.rows;
-
-    let players = [];
-
-    rows.forEach(row => {
-
-      const cells = row.c || [];
-
-      const playerName = cells[2]?.v || "";
-
-      if (!playerName) return;
-
-      const played = Number(cells[5]?.v || 0);
-      const wins = Number(cells[6]?.v || 0);
-      const draws = Number(cells[7]?.v || 0);
-      const losses = Number(cells[8]?.v || 0);
-      const bonus = Number(cells[9]?.v || 0);
-
-      const points = (wins * 3) + draws + bonus;
-
-      players.push({
-        name: playerName,
-        played: played,
-        wins: wins,
-        draws: draws,
-        losses: losses,
-        points: points
-      });
-
-    });
+  </section>
 
 
-    // Highest points first
-    players.sort((a, b) => b.points - a.points);
+  <!-- PLAYER RULES -->
+  <section id="rules">
+
+    <h2 class="section-title">
+      Player <span>Rules</span>
+    </h2>
 
 
-    rankingBody.innerHTML = "";
+    <div class="rules-container">
 
 
-    if (players.length === 0) {
+      <div class="rule-card">
 
-      rankingBody.innerHTML = `
-        <tr>
-          <td colspan="7">No players registered yet.</td>
-        </tr>
-      `;
+        <span class="rule-icon">📝</span>
 
-      return;
-    }
+        <div>
+          <h3>Registration</h3>
 
+          <p>
+            প্রতিটি player-কে সঠিক Player Name, eFootball ID
+            এবং Team Name দিয়ে registration করতে হবে।
+          </p>
+        </div>
 
-    players.forEach((player, index) => {
-
-      let rank;
-
-      if (index === 0) {
-        rank = "🥇";
-      } else if (index === 1) {
-        rank = "🥈";
-      } else if (index === 2) {
-        rank = "🥉";
-      } else {
-        rank = index + 1;
-      }
+      </div>
 
 
-      const row = document.createElement("tr");
+      <div class="rule-card">
 
-      row.innerHTML = `
-        <td>${rank}</td>
-        <td>${player.name}</td>
-        <td>${player.played}</td>
-        <td>${player.wins}</td>
-        <td>${player.draws}</td>
-        <td>${player.losses}</td>
-        <td><strong>${player.points}</strong></td>
-      `;
+        <span class="rule-icon">⏱️</span>
 
-      rankingBody.appendChild(row);
+        <div>
+          <h3>Match Duration</h3>
 
-    });
+          <p>
+            সাধারণ ম্যাচ <strong>8 minutes</strong> হবে এবং
+            match settings <strong>Random</strong> থাকবে।
+          </p>
+        </div>
 
-  } catch (error) {
-
-    console.error("Ranking error:", error);
-
-    rankingBody.innerHTML = `
-      <tr>
-        <td colspan="7">
-          Unable to load ranking.
-        </td>
-      </tr>
-    `;
-
-  }
-
-}
+      </div>
 
 
-// Load ranking
-loadPlayerRanking();
+      <div class="rule-card">
+
+        <span class="rule-icon">🏆</span>
+
+        <div>
+          <h3>Knockout Matches</h3>
+
+          <p>
+            Knockout match draw হলে <strong>Extra Time</strong>
+            এবং এরপর <strong>Penalty Shootout</strong> হবে।
+          </p>
+        </div>
+
+      </div>
 
 
-// Automatically refresh every 30 seconds
-setInterval(loadPlayerRanking, 30000);
+      <div class="rule-card">
 
-</script>
+        <span class="rule-icon">👑</span>
+
+        <div>
+          <h3>Final Match</h3>
+
+          <p>
+            Final match <strong>12 minutes</strong> হবে।
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="rule-card">
+
+        <span class="rule-icon">⚡</span>
+
+        <div>
+          <h3>Fair Play</h3>
+
+          <p>
+            কোনো ধরনের cheat, hack, exploit বা unfair method
+            ব্যবহার করা যাবে না।
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="rule-card">
+
+        <span class="rule-icon">📸</span>
+
+        <div>
+          <h3>Screenshot</h3>
+
+          <p>
+            প্রতিটি match শেষ হওয়ার পর
+            <strong>match result-এর screenshot দেওয়া বাধ্যতামূলক</strong>।
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="rule-card">
+
+        <span class="rule-icon">🤝</span>
+
+        <div>
+          <h3>Respect</h3>
+
+          <p>
+            Opponent এবং tournament organizer-এর সঙ্গে
+            respectful আচরণ করতে হবে।
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="rule-card">
+
+        <span class="rule-icon">🚫</span>
+
+        <div>
+          <h3>No Abuse</h3>
+
+          <p>
+            গালি, harassment বা toxic behaviour গ্রহণযোগ্য নয়।
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="rule-card">
+
+        <span class="rule-icon">⚖️</span>
+
+        <div>
+          <h3>Dispute</h3>
+
+          <p>
+            কোনো dispute হলে submitted screenshot-এর ভিত্তিতে
+            বিষয়টি যাচাই করা হবে।
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="rule-card">
+
+        <span class="rule-icon">🆔</span>
+
+        <div>
+          <h3>eFootball ID</h3>
+
+          <p>
+            যে eFootball ID দিয়ে প্রথম ম্যাচ খেলবে,
+            tournament-এর সব ম্যাচে একই ID ব্যবহার করতে হবে।
+            ID পরিবর্তন করে খেললে player-কে
+            <strong>tournament থেকে suspend/disqualify</strong>
+            করা হবে।
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="rule-card">
+
+        <span class="rule-icon">🛡️</span>
+
+        <div>
+          <h3>Organizer's Decision</h3>
+
+          <p>
+            Tournament পরিচালনার প্রয়োজনে organizer-এর
+            সিদ্ধান্ত final হিসেবে গণ্য হবে।
+          </p>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
   <!-- FOOTER -->
   <footer>
+
     <p>
-      © 2026 <strong>PesRaiyan</strong> | eFootball Friendly Tournament
+      © 2026 <strong>PesRaiyan</strong> |
+      eFootball Friendly Tournament
     </p>
+
   </footer>
 
 
   <!-- JAVASCRIPT -->
+
   <script>
 
-    const form = document.getElementById("registrationForm");
-    const successMessage = document.getElementById("successMessage");
+    /* ==========================================
+       LOCAL REGISTRATION FORM
+       ========================================== */
+
+    const form =
+      document.getElementById("registrationForm");
+
+    const successMessage =
+      document.getElementById("successMessage");
+
 
     form.addEventListener("submit", function(event) {
 
       event.preventDefault();
 
+
       const playerName =
-        document.getElementById("name").value;
+        document.getElementById("name").value.trim();
 
       const gameId =
-        document.getElementById("gameId").value;
+        document.getElementById("gameId").value.trim();
 
       const team =
-        document.getElementById("team").value;
+        document.getElementById("team").value.trim();
 
       const contact =
-        document.getElementById("contact").value;
+        document.getElementById("contact").value.trim();
 
-
-      /*
-        Registration data is currently saved
-        only in the browser.
-
-        Later we can connect this form
-        to Google Sheets / Firebase.
-      */
 
       const registration = {
+
         playerName: playerName,
         gameId: gameId,
         team: team,
         contact: contact
+
       };
 
-      console.log("Registration:", registration);
+
+      console.log(
+        "Registration:",
+        registration
+      );
 
 
       successMessage.style.display = "block";
+
 
       form.reset();
 
 
       setTimeout(function() {
+
         successMessage.style.display = "none";
+
       }, 5000);
 
     });
 
+
+
+    /* ==========================================
+       GOOGLE SHEETS PLAYER RANKING
+       ========================================== */
+
+    const GOOGLE_SHEET_ID =
+      "1tiq4kQRs1gt4z735OrlqozPkDNQCmJpp-9i9GKVeGvE";
+
+
+    /*
+      IMPORTANT:
+
+      This uses the separate "Ranking" sheet.
+
+      Do NOT use "Form responses 1" here because
+      that sheet contains private contact information.
+    */
+
+    const SHEET_NAME = "Ranking";
+
+
+    const GOOGLE_SHEET_URL =
+      `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
+
+
+    async function loadPlayerRanking() {
+
+      const rankingBody =
+        document.getElementById("rankingBody");
+
+
+      try {
+
+        const response =
+          await fetch(GOOGLE_SHEET_URL);
+
+
+        if (!response.ok) {
+          throw new Error("Google Sheet could not be loaded.");
+        }
+
+
+        const text =
+          await response.text();
+
+
+        const start =
+          text.indexOf("{");
+
+        const end =
+          text.lastIndexOf("}");
+
+
+        if (start === -1 || end === -1) {
+          throw new Error("Invalid Google Sheet response.");
+        }
+
+
+        const jsonText =
+          text.substring(start, end + 1);
+
+
+        const data =
+          JSON.parse(jsonText);
+
+
+        const rows =
+          data.table.rows || [];
+
+
+        let players = [];
+
+
+        rows.forEach(function(row) {
+
+          const cells =
+            row.c || [];
+
+
+          /*
+            Ranking sheet columns:
+
+            A = Player Name
+            B = P
+            C = W
+            D = D
+            E = L
+            F = Bonus
+            G = Points
+            H = Rank
+          */
+
+
+          const playerName =
+            cells[0]?.v || "";
+
+
+          if (!playerName) {
+            return;
+          }
+
+
+          const played =
+            Number(cells[1]?.v || 0);
+
+
+          const wins =
+            Number(cells[2]?.v || 0);
+
+
+          const draws =
+            Number(cells[3]?.v || 0);
+
+
+          const losses =
+            Number(cells[4]?.v || 0);
+
+
+          const bonus =
+            Number(cells[5]?.v || 0);
+
+
+          const points =
+            (wins * 3) + draws + bonus;
+
+
+          players.push({
+
+            name: String(playerName),
+
+            played: played,
+
+            wins: wins,
+
+            draws: draws,
+
+            losses: losses,
+
+            points: points
+
+          });
+
+        });
+
+
+        /* Highest points first */
+
+        players.sort(function(a, b) {
+
+          if (b.points !== a.points) {
+            return b.points - a.points;
+          }
+
+          return b.wins - a.wins;
+
+        });
+
+
+        rankingBody.innerHTML = "";
+
+
+        if (players.length === 0) {
+
+          rankingBody.innerHTML = `
+            <tr>
+              <td colspan="7">
+                No players registered yet.
+              </td>
+            </tr>
+          `;
+
+          return;
+        }
+
+
+        players.forEach(function(player, index) {
+
+          let rank;
+
+
+          if (index === 0) {
+
+            rank = "🥇";
+
+          } else if (index === 1) {
+
+            rank = "🥈";
+
+          } else if (index === 2) {
+
+            rank = "🥉";
+
+          } else {
+
+            rank = index + 1;
+
+          }
+
+
+          const row =
+            document.createElement("tr");
+
+
+          const rankCell =
+            document.createElement("td");
+
+          rankCell.textContent =
+            rank;
+
+
+          const nameCell =
+            document.createElement("td");
+
+          nameCell.textContent =
+            player.name;
+
+
+          const playedCell =
+            document.createElement("td");
+
+          playedCell.textContent =
+            player.played;
+
+
+          const winsCell =
+            document.createElement("td");
+
+          winsCell.textContent =
+            player.wins;
+
+
+          const drawsCell =
+            document.createElement("td");
+
+          drawsCell.textContent =
+            player.draws;
+
+
+          const lossesCell =
+            document.createElement("td");
+
+          lossesCell.textContent =
+            player.losses;
+
+
+          const pointsCell =
+            document.createElement("td");
+
+
+          const pointsStrong =
+            document.createElement("strong");
+
+
+          pointsStrong.textContent =
+            player.points;
+
+
+          pointsCell.appendChild(
+            pointsStrong
+          );
+
+
+          row.appendChild(rankCell);
+          row.appendChild(nameCell);
+          row.appendChild(playedCell);
+          row.appendChild(winsCell);
+          row.appendChild(drawsCell);
+          row.appendChild(lossesCell);
+          row.appendChild(pointsCell);
+
+
+          rankingBody.appendChild(row);
+
+        });
+
+
+      } catch (error) {
+
+        console.error(
+          "Ranking error:",
+          error
+        );
+
+
+        rankingBody.innerHTML = `
+          <tr>
+            <td colspan="7">
+              Ranking is currently unavailable.
+            </td>
+          </tr>
+        `;
+
+      }
+
+    }
+
+
+    /* Load ranking */
+
+    loadPlayerRanking();
+
+
+    /* Refresh every 30 seconds */
+
+    setInterval(
+      loadPlayerRanking,
+      30000
+    );
+
   </script>
 
 </body>
-</html>
+</html>    
+          
+    
