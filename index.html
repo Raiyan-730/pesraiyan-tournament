@@ -1,1441 +1,1469 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>PesRaiyan | eFootball Friendly Tournament</title>
+<title>PesRaiyan | eFootball Tournament</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #080b12;
-      color: white;
-      line-height: 1.6;
-    }
-
-    /* NAVBAR */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #0d111c;
-      border-bottom: 1px solid #252b3a;
-      padding: 15px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-    }
-
-    .logo span {
-      color: #00e5ff;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: #00e5ff;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-      background:
-        radial-gradient(circle at top, #12304b 0%, #080b12 55%);
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      color: #00e5ff;
-      border: 1px solid #00e5ff;
-      padding: 7px 14px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: clamp(45px, 10vw, 90px);
-      margin-bottom: 10px;
-    }
-
-    .hero h1 span {
-      color: #00e5ff;
-    }
-
-    .hero-subtitle {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .hero-description {
-      color: #b8c0cf;
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #00e5ff;
-      color: #061018;
-      padding: 13px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.85;
-    }
-
-    .secondary-btn {
-      background: transparent;
-      color: #00e5ff;
-      border: 1px solid #00e5ff;
-    }
-
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin-top: 45px;
-      flex-wrap: wrap;
-    }
-
-    .hero-stats div {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero-stats strong {
-      font-size: 30px;
-      color: #00e5ff;
-    }
-
-    .hero-stats span {
-      color: #b8c0cf;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 70px 6%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 35px;
-      margin-bottom: 40px;
-    }
-
-    .section-title span {
-      color: #00e5ff;
-    }
-
-    /* CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #101521;
-      border: 1px solid #252d3d;
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .card h3 {
-      color: #00e5ff;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: #b8c0cf;
-    }
-
-    /* REGISTRATION */
-    .form-container {
-      max-width: 600px;
-      margin: auto;
-      background: #101521;
-      padding: 30px;
-      border-radius: 15px;
-      border: 1px solid #252d3d;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 7px;
-      font-weight: bold;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 13px;
-      border-radius: 7px;
-      border: 1px solid #303849;
-      background: #080b12;
-      color: white;
-      outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      border-color: #00e5ff;
-    }
-
-    .success {
-      display: none;
-      margin-top: 20px;
-      padding: 15px;
-      border-radius: 8px;
-      background: #103b32;
-      color: #65ffc9;
-      text-align: center;
-    }
-
-    .registration-note {
-      margin-top: 15px;
-      color: #8993a6;
-      font-size: 13px;
-      text-align: center;
-    }
-
-    /* TABLE */
-    .table-container {
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #101521;
-      min-width: 600px;
-    }
-
-    th,
-    td {
-      padding: 15px;
-      text-align: center;
-      border-bottom: 1px solid #293142;
-    }
-
-    th {
-      color: #00e5ff;
-    }
-
-    /* PLAYER RULES */
-    .rules-container {
-      max-width: 950px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .rule-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      padding: 20px;
-      background: #101521;
-      border: 1px solid #252d3d;
-      border-radius: 14px;
-      transition: 0.3s ease;
-    }
-
-    .rule-card:hover {
-      transform: translateY(-3px);
-      border-color: #00e5ff;
-      box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
-    }
-
-    .rule-icon {
-      font-size: 28px;
-      min-width: 35px;
-    }
-
-    .rule-card h3 {
-      margin: 0 0 7px;
-      color: #00e5ff;
-      font-size: 18px;
-    }
-
-    .rule-card p {
-      margin: 0;
-      color: #b8c0cf;
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    /* RANKING RULES */
-    .ranking-rules {
-      max-width: 600px;
-      margin: 25px auto 0;
-      text-align: center;
-      color: #b8c0cf;
-    }
-
-    .ranking-rules p {
-      margin: 5px 0;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #05070c;
-      color: #8993a6;
-    }
-
-    footer strong {
-      color: #00e5ff;
-    }
-
-    /* MOBILE */
-    @media (max-width: 700px) {
-
-      nav {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      nav ul {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav a {
-        font-size: 14px;
-      }
-
-      .hero {
-        min-height: 80vh;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-
-      .section-title {
-        font-size: 29px;
-      }
-
-      .rules-container {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-stats {
-        gap: 30px;
-      }
-
-      .hero-description {
-        font-size: 16px;
-      }
-    }
-    /* PLAYER PROFILES */
-
-.player-profiles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin: 30px auto;
-  max-width: 1100px;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
 }
 
-.player-profile-card {
-  padding: 25px;
-  border-radius: 18px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
+html{
+  scroll-behavior:smooth;
 }
 
-.player-profile-card:hover {
-  transform: translateY(-5px);
+body{
+  background:#080b12;
+  color:white;
+  line-height:1.6;
 }
 
-.profile-photo {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 0 auto 15px;
-  display: block;
-  border: 3px solid #ffffff;
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#0d111c;
+  border-bottom:1px solid #252b3a;
+  padding:15px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.default-photo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 45px;
-  background: #222;
+.logo{
+  font-size:25px;
+  font-weight:bold;
 }
 
-.player-profile-card h3 {
-  font-size: 22px;
-  margin-bottom: 12px;
+.logo span{
+  color:#00e5ff;
 }
 
-.player-profile-card p {
-  margin: 7px 0;
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
 }
 
-.profile-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-top: 20px;
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
 }
 
-.profile-stats div {
-  padding: 10px 4px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.08);
+nav a:hover{
+  color:#00e5ff;
+}
+
+.hero{
+  min-height:90vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+  background:radial-gradient(circle at top,#12304b 0%,#080b12 55%);
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.hero-badge{
+  display:inline-block;
+  color:#00e5ff;
+  border:1px solid #00e5ff;
+  padding:7px 14px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(45px,10vw,90px);
+  margin-bottom:10px;
+}
+
+.hero h1 span{
+  color:#00e5ff;
+}
+
+.hero-subtitle{
+  font-size:24px;
+  font-weight:bold;
+}
+
+.hero-description{
+  color:#b8c0cf;
+  font-size:18px;
+  margin:10px 0 30px;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  background:#00e5ff;
+  color:#061018;
+  padding:13px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+}
+
+.secondary-btn{
+  background:transparent;
+  color:#00e5ff;
+  border:1px solid #00e5ff;
+}
+
+.hero-stats{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  margin-top:45px;
+  flex-wrap:wrap;
+}
+
+.hero-stats strong{
+  display:block;
+  font-size:30px;
+  color:#00e5ff;
+}
+
+.hero-stats span{
+  color:#b8c0cf;
+}
+
+section{
+  padding:70px 6%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:35px;
+  margin-bottom:40px;
+}
+
+.section-title span{
+  color:#00e5ff;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#101521;
+  border:1px solid #252d3d;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.card h3{
+  color:#00e5ff;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#b8c0cf;
+}
+
+.form-container{
+  max-width:600px;
+  margin:auto;
+  background:#101521;
+  padding:30px;
+  border-radius:15px;
+  border:1px solid #252d3d;
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:7px;
+  font-weight:bold;
+}
+
+.form-group input{
+  width:100%;
+  padding:13px;
+  border-radius:7px;
+  border:1px solid #303849;
+  background:#080b12;
+  color:white;
+  outline:none;
+}
+
+.registration-note{
+  margin-top:15px;
+  color:#8993a6;
+  font-size:13px;
+  text-align:center;
+}
+
+.table-container{
+  overflow-x:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#101521;
+  min-width:600px;
+}
+
+th,td{
+  padding:14px;
+  text-align:center;
+  border-bottom:1px solid #293142;
+}
+
+th{
+  color:#00e5ff;
+}
+
+.player-profiles{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.player-profile-card{
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  background:#101521;
+  border:1px solid #252d3d;
+}
+
+.profile-photo{
+  width:110px;
+  height:110px;
+  object-fit:cover;
+  border-radius:50%;
+  margin:0 auto 15px;
+  display:block;
+  border:3px solid white;
+}
+
+.profile-stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin-top:20px;
+}
+
+.profile-stats div{
+  padding:10px 4px;
+  border-radius:10px;
+  background:#080b12;
 }
 
 .profile-stats strong,
-.profile-stats span {
-  display: block;
+.profile-stats span{
+  display:block;
 }
 
-.profile-stats strong {
-  font-size: 18px;
+.profile-stats span{
+  font-size:11px;
+  color:#b8c0cf;
 }
 
-.profile-stats span {
-  font-size: 11px;
-  margin-top: 4px;
+.tournament-status{
+  max-width:700px;
+  margin:0 auto 35px;
+  text-align:center;
+  padding:20px;
+  background:#101521;
+  border:1px solid #252d3d;
+  border-radius:15px;
 }
 
-.profile-points {
-  margin-top: 18px;
-  font-size: 18px;
+.status-number{
+  font-size:42px;
+  color:#00e5ff;
+  font-weight:bold;
 }
 
-.profile-loading {
-  text-align: center;
-  padding: 30px;
+.progress{
+  width:100%;
+  height:12px;
+  background:#080b12;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:15px;
 }
-  </style>
+
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:#00e5ff;
+  transition:0.4s;
+}
+
+.groups{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.group-card{
+  background:#101521;
+  border:1px solid #252d3d;
+  border-radius:15px;
+  padding:20px;
+}
+
+.group-card h3{
+  color:#00e5ff;
+  margin-bottom:15px;
+  text-align:center;
+}
+
+.group-player{
+  display:flex;
+  justify-content:space-between;
+  padding:10px;
+  margin:7px 0;
+  background:#080b12;
+  border-radius:8px;
+}
+
+.knockout{
+  max-width:900px;
+  margin:auto;
+}
+
+.stage{
+  margin-bottom:30px;
+}
+
+.stage h3{
+  text-align:center;
+  color:#00e5ff;
+  margin-bottom:15px;
+}
+
+.match-box{
+  background:#101521;
+  border:1px solid #252d3d;
+  border-radius:10px;
+  padding:15px;
+  margin:10px 0;
+  text-align:center;
+}
+
+.match-box span{
+  color:#b8c0cf;
+}
+
+.rules-container{
+  max-width:950px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.rule-card{
+  display:flex;
+  gap:15px;
+  padding:20px;
+  background:#101521;
+  border:1px solid #252d3d;
+  border-radius:14px;
+}
+
+.rule-icon{
+  font-size:28px;
+}
+
+.rule-card h3{
+  color:#00e5ff;
+  margin-bottom:7px;
+}
+
+.rule-card p{
+  color:#b8c0cf;
+  font-size:14px;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#05070c;
+  color:#8993a6;
+}
+
+footer strong{
+  color:#00e5ff;
+}
+
+@media(max-width:700px){
+
+  nav{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav ul{
+    justify-content:center;
+    gap:12px;
+  }
+
+  nav a{
+    font-size:13px;
+  }
+
+  section{
+    padding:55px 5%;
+  }
+
+  .section-title{
+    font-size:29px;
+  }
+
+  .groups{
+    grid-template-columns:1fr;
+  }
+
+  .rules-container{
+    grid-template-columns:1fr;
+  }
+
+  .hero-description{
+    font-size:16px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
+<!-- NAVBAR -->
 
-    <div class="logo">
-      <span>Pes</span>Raiyan
-    </div>
+<nav>
 
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#register">Register</a></li>
-      <li><a href="#teams">Teams</a></li>
-      <li><a href="#matches">Matches</a></li>
-      <li><a href="#leaderboard">Leaderboard</a></li>
-      <li><a href="#rules">Rules</a></li>
-    </ul>
-
-  </nav>
-
-
-  <!-- HOME -->
-  <section class="hero" id="home">
-
-    <div class="hero-content">
-
-      <div class="hero-badge">
-        🏆 eFOOTBALL FRIENDLY TOURNAMENT
-      </div>
-
-      <h1>
-        <span>Pes</span>Raiyan
-      </h1>
-
-      <p class="hero-subtitle">
-        Compete. Play. Win.
-      </p>
-
-      <p class="hero-description">
-        Welcome to PesRaiyan — a friendly eFootball tournament
-        where players come together to compete and enjoy the game.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSetuClRBuq-zyTimnVsYYhP4dH3N2b-1cdETD-sLGBjfMqzBg/viewform?usp=header"
-          class="btn"
-          target="_blank"
-          rel="noopener"
-        >
-          📝 Register Now
-        </a>
-
-        <a href="#matches" class="btn secondary-btn">
-          ⚽ View Matches
-        </a>
-
-      </div>
-
-      <div class="hero-stats">
-
-        <div>
-          <strong>∞</strong>
-          <span>Players</span>
-        </div>
-
-        <div>
-          <strong>🎮</strong>
-          <span>eFootball</span>
-        </div>
-
-        <div>
-          <strong>🏆</strong>
-          <span>Friendly</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- TOURNAMENT INFO -->
-  <section>
-
-    <h2 class="section-title">
-      Tournament <span>Info</span>
-    </h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>🎮 Game</h3>
-        <p>eFootball</p>
-      </div>
-
-      <div class="card">
-        <h3>👥 Participants</h3>
-        <p>Unlimited</p>
-      </div>
-
-      <div class="card">
-        <h3>📝 Registration</h3>
-        <p>Open</p>
-      </div>
-
-      <div class="card">
-        <h3>🏆 Tournament</h3>
-        <p>Friendly Tournament</p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- REGISTRATION -->
-  <section id="register">
-
-    <h2 class="section-title">
-      Player <span>Registration</span>
-    </h2>
-
-    <div class="form-container">
-
-      <form id="registrationForm">
-
-        <div class="form-group">
-          <label for="name">Player Name</label>
-
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter your name"
-            required
-          >
-        </div>
-
-
-        <div class="form-group">
-          <label for="gameId">eFootball ID</label>
-
-          <input
-            type="text"
-            id="gameId"
-            placeholder="Enter your eFootball ID"
-            required
-          >
-        </div>
-
-
-        <div class="form-group">
-          <label for="team">Team Name</label>
-
-          <input
-            type="text"
-            id="team"
-            placeholder="Enter your team name"
-            required
-          >
-        </div>
-
-
-        <div class="form-group">
-          <label for="contact">Contact</label>
-
-          <input
-            type="text"
-            id="contact"
-            placeholder="WhatsApp / Phone"
-            required
-          >
-        </div>
-
-
-        <button type="submit" class="btn">
-          Submit Registration
-        </button>
-
-      </form>
-
-
-      <div class="success" id="successMessage">
-        ✅ Registration submitted successfully!
-      </div>
-
-
-      <p class="registration-note">
-        For official tournament registration, please use the
-        <strong>Register Now</strong> button above.
-      </p>
-
-    </div>
-
-  </section>
-
-<!-- PLAYER PROFILES -->
-<section>
-  <h2 class="section-title">
-    Player <span>Profiles</span>
-  </h2>
-
-  <div class="player-profiles" id="playerProfiles">
-    <div class="profile-loading">
-      Loading player profiles...
-    </div>
-  </div>
-</section>
-  <!-- TEAMS -->
-  <section id="teams">
-
-    <h2 class="section-title">
-      Registered <span>Teams</span>
-    </h2>
-<div class="cards" id="teamList">
-  <div class="card">
-    <h3>Loading Players...</h3>
-    <p>Please wait</p>
-  </div>
+<div class="logo">
+<span>Pes</span>Raiyan
 </div>
-  </section>
 
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#register">Register</a></li>
+<li><a href="#players">Players</a></li>
+<li><a href="#groups">Groups</a></li>
+<li><a href="#knockout">Knockout</a></li>
+<li><a href="#leaderboard">Leaderboard</a></li>
+<li><a href="#rules">Rules</a></li>
+</ul>
 
-  <!-- MATCHES -->
-  <section id="matches">
+</nav>
 
-    <h2 class="section-title">
-      Upcoming <span>Matches</span>
-    </h2>
 
-    <div class="table-container">
+<!-- HOME -->
 
-      <table>
+<section class="hero" id="home">
 
-        <thead>
-          <tr>
-            <th>Match</th>
-            <th>Player 1</th>
-            <th>Player 2</th>
-            <th>Status</th>
-          </tr>
-        </thead>
+<div class="hero-content">
 
-        <tbody>
+<div class="hero-badge">
+🏆 PESRAIYAN 16 PLAYER TOURNAMENT
+</div>
 
-          <tr>
-            <td>01</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td>Upcoming</td>
-          </tr>
+<h1>
+<span>Pes</span>Raiyan
+</h1>
 
-          <tr>
-            <td>02</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td>Upcoming</td>
-          </tr>
-
-          <tr>
-            <td>03</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td>Upcoming</td>
-          </tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
-
-  </section>
-
-
-  <!-- PLAYER RANKING -->
-  <section id="leaderboard">
-
-    <h2 class="section-title">
-      <span>Player Ranking</span>
-    </h2>
-
-    <div class="table-container">
-
-      <table id="rankingTable">
-
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Player</th>
-            <th>P</th>
-            <th>W</th>
-            <th>D</th>
-            <th>L</th>
-            <th>Pts</th>
-          </tr>
-        </thead>
-
-        <tbody id="rankingBody">
-
-          <tr>
-            <td colspan="7">
-              Loading players...
-            </td>
-          </tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
-
-
-    <div class="ranking-rules">
-
-      <p>⚽ Win = <strong>3 Points</strong></p>
-      <p>🤝 Draw = <strong>1 Point</strong></p>
-      <p>❌ Loss = <strong>0 Points</strong></p>
-      <p>🏆 Final Winner = <strong>+10 Bonus</strong></p>
-      <p>🥈 Runner-up = <strong>+5 Bonus</strong></p>
-
-    </div>
-
-  </section>
-
-
-  <!-- PLAYER RULES -->
-  <section id="rules">
-
-    <h2 class="section-title">
-      Player <span>Rules</span>
-    </h2>
-
-
-    <div class="rules-container">
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">📝</span>
-
-        <div>
-          <h3>Registration</h3>
-
-          <p>
-            প্রতিটি player-কে সঠিক Player Name, eFootball ID
-            এবং Team Name দিয়ে registration করতে হবে।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">⏱️</span>
-
-        <div>
-          <h3>Match Duration</h3>
-
-          <p>
-            সাধারণ ম্যাচ <strong>8 minutes</strong> হবে এবং
-            match settings <strong>Random</strong> থাকবে।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">🏆</span>
-
-        <div>
-          <h3>Knockout Matches</h3>
-
-          <p>
-            Knockout match draw হলে <strong>Extra Time</strong>
-            এবং এরপর <strong>Penalty Shootout</strong> হবে।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">👑</span>
-
-        <div>
-          <h3>Final Match</h3>
-
-          <p>
-            Final match <strong>12 minutes</strong> হবে।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">⚡</span>
-
-        <div>
-          <h3>Fair Play</h3>
-
-          <p>
-            কোনো ধরনের cheat, hack, exploit বা unfair method
-            ব্যবহার করা যাবে না।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">📸</span>
-
-        <div>
-          <h3>Screenshot</h3>
-
-          <p>
-            প্রতিটি match শেষ হওয়ার পর
-            <strong>match result-এর screenshot দেওয়া বাধ্যতামূলক</strong>।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">🤝</span>
-
-        <div>
-          <h3>Respect</h3>
-
-          <p>
-            Opponent এবং tournament organizer-এর সঙ্গে
-            respectful আচরণ করতে হবে।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">🚫</span>
-
-        <div>
-          <h3>No Abuse</h3>
-
-          <p>
-            গালি, harassment বা toxic behaviour গ্রহণযোগ্য নয়।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">⚖️</span>
-
-        <div>
-          <h3>Dispute</h3>
-
-          <p>
-            কোনো dispute হলে submitted screenshot-এর ভিত্তিতে
-            বিষয়টি যাচাই করা হবে।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">🆔</span>
-
-        <div>
-          <h3>eFootball ID</h3>
-
-          <p>
-            যে eFootball ID দিয়ে প্রথম ম্যাচ খেলবে,
-            tournament-এর সব ম্যাচে একই ID ব্যবহার করতে হবে।
-            ID পরিবর্তন করে খেললে player-কে
-            <strong>tournament থেকে suspend/disqualify</strong>
-            করা হবে।
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="rule-card">
-
-        <span class="rule-icon">🛡️</span>
-
-        <div>
-          <h3>Organizer's Decision</h3>
-
-          <p>
-            Tournament পরিচালনার প্রয়োজনে organizer-এর
-            সিদ্ধান্ত final হিসেবে গণ্য হবে।
-          </p>
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer>
-
-    <p>
-  © 2026 <strong>PesRaiyan</strong> |
-  eFootball Friendly Tournament
+<p class="hero-subtitle">
+Compete. Play. Win.
 </p>
 
+<p class="hero-description">
+A 16-player eFootball tournament featuring Group Stage,
+Quarter Final, Semi Final and Final.
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="https://docs.google.com/forms/d/e/1FAIpQLSetuClRBuq-zyTimnVsYYhP4dH3N2b-1cdETD-sLGBjfMqzBg/viewform?usp=header"
+class="btn"
+target="_blank"
+rel="noopener"
+>
+📝 Register Now
+</a>
+
+<a href="#groups" class="btn secondary-btn">
+🏆 View Tournament
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div>
+<strong id="playerCount">0</strong>
+<span>Players</span>
+</div>
+
+<div>
+<strong>16</strong>
+<span>Maximum</span>
+</div>
+
+<div>
+<strong>31</strong>
+<span>Total Matches</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TOURNAMENT INFO -->
+
+<section>
+
+<h2 class="section-title">
+Tournament <span>Info</span>
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>👥 Players</h3>
+<p>16 Players</p>
+</div>
+
+<div class="card">
+<h3>🏟️ Groups</h3>
+<p>4 Groups × 4 Players</p>
+</div>
+
+<div class="card">
+<h3>🔥 Knockout</h3>
+<p>Top 2 From Each Group</p>
+</div>
+
+<div class="card">
+<h3>🏆 Final</h3>
+<p>1 Champion</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REGISTRATION -->
+
+<section id="register">
+
+<h2 class="section-title">
+Player <span>Registration</span>
+</h2>
+
+<div class="form-container">
+
+<p style="text-align:center;color:#b8c0cf;margin-bottom:20px;">
+Registration will be done through the official Google Form.
+</p>
+
+<div style="text-align:center;">
+
+<a
+href="https://docs.google.com/forms/d/e/1FAIpQLSetuClRBuq-zyTimnVsYYhP4dH3N2b-1cdETD-sLGBjfMqzBg/viewform?usp=header"
+class="btn"
+target="_blank"
+rel="noopener"
+>
+📝 Register Now
+</a>
+
+</div>
+
+<p class="registration-note">
+Maximum 16 players. Currently registered players will appear automatically.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PLAYER PROFILES -->
+
+<section id="players">
+
+<h2 class="section-title">
+Registered <span>Players</span>
+</h2>
+
+<div class="tournament-status">
+
+<div class="status-number">
+<span id="registeredNumber">0</span> / 16
+</div>
+
+<p>Players Registered</p>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<p id="registrationStatus" style="margin-top:12px;color:#b8c0cf;">
+Waiting for players...
+</p>
+
+</div>
+
+<div class="player-profiles" id="playerProfiles">
+
+<div class="card">
+<h3>Loading Players...</h3>
+<p>Please wait</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GROUP STAGE -->
+
+<section id="groups">
+
+<h2 class="section-title">
+Group <span>Stage</span>
+</h2>
+
+<div class="tournament-status">
+
+<h3 style="color:#00e5ff;">
+GROUP STAGE
+</h3>
+
+<p style="color:#b8c0cf;margin-top:8px;">
+When 16 players are registered, they will be divided into
+4 groups of 4 players.
+</p>
+
+</div>
+
+<div class="groups" id="groupsContainer">
+
+<div class="group-card">
+
+<h3>Group A</h3>
+
+<div class="group-player">
+<span>Waiting...</span>
+</div>
+
+</div>
+
+<div class="group-card">
+
+<h3>Group B</h3>
+
+<div class="group-player">
+<span>Waiting...</span>
+</div>
+
+</div>
+
+<div class="group-card">
+
+<h3>Group C</h3>
+
+<div class="group-player">
+<span>Waiting...</span>
+</div>
+
+</div>
+
+<div class="group-card">
+
+<h3>Group D</h3>
+
+<div class="group-player">
+<span>Waiting...</span>
+</div>
+
+</div>
+
+</div>
+
+<p style="text-align:center;color:#8993a6;margin-top:25px;">
+Each player plays 3 matches in the Group Stage.
+Top 2 players from each group qualify for the Knockout Stage.
+</p>
+
+</section>
+
+
+<!-- KNOCKOUT -->
+
+<section id="knockout">
+
+<h2 class="section-title">
+🔥 <span>Knockout Stage</span>
+</h2>
+
+<div class="knockout">
+
+<div class="stage">
+
+<h3>Quarter Final</h3>
+
+<div class="match-box">
+A1 🆚 B2
+<br>
+<span>Quarter Final 1</span>
+</div>
+
+<div class="match-box">
+B1 🆚 A2
+<br>
+<span>Quarter Final 2</span>
+</div>
+
+<div class="match-box">
+C1 🆚 D2
+<br>
+<span>Quarter Final 3</span>
+</div>
+
+<div class="match-box">
+D1 🆚 C2
+<br>
+<span>Quarter Final 4</span>
+</div>
+
+</div>
+
+
+<div class="stage">
+
+<h3>Semi Final</h3>
+
+<div class="match-box">
+Winner QF1 🆚 Winner QF2
+<br>
+<span>Semi Final 1</span>
+</div>
+
+<div class="match-box">
+Winner QF3 🆚 Winner QF4
+<br>
+<span>Semi Final 2</span>
+</div>
+
+</div>
+
+
+<div class="stage">
+
+<h3>🏆 Final</h3>
+
+<div class="match-box">
+
+Winner SF1 🆚 Winner SF2
+
+<br>
+
+<span>
+Tournament Final
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LEADERBOARD -->
+
+<section id="leaderboard">
+
+<h2 class="section-title">
+Player <span>Ranking</span>
+</h2>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>#</th>
+<th>Player</th>
+<th>P</th>
+<th>W</th>
+<th>D</th>
+<th>L</th>
+<th>Pts</th>
+</tr>
+
+</thead>
+
+<tbody id="rankingBody">
+
+<tr>
+<td colspan="7">
+Loading ranking...
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div style="text-align:center;color:#b8c0cf;margin-top:25px;">
+
+<p>⚽ Win = <strong>3 Points</strong></p>
+<p>🤝 Draw = <strong>1 Point</strong></p>
+<p>❌ Loss = <strong>0 Point</strong></p>
+<p>🏆 Final Winner = <strong>+10 Bonus</strong></p>
+<p>🥈 Runner-up = <strong>+5 Bonus</strong></p>
+
+</div>
+
+</section>
+
+
+<!-- RULES -->
+
+<section id="rules">
+
+<h2 class="section-title">
+Player <span>Rules</span>
+</h2>
+
+<div class="rules-container">
+
+<div class="rule-card">
+<span class="rule-icon">📝</span>
+<div>
+<h3>Registration</h3>
+<p>
+Maximum 16 players can participate in the tournament.
+</p>
+</div>
+</div>
+
+<div class="rule-card">
+<span class="rule-icon">🏟️</span>
+<div>
+<h3>Group Stage</h3>
+<p>
+4 groups will contain 4 players each. Every player plays 3 group matches.
+</p>
+</div>
+</div>
+
+<div class="rule-card">
+<span class="rule-icon">🏆</span>
+<div>
+<h3>Qualification</h3>
+<p>
+Top 2 players from each group qualify for the Quarter Final.
+</p>
+</div>
+</div>
+
+<div class="rule-card">
+<span class="rule-icon">⏱️</span>
+<div>
+<h3>Match Duration</h3>
+<p>
+Regular matches will be 8 minutes.
+</p>
+</div>
+</div>
+
+<div class="rule-card">
+<span class="rule-icon">🔥</span>
+<div>
+<h3>Knockout</h3>
+<p>
+Draw in knockout matches will go to Extra Time and Penalty Shootout.
+</p>
+</div>
+</div>
+
+<div class="rule-card">
+<span class="rule-icon">👑</span>
+<div>
+<h3>Final</h3>
+<p>
+The Final match will be 12 minutes.
+</p>
+</div>
+</div>
+
+<div class="rule-card">
+<span class="rule-icon">📸</span>
+<div>
+<h3>Screenshot</h3>
+<p>
+Match result screenshot must be submitted after every match.
+</p>
+</div>
+</div>
+
+<div class="rule-card">
+<span class="rule-icon">⚡</span>
+<div>
+<h3>Fair Play</h3>
+<p>
+Cheat, hack, exploit or unfair methods are not allowed.
+</p>
+</div>
+</div>
+
+<div class="rule-card">
+<span class="rule-icon">🤝</span>
+<div>
+<h3>Respect</h3>
+<p>
+Players must behave respectfully with opponents and organizers.
+</p>
+</div>
+</div>
+
+<div class="rule-card">
+<span class="rule-icon">🆔</span>
+<div>
+<h3>eFootball ID</h3>
+<p>
+The same eFootball ID must be used throughout the tournament.
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 <strong>PesRaiyan</strong> |
+eFootball 16 Player Tournament
+</p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
 <script>
-const SHEET_ID = "1tiq4kQRs1gt4z735OrlqozPkDNQCmJpp-9i9GKVeGvE";
-const SHEET_NAME = "Form responses 4";
 
-async function loadPlayers() {
-  const teamList = document.getElementById("teamList");
+const SHEET_ID =
+"1tiq4kQRs1gt4z735OrlqozPkDNQCmJpp-9i9GKVeGvE";
 
-  try {
-    const url =
-      `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
+const PLAYER_SHEET =
+"Form responses 4";
 
-    const response = await fetch(url);
-    const text = await response.text();
+const RANKING_SHEET =
+"Ranking";
 
-    const json = JSON.parse(
-      text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1)
-    );
 
-    const rows = json.table.rows;
+/* ==========================================
+   LOAD REGISTERED PLAYERS
+========================================== */
 
-    teamList.innerHTML = "";
+async function loadPlayers(){
 
-    rows.forEach((row) => {
-      const playerName = row.c[1]?.v || "";
-      const efootballId = row.c[2]?.v || "";
-      const teamName = row.c[3]?.v || "";
+const profileContainer =
+document.getElementById("playerProfiles");
 
-      if (!playerName) return;
+try{
 
-      const card = document.createElement("div");
-      card.className = "card";
+const url =
+`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(PLAYER_SHEET)}`;
 
-      card.innerHTML = `
-        <h3>🎮 ${playerName}</h3>
-        <p><strong>eFootball ID:</strong> ${efootballId}</p>
-        <p><strong>Team:</strong> ${teamName}</p>
-      `;
+const response =
+await fetch(url);
 
-      teamList.appendChild(card);
-    });
+const text =
+await response.text();
 
-  } catch (error) {
-    console.error("Error loading players:", error);
-  }
+const start =
+text.indexOf("{");
+
+const end =
+text.lastIndexOf("}");
+
+const data =
+JSON.parse(text.substring(start,end+1));
+
+const rows =
+data.table.rows || [];
+
+let players=[];
+
+rows.forEach(function(row){
+
+const cells =
+row.c || [];
+
+const playerName =
+cells[1]?.v || "";
+
+const efootballId =
+cells[2]?.v || "";
+
+const teamName =
+cells[3]?.v || "";
+
+if(!playerName) return;
+
+players.push({
+
+name:String(playerName),
+id:String(efootballId),
+team:String(teamName)
+
+});
+
+});
+
+
+/* Maximum 16 */
+
+players =
+players.slice(0,16);
+
+
+/* Counter */
+
+document.getElementById("playerCount").textContent =
+players.length;
+
+document.getElementById("registeredNumber").textContent =
+players.length;
+
+
+/* Progress */
+
+const percentage =
+(players.length / 16) * 100;
+
+document.getElementById("progressBar").style.width =
+percentage + "%";
+
+
+if(players.length >= 16){
+
+document.getElementById("registrationStatus").textContent =
+"🏆 16 players registered — Tournament is ready!";
+
+}else{
+
+document.getElementById("registrationStatus").textContent =
+`${16 - players.length} player(s) still needed`;
+
 }
+
+
+/* Profiles */
+
+profileContainer.innerHTML="";
+
+if(players.length===0){
+
+profileContainer.innerHTML=`
+<div class="card">
+<h3>No Players Yet</h3>
+<p>Players will appear here after registration.</p>
+</div>
+`;
+
+return;
+
+}
+
+
+players.forEach(function(player,index){
+
+const card =
+document.createElement("div");
+
+card.className =
+"player-profile-card";
+
+card.innerHTML=`
+
+<div class="profile-photo default-photo">
+🎮
+</div>
+
+<h3>${index+1}. ${player.name}</h3>
+
+<p>
+<strong>eFootball ID:</strong>
+${player.id}
+</p>
+
+<p>
+<strong>Team:</strong>
+${player.team}
+</p>
+
+`;
+
+profileContainer.appendChild(card);
+
+});
+
+
+/* Create groups */
+
+createGroups(players);
+
+}
+catch(error){
+
+console.error(
+"Player loading error:",
+error
+);
+
+profileContainer.innerHTML=`
+
+<div class="card">
+
+<h3>Unable to Load Players</h3>
+
+<p>
+Please make sure the Google Sheet is public.
+</p>
+
+</div>
+
+`;
+
+}
+
+}
+
+
+/* ==========================================
+   CREATE GROUPS
+========================================== */
+
+function createGroups(players){
+
+const container =
+document.getElementById("groupsContainer");
+
+if(players.length < 16){
+
+container.innerHTML="";
+
+["A","B","C","D"].forEach(function(group){
+
+container.innerHTML += `
+
+<div class="group-card">
+
+<h3>Group ${group}</h3>
+
+<div class="group-player">
+<span>Waiting for 16 players...</span>
+</div>
+
+</div>
+
+`;
+
+});
+
+return;
+
+}
+
+
+/* 16 players */
+
+const groups=[
+players.slice(0,4),
+players.slice(4,8),
+players.slice(8,12),
+players.slice(12,16)
+];
+
+const names=["A","B","C","D"];
+
+container.innerHTML="";
+
+
+groups.forEach(function(group,index){
+
+let html=`
+
+<div class="group-card">
+
+<h3>Group ${names[index]}</h3>
+
+`;
+
+group.forEach(function(player,i){
+
+html += `
+
+<div class="group-player">
+
+<span>
+${names[index]}${i+1}
+</span>
+
+<strong>
+${player.name}
+</strong>
+
+</div>
+
+`;
+
+});
+
+html += `</div>`;
+
+container.innerHTML += html;
+
+});
+
+}
+
+
+/* ==========================================
+   LOAD RANKING
+========================================== */
+
+async function loadRanking(){
+
+const rankingBody =
+document.getElementById("rankingBody");
+
+try{
+
+const url =
+`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(RANKING_SHEET)}`;
+
+const response =
+await fetch(url);
+
+const text =
+await response.text();
+
+const start =
+text.indexOf("{");
+
+const end =
+text.lastIndexOf("}");
+
+const data =
+JSON.parse(text.substring(start,end+1));
+
+const rows =
+data.table.rows || [];
+
+let players=[];
+
+
+rows.forEach(function(row){
+
+const cells =
+row.c || [];
+
+const name =
+cells[0]?.v || "";
+
+if(!name) return;
+
+const played =
+Number(cells[1]?.v || 0);
+
+const wins =
+Number(cells[2]?.v || 0);
+
+const draws =
+Number(cells[3]?.v || 0);
+
+const losses =
+Number(cells[4]?.v || 0);
+
+const bonus =
+Number(cells[5]?.v || 0);
+
+const points =
+(wins*3)+draws+bonus;
+
+players.push({
+
+name:String(name),
+played:played,
+wins:wins,
+draws:draws,
+losses:losses,
+points:points
+
+});
+
+});
+
+
+players.sort(function(a,b){
+
+if(b.points!==a.points){
+
+return b.points-a.points;
+
+}
+
+return b.wins-a.wins;
+
+});
+
+
+rankingBody.innerHTML="";
+
+
+if(players.length===0){
+
+rankingBody.innerHTML=`
+
+<tr>
+<td colspan="7">
+No ranking data yet.
+</td>
+</tr>
+
+`;
+
+return;
+
+}
+
+
+players.forEach(function(player,index){
+
+let rank=index+1;
+
+if(index===0) rank="🥇";
+else if(index===1) rank="🥈";
+else if(index===2) rank="🥉";
+
+
+const row =
+document.createElement("tr");
+
+row.innerHTML=`
+
+<td>${rank}</td>
+<td>${player.name}</td>
+<td>${player.played}</td>
+<td>${player.wins}</td>
+<td>${player.draws}</td>
+<td>${player.losses}</td>
+<td><strong>${player.points}</strong></td>
+
+`;
+
+rankingBody.appendChild(row);
+
+});
+
+
+}
+catch(error){
+
+console.error(
+"Ranking error:",
+error
+);
+
+rankingBody.innerHTML=`
+
+<tr>
+<td colspan="7">
+Ranking is currently unavailable.
+</td>
+</tr>
+
+`;
+
+}
+
+}
+
+
+/* ==========================================
+   START
+========================================== */
 
 loadPlayers();
 
-setInterval(loadPlayers, 30000);
+loadRanking();
+
+
+/* Refresh every 30 seconds */
+
+setInterval(
+loadPlayers,
+30000
+);
+
+setInterval(
+loadRanking,
+30000
+);
+
 </script>
-  </footer>
-
-
-  <!-- JAVASCRIPT -->
-
-  <script>
-
-    /* ==========================================
-       LOCAL REGISTRATION FORM
-       ========================================== */
-
-    const form =
-      document.getElementById("registrationForm");
-
-    const successMessage =
-      document.getElementById("successMessage");
-
-
-    form.addEventListener("submit", function(event) {
-
-      event.preventDefault();
-
-
-      const playerName =
-        document.getElementById("name").value.trim();
-
-      const gameId =
-        document.getElementById("gameId").value.trim();
-
-      const team =
-        document.getElementById("team").value.trim();
-
-      const contact =
-        document.getElementById("contact").value.trim();
-
-
-      const registration = {
-
-        playerName: playerName,
-        gameId: gameId,
-        team: team,
-        contact: contact
-
-      };
-
-
-      console.log(
-        "Registration:",
-        registration
-      );
-
-
-      successMessage.style.display = "block";
-
-
-      form.reset();
-
-
-      setTimeout(function() {
-
-        successMessage.style.display = "none";
-
-      }, 5000);
-
-    });
-
-
-
-    /* ==========================================
-       GOOGLE SHEETS PLAYER RANKING
-       ========================================== */
-
-    const GOOGLE_SHEET_ID =
-      "1tiq4kQRs1gt4z735OrlqozPkDNQCmJpp-9i9GKVeGvE";
-
-
-    /*
-      IMPORTANT:
-
-      This uses the separate "Ranking" sheet.
-
-      Do NOT use "Form responses 1" here because
-      that sheet contains private contact information.
-    */
-
-    const SHEET_NAME = "Ranking";
-
-
-    const GOOGLE_SHEET_URL =
-      `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
-
-
-    async function loadPlayerRanking() {
-
-      const rankingBody =
-        document.getElementById("rankingBody");
-
-
-      try {
-
-        const response =
-          await fetch(GOOGLE_SHEET_URL);
-
-
-        if (!response.ok) {
-          throw new Error("Google Sheet could not be loaded.");
-        }
-
-
-        const text =
-          await response.text();
-
-
-        const start =
-          text.indexOf("{");
-
-        const end =
-          text.lastIndexOf("}");
-
-
-        if (start === -1 || end === -1) {
-          throw new Error("Invalid Google Sheet response.");
-        }
-
-
-        const jsonText =
-          text.substring(start, end + 1);
-
-
-        const data =
-          JSON.parse(jsonText);
-
-
-        const rows =
-          data.table.rows || [];
-
-
-        let players = [];
-
-
-        rows.forEach(function(row) {
-
-          const cells =
-            row.c || [];
-
-
-          /*
-            Ranking sheet columns:
-
-            A = Player Name
-            B = P
-            C = W
-            D = D
-            E = L
-            F = Bonus
-            G = Points
-            H = Rank
-          */
-
-
-          const playerName =
-            cells[0]?.v || "";
-
-
-          if (!playerName) {
-            return;
-          }
-
-
-          const played =
-            Number(cells[1]?.v || 0);
-
-
-          const wins =
-            Number(cells[2]?.v || 0);
-
-
-          const draws =
-            Number(cells[3]?.v || 0);
-
-
-          const losses =
-            Number(cells[4]?.v || 0);
-
-
-          const bonus =
-            Number(cells[5]?.v || 0);
-
-
-          const points =
-            (wins * 3) + draws + bonus;
-
-
-          players.push({
-
-            name: String(playerName),
-
-            played: played,
-
-            wins: wins,
-
-            draws: draws,
-
-            losses: losses,
-
-            points: points
-
-          });
-
-        });
-
-
-        /* Highest points first */
-
-        players.sort(function(a, b) {
-
-          if (b.points !== a.points) {
-            return b.points - a.points;
-          }
-
-          return b.wins - a.wins;
-
-        });
-
-
-        rankingBody.innerHTML = "";
-
-
-        if (players.length === 0) {
-
-          rankingBody.innerHTML = `
-            <tr>
-              <td colspan="7">
-                No players registered yet.
-              </td>
-            </tr>
-          `;
-
-          return;
-        }
-
-
-        players.forEach(function(player, index) {
-
-          let rank;
-
-
-          if (index === 0) {
-
-            rank = "🥇";
-
-          } else if (index === 1) {
-
-            rank = "🥈";
-
-          } else if (index === 2) {
-
-            rank = "🥉";
-
-          } else {
-
-            rank = index + 1;
-
-          }
-
-
-          const row =
-            document.createElement("tr");
-
-
-          const rankCell =
-            document.createElement("td");
-
-          rankCell.textContent =
-            rank;
-
-
-          const nameCell =
-            document.createElement("td");
-
-          nameCell.textContent =
-            player.name;
-
-
-          const playedCell =
-            document.createElement("td");
-
-          playedCell.textContent =
-            player.played;
-
-
-          const winsCell =
-            document.createElement("td");
-
-          winsCell.textContent =
-            player.wins;
-
-
-          const drawsCell =
-            document.createElement("td");
-
-          drawsCell.textContent =
-            player.draws;
-
-
-          const lossesCell =
-            document.createElement("td");
-
-          lossesCell.textContent =
-            player.losses;
-
-
-          const pointsCell =
-            document.createElement("td");
-
-
-          const pointsStrong =
-            document.createElement("strong");
-
-
-          pointsStrong.textContent =
-            player.points;
-
-
-          pointsCell.appendChild(
-            pointsStrong
-          );
-
-
-          row.appendChild(rankCell);
-          row.appendChild(nameCell);
-          row.appendChild(playedCell);
-          row.appendChild(winsCell);
-          row.appendChild(drawsCell);
-          row.appendChild(lossesCell);
-          row.appendChild(pointsCell);
-
-
-          rankingBody.appendChild(row);
-
-        });
-
-
-      } catch (error) {
-
-        console.error(
-          "Ranking error:",
-          error
-        );
-
-
-        rankingBody.innerHTML = `
-          <tr>
-            <td colspan="7">
-              Ranking is currently unavailable.
-            </td>
-          </tr>
-        `;
-
-      }
-
-    }
-
-
-    /* Load ranking */
-
-    loadPlayerRanking();
-
-
-    /* Refresh every 30 seconds */
-
-    setInterval(
-      loadPlayerRanking,
-      30000
-    );
-
-  </script>
 
 </body>
-</html>    
-          
-    
+</html>
