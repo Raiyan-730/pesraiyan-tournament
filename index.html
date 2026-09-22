@@ -388,6 +388,93 @@
         font-size: 16px;
       }
     }
+    /* PLAYER PROFILES */
+
+.player-profiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 30px auto;
+  max-width: 1100px;
+}
+
+.player-profile-card {
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.player-profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: block;
+  border: 3px solid #ffffff;
+}
+
+.default-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  background: #222;
+}
+
+.player-profile-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.player-profile-card p {
+  margin: 7px 0;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.profile-stats div {
+  padding: 10px 4px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.profile-stats strong,
+.profile-stats span {
+  display: block;
+}
+
+.profile-stats strong {
+  font-size: 18px;
+}
+
+.profile-stats span {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.profile-points {
+  margin-top: 18px;
+  font-size: 18px;
+}
+
+.profile-loading {
+  text-align: center;
+  padding: 30px;
+}
   </style>
 </head>
 
@@ -589,7 +676,18 @@
 
   </section>
 
+<!-- PLAYER PROFILES -->
+<section>
+  <h2 class="section-title">
+    Player <span>Profiles</span>
+  </h2>
 
+  <div class="player-profiles" id="playerProfiles">
+    <div class="profile-loading">
+      Loading player profiles...
+    </div>
+  </div>
+</section>
   <!-- TEAMS -->
   <section id="teams">
 
