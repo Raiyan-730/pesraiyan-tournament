@@ -596,26 +596,12 @@
     <h2 class="section-title">
       Registered <span>Teams</span>
     </h2>
-
-    <div class="cards" id="teamList">
-
-      <div class="card">
-        <h3>Team 01</h3>
-        <p>Coming Soon</p>
-      </div>
-
-      <div class="card">
-        <h3>Team 02</h3>
-        <p>Coming Soon</p>
-      </div>
-
-      <div class="card">
-        <h3>Team 03</h3>
-        <p>Coming Soon</p>
-      </div>
-
-    </div>
-
+<div class="cards" id="teamList">
+  <div class="card">
+    <h3>Loading Players...</h3>
+    <p>Please wait</p>
+  </div>
+</div>
   </section>
 
 
@@ -919,10 +905,52 @@
   <footer>
 
     <p>
-      © 2026 <strong>PesRaiyan</strong> |
-      eFootball Friendly Tournament
-    </p>
+  © 2026 <strong>PesRaiyan</strong> |
+  eFootball Friendly Tournament
+</p>
 
+<script>
+
+const players = [
+  {
+    name: "Raiyan Ahmed Adnan",
+    efootballId: "RAIYAN_-7",
+    team: "Hala madrid"
+  },
+  {
+    name: "RR-RaNa",
+    efootballId: "RR-RaNa_17",
+    team: "FORCA BARCA"
+  }
+];
+
+const teamList = document.getElementById("teamList");
+
+function loadPlayers() {
+
+  teamList.innerHTML = "";
+
+  players.forEach((player) => {
+
+    const card = document.createElement("div");
+
+    card.className = "card";
+
+    card.innerHTML = `
+      <h3>🎮 ${player.name}</h3>
+      <p><strong>eFootball ID:</strong> ${player.efootballId}</p>
+      <p><strong>Team:</strong> ${player.team}</p>
+    `;
+
+    teamList.appendChild(card);
+
+  });
+
+}
+
+loadPlayers();
+
+</script>
   </footer>
 
 
