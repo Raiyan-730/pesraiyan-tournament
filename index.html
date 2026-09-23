@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -8,10 +9,6 @@
 <title>PesRaiyan | eFootball Tournament</title>
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 *{
   margin:0;
@@ -30,10 +27,7 @@ body{
   line-height:1.6;
 }
 
-
-/* =====================================================
-   NAVBAR
-===================================================== */
+/* ================= NAVBAR ================= */
 
 nav{
   position:sticky;
@@ -42,7 +36,6 @@ nav{
   background:#0d111c;
   border-bottom:1px solid #252d3d;
   padding:15px 5%;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -78,27 +71,22 @@ nav a:hover{
   color:#00e5ff;
 }
 
-
-/* =====================================================
-   HERO
-===================================================== */
+/* ================= HERO ================= */
 
 .hero{
   min-height:88vh;
-
   display:flex;
   justify-content:center;
   align-items:center;
-
   text-align:center;
   padding:50px 20px;
 
   background:
-    radial-gradient(
-      circle at top,
-      #123451 0%,
-      #080b12 55%
-    );
+  radial-gradient(
+    circle at top,
+    #123451 0%,
+    #080b12 55%
+  );
 }
 
 .hero-content{
@@ -107,18 +95,12 @@ nav a:hover{
 
 .badge{
   display:inline-block;
-
   color:#00e5ff;
-
   border:1px solid #00e5ff;
-
   padding:7px 16px;
-
   border-radius:30px;
-
   font-size:13px;
   font-weight:bold;
-
   margin-bottom:20px;
 }
 
@@ -153,20 +135,13 @@ nav a:hover{
 
 .btn{
   display:inline-block;
-
   padding:13px 24px;
-
   border-radius:9px;
-
   background:#00e5ff;
   color:#061018;
-
   text-decoration:none;
-
   font-weight:bold;
-
   border:none;
-
   cursor:pointer;
 }
 
@@ -194,10 +169,7 @@ nav a:hover{
   color:#aeb8c9;
 }
 
-
-/* =====================================================
-   SECTION
-===================================================== */
+/* ================= SECTION ================= */
 
 section{
   padding:75px 5%;
@@ -216,10 +188,7 @@ section{
   margin-bottom:35px;
 }
 
-
-/* =====================================================
-   TOURNAMENT
-===================================================== */
+/* ================= TOURNAMENT ================= */
 
 .tournament-info{
   max-width:1100px;
@@ -230,9 +199,7 @@ section{
   background:#101521;
   border:1px solid #252d3d;
   border-radius:18px;
-
   padding:30px;
-
   margin-bottom:30px;
 }
 
@@ -255,9 +222,7 @@ section{
 .group{
   background:#0d111c;
   border:1px solid #252d3d;
-
   border-radius:14px;
-
   padding:18px;
 }
 
@@ -269,46 +234,30 @@ section{
 
 .player-slot{
   background:#161d2a;
-
   padding:10px;
-
   margin:7px 0;
-
   border-radius:7px;
-
   color:#d9e1ed;
-
   text-align:center;
 }
 
-
-/* =====================================================
-   PLAYERS
-===================================================== */
+/* ================= PLAYERS ================= */
 
 .player-grid{
   max-width:1200px;
   margin:auto;
-
   display:grid;
-
   grid-template-columns:
   repeat(auto-fit,minmax(260px,1fr));
-
   gap:20px;
 }
 
 .player-card{
   background:#101521;
-
   border:1px solid #252d3d;
-
   border-radius:18px;
-
   padding:25px;
-
   text-align:center;
-
   transition:.2s;
 }
 
@@ -320,35 +269,23 @@ section{
 .profile-img{
   width:105px;
   height:105px;
-
   border-radius:50%;
-
   object-fit:cover;
-
   border:3px solid #00e5ff;
-
   margin:auto auto 15px;
-
   display:block;
 }
 
 .avatar{
   width:105px;
   height:105px;
-
   border-radius:50%;
-
   margin:auto auto 15px;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   background:#18202e;
-
   border:3px solid #00e5ff;
-
   font-size:42px;
 }
 
@@ -374,27 +311,20 @@ section{
 
 .player-stats{
   display:grid;
-
   grid-template-columns:repeat(2,1fr);
-
   gap:8px;
-
   margin-top:18px;
 }
 
 .stat-box{
   background:#171e2b;
-
   padding:10px;
-
   border-radius:9px;
 }
 
 .stat-box strong{
   display:block;
-
   color:#00e5ff;
-
   font-size:19px;
 }
 
@@ -403,37 +333,28 @@ section{
   font-size:12px;
 }
 
-
-/* =====================================================
-   TABLE
-===================================================== */
+/* ================= TABLE ================= */
 
 .table-wrap{
   max-width:1100px;
   margin:auto;
-
   overflow-x:auto;
-
-  border-radius:14px;
 }
 
 table{
   width:100%;
-
+  min-width:750px;
   border-collapse:collapse;
-
   background:#101521;
+  border-radius:14px;
+  overflow:hidden;
 }
 
 th,
 td{
   padding:15px;
-
   text-align:center;
-
   border-bottom:1px solid #293142;
-
-  white-space:nowrap;
 }
 
 th{
@@ -449,83 +370,7 @@ td{
   font-size:20px;
 }
 
-
-/* =====================================================
-   MOBILE RANKING CARDS
-===================================================== */
-
-.mobile-ranking{
-  display:none;
-}
-
-.rank-mobile-card{
-  background:#101521;
-
-  border:1px solid #252d3d;
-
-  border-radius:15px;
-
-  padding:18px;
-
-  margin-bottom:12px;
-}
-
-.rank-mobile-top{
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  margin-bottom:12px;
-}
-
-.rank-mobile-name{
-  font-size:18px;
-  font-weight:bold;
-}
-
-.rank-mobile-points{
-  color:#00e5ff;
-  font-size:20px;
-  font-weight:bold;
-}
-
-.rank-mobile-stats{
-  display:grid;
-
-  grid-template-columns:
-  repeat(5,1fr);
-
-  gap:5px;
-}
-
-.rank-mobile-stat{
-  background:#171e2b;
-
-  padding:8px 3px;
-
-  border-radius:7px;
-
-  text-align:center;
-}
-
-.rank-mobile-stat strong{
-  display:block;
-
-  color:#00e5ff;
-}
-
-.rank-mobile-stat span{
-  font-size:10px;
-
-  color:#8993a6;
-}
-
-
-/* =====================================================
-   MATCH RESULTS
-===================================================== */
+/* ================= RESULTS ================= */
 
 .result-box{
   max-width:1000px;
@@ -534,13 +379,9 @@ td{
 
 .result-card{
   background:#101521;
-
   border:1px solid #252d3d;
-
   border-radius:15px;
-
   padding:20px;
-
   margin-bottom:15px;
 }
 
@@ -551,13 +392,9 @@ td{
 
 .result-line{
   display:flex;
-
   justify-content:space-between;
-
   gap:15px;
-
   padding:8px 0;
-
   border-bottom:1px solid #252d3d;
 }
 
@@ -570,56 +407,39 @@ td{
   color:#00e5ff;
 }
 
-
-/* =====================================================
-   BRACKET
-===================================================== */
+/* ================= BRACKET ================= */
 
 .bracket{
   max-width:1200px;
   margin:auto;
-
   display:grid;
-
-  grid-template-columns:
-  repeat(4,1fr);
-
+  grid-template-columns:repeat(4,1fr);
   gap:18px;
 }
 
 .round{
   background:#101521;
-
   border:1px solid #252d3d;
-
   border-radius:15px;
-
   padding:18px;
 }
 
 .round h3{
   text-align:center;
-
   color:#00e5ff;
-
   margin-bottom:20px;
 }
 
 .match{
   background:#0b1019;
-
   border:1px solid #283244;
-
   border-radius:10px;
-
   padding:12px;
-
   margin-bottom:18px;
 }
 
 .match div{
   padding:6px;
-
   border-bottom:1px solid #202938;
 }
 
@@ -631,40 +451,27 @@ td{
   color:#687487;
 }
 
-
-/* =====================================================
-   DASHBOARD
-===================================================== */
+/* ================= DASHBOARD ================= */
 
 .dashboard{
   max-width:1100px;
   margin:auto;
-
   display:grid;
-
-  grid-template-columns:
-  repeat(4,1fr);
-
+  grid-template-columns:repeat(4,1fr);
   gap:18px;
 }
 
 .dashboard-card{
   background:#101521;
-
   border:1px solid #252d3d;
-
   border-radius:15px;
-
   padding:25px;
-
   text-align:center;
 }
 
 .dashboard-card .number{
   color:#00e5ff;
-
   font-size:34px;
-
   font-weight:bold;
 }
 
@@ -672,57 +479,38 @@ td{
   color:#8993a6;
 }
 
-
-/* =====================================================
-   PROFILE
-===================================================== */
+/* ================= PROFILE ================= */
 
 .profile-search{
   max-width:500px;
-
   margin:0 auto 30px;
 }
 
 .profile-search select{
   width:100%;
-
   padding:14px;
-
   background:#101521;
-
   color:white;
-
   border:1px solid #303849;
-
   border-radius:9px;
 }
 
 .profile-box{
   max-width:600px;
-
   margin:auto;
-
   background:#101521;
-
   border:1px solid #252d3d;
-
   border-radius:20px;
-
   padding:35px;
-
   text-align:center;
 }
 
 .profile-big-img{
   width:130px;
   height:130px;
-
   border-radius:50%;
-
   object-fit:cover;
-
   border:3px solid #00e5ff;
-
   margin-bottom:15px;
 }
 
@@ -732,32 +520,24 @@ td{
 
 .profile-box .team{
   color:#00e5ff;
-
   margin-bottom:25px;
 }
 
 .profile-stat-grid{
   display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
+  grid-template-columns:repeat(2,1fr);
   gap:12px;
 }
 
 .profile-stat{
   background:#171e2b;
-
   padding:15px;
-
   border-radius:10px;
 }
 
 .profile-stat strong{
   display:block;
-
   color:#00e5ff;
-
   font-size:23px;
 }
 
@@ -765,37 +545,25 @@ td{
   color:#8993a6;
 }
 
-
-/* =====================================================
-   RULES
-===================================================== */
+/* ================= RULES ================= */
 
 .rules{
   max-width:1000px;
-
   margin:auto;
-
   display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
+  grid-template-columns:repeat(2,1fr);
   gap:18px;
 }
 
 .rule{
   background:#101521;
-
   border:1px solid #252d3d;
-
   border-radius:14px;
-
   padding:20px;
 }
 
 .rule h3{
   color:#00e5ff;
-
   margin-bottom:7px;
 }
 
@@ -803,50 +571,20 @@ td{
   color:#aeb8c9;
 }
 
-
-/* =====================================================
-   LOADING
-===================================================== */
+/* ================= LOADING ================= */
 
 .loading{
   text-align:center;
-
   padding:40px;
-
   color:#8993a6;
 }
 
-
-/* =====================================================
-   ERROR
-===================================================== */
-
-.error-box{
-  background:#241317;
-
-  border:1px solid #66323a;
-
-  color:#ffb8c0;
-
-  border-radius:12px;
-
-  padding:20px;
-
-  text-align:center;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
+/* ================= FOOTER ================= */
 
 footer{
   background:#05070c;
-
   text-align:center;
-
   padding:30px;
-
   color:#8993a6;
 }
 
@@ -854,12 +592,9 @@ footer strong{
   color:#00e5ff;
 }
 
+/* ================= MOBILE ================= */
 
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media(max-width:900px){
+@media(max-width:800px){
 
   nav{
     flex-direction:column;
@@ -869,42 +604,29 @@ footer strong{
     gap:12px;
   }
 
+  nav a{
+    font-size:13px;
+  }
+
   .groups{
     grid-template-columns:repeat(2,1fr);
   }
 
   .bracket{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr;
   }
 
   .dashboard{
     grid-template-columns:repeat(2,1fr);
   }
 
+  .rules{
+    grid-template-columns:1fr;
+  }
+
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:600px){
-
-  nav{
-    padding:15px 10px;
-  }
-
-  nav ul{
-    gap:10px 14px;
-  }
-
-  nav a{
-    font-size:13px;
-  }
-
-  .hero{
-    min-height:80vh;
-  }
+@media(max-width:500px){
 
   .hero h2{
     font-size:22px;
@@ -926,52 +648,31 @@ footer strong{
     grid-template-columns:1fr;
   }
 
-  .bracket{
-    grid-template-columns:1fr;
-  }
-
   .dashboard{
     grid-template-columns:1fr 1fr;
   }
 
-  /* Hide desktop leaderboard */
-
-  .desktop-ranking{
-    display:none;
+  nav{
+    padding:18px 10px;
   }
 
-  /* Show mobile leaderboard */
-
-  .mobile-ranking{
-    display:block;
-  }
-
-  .profile-stat-grid{
-    grid-template-columns:1fr 1fr;
+  nav ul{
+    gap:10px 15px;
   }
 
 }
 
+/* ================= STATUS ================= */
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media(max-width:400px){
-
-  .dashboard{
-    grid-template-columns:1fr;
-  }
-
-  .stats{
-    gap:25px;
-  }
-
-  .rank-mobile-stats{
-    grid-template-columns:
-    repeat(5,1fr);
-  }
-
+.status-message{
+  max-width:700px;
+  margin:20px auto;
+  padding:15px;
+  text-align:center;
+  border-radius:10px;
+  background:#101521;
+  border:1px solid #252d3d;
+  color:#8993a6;
 }
 
 </style>
@@ -982,9 +683,7 @@ footer strong{
 <body>
 
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
@@ -1031,9 +730,7 @@ footer strong{
 </nav>
 
 
-<!-- =====================================================
-     HOME
-===================================================== -->
+<!-- ================= HOME ================= -->
 
 <section class="hero" id="home">
 
@@ -1054,8 +751,8 @@ footer strong{
     <p>
       Welcome to PesRaiyan — a competitive
       eFootball tournament platform where
-      players can register, compete,
-      track results and follow rankings.
+      players can register, compete, track
+      results and follow rankings.
     </p>
 
     <div class="buttons">
@@ -1080,39 +777,18 @@ footer strong{
     <div class="stats">
 
       <div>
-
-        <strong id="homePlayers">
-          0
-        </strong>
-
-        <span>
-          Registered Players
-        </span>
-
+        <strong id="homePlayers">0</strong>
+        <span>Registered Players</span>
       </div>
 
       <div>
-
-        <strong>
-          16
-        </strong>
-
-        <span>
-          Player Tournament
-        </span>
-
+        <strong>16</strong>
+        <span>Player Tournament</span>
       </div>
 
       <div>
-
-        <strong id="homeMatches">
-          0
-        </strong>
-
-        <span>
-          Matches Played
-        </span>
-
+        <strong id="homeMatches">0</strong>
+        <span>Matches Played</span>
       </div>
 
     </div>
@@ -1122,23 +798,16 @@ footer strong{
 </section>
 
 
-<!-- =====================================================
-     TOURNAMENT
-===================================================== -->
+<!-- ================= TOURNAMENT ================= -->
 
 <section id="tournaments">
 
   <h2 class="section-title">
-
-    <span>Tournament</span>
-    System
-
+    <span>Tournament</span> System
   </h2>
 
   <p class="section-subtitle">
-
     16 players • Group Stage • Knockout Stage
-
   </p>
 
   <div class="tournament-info">
@@ -1150,14 +819,12 @@ footer strong{
       </h3>
 
       <p>
-
         16 players will be divided into
         4 groups. Each group contains
         4 players. Every player plays
-        3 group-stage matches. The top
-        2 players from each group qualify
-        for the knockout stage.
-
+        3 group-stage matches.
+        The top 2 players from each group
+        qualify for the knockout stage.
       </p>
 
     </div>
@@ -1167,9 +834,7 @@ footer strong{
 
       <div class="group">
 
-        <h3>
-          GROUP A
-        </h3>
+        <h3>GROUP A</h3>
 
         <div class="player-slot" id="a1">
           TBD
@@ -1192,9 +857,7 @@ footer strong{
 
       <div class="group">
 
-        <h3>
-          GROUP B
-        </h3>
+        <h3>GROUP B</h3>
 
         <div class="player-slot" id="b1">
           TBD
@@ -1217,9 +880,7 @@ footer strong{
 
       <div class="group">
 
-        <h3>
-          GROUP C
-        </h3>
+        <h3>GROUP C</h3>
 
         <div class="player-slot" id="c1">
           TBD
@@ -1242,9 +903,7 @@ footer strong{
 
       <div class="group">
 
-        <h3>
-          GROUP D
-        </h3>
+        <h3>GROUP D</h3>
 
         <div class="player-slot" id="d1">
           TBD
@@ -1271,24 +930,16 @@ footer strong{
 </section>
 
 
-<!-- =====================================================
-     PLAYERS
-===================================================== -->
+<!-- ================= PLAYERS ================= -->
 
 <section id="players">
 
   <h2 class="section-title">
-
-    <span>Registered</span>
-    Players
-
+    <span>Registered</span> Players
   </h2>
 
   <p class="section-subtitle">
-
-    Players are automatically loaded
-    from Google Sheets
-
+    Players are automatically loaded from Google Sheets
   </p>
 
   <div
@@ -1305,31 +956,19 @@ footer strong{
 </section>
 
 
-<!-- =====================================================
-     LEADERBOARD
-===================================================== -->
+<!-- ================= LEADERBOARD ================= -->
 
 <section id="leaderboard">
 
   <h2 class="section-title">
-
-    Player
-    <span>Ranking</span>
-
+    Player <span>Ranking</span>
   </h2>
 
   <p class="section-subtitle">
-
     Win = 3 Points • Draw = 1 Point • Loss = 0 Points
-
   </p>
 
-
-  <!-- DESKTOP TABLE -->
-
-  <div
-    class="table-wrap desktop-ranking"
-  >
+  <div class="table-wrap">
 
     <table>
 
@@ -1337,45 +976,20 @@ footer strong{
 
         <tr>
 
-          <th>
-            Rank
-          </th>
-
-          <th>
-            Player
-          </th>
-
-          <th>
-            W
-          </th>
-
-          <th>
-            D
-          </th>
-
-          <th>
-            L
-          </th>
-
-          <th>
-            GF
-          </th>
-
-          <th>
-            GA
-          </th>
-
-          <th>
-            GD
-          </th>
-
-          <th>
-            Points
-          </th>
+          <th>Rank</th>
+          <th>Player</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>GF</th>
+          <th>GA</th>
+          <th>GD</th>
+          <th>Points</th>
 
         </tr>
 
       </thead>
+
 
       <tbody id="leaderboardBody">
 
@@ -1393,41 +1007,19 @@ footer strong{
 
   </div>
 
-
-  <!-- MOBILE -->
-
-  <div
-    id="mobileRanking"
-    class="mobile-ranking"
-  >
-
-    <div class="loading">
-      Loading ranking...
-    </div>
-
-  </div>
-
 </section>
 
 
-<!-- =====================================================
-     MATCH RESULTS
-===================================================== -->
+<!-- ================= MATCH RESULTS ================= -->
 
 <section id="results">
 
   <h2 class="section-title">
-
-    Match
-    <span>Results</span>
-
+    Match <span>Results</span>
   </h2>
 
   <p class="section-subtitle">
-
-    Results are automatically loaded
-    from Google Sheets
-
+    Results are automatically loaded from Google Sheets
   </p>
 
   <div
@@ -1436,9 +1028,7 @@ footer strong{
   >
 
     <div class="loading">
-
       Loading match results...
-
     </div>
 
   </div>
@@ -1446,37 +1036,27 @@ footer strong{
 </section>
 
 
-<!-- =====================================================
-     BRACKET
-===================================================== -->
+<!-- ================= BRACKET ================= -->
 
 <section>
 
   <h2 class="section-title">
-
-    Knockout
-    <span>Bracket</span>
-
+    Knockout <span>Bracket</span>
   </h2>
 
   <p class="section-subtitle">
-
     Top 2 from each group qualify
-
   </p>
 
 
   <div class="bracket">
 
 
-    <!-- QUARTER FINAL -->
-
     <div class="round">
 
       <h3>
         Quarter Final
       </h3>
-
 
       <div class="match">
 
@@ -1532,14 +1112,11 @@ footer strong{
     </div>
 
 
-    <!-- SEMI FINAL -->
-
     <div class="round">
 
       <h3>
         Semi Final
       </h3>
-
 
       <div class="match">
 
@@ -1569,14 +1146,11 @@ footer strong{
     </div>
 
 
-    <!-- FINAL -->
-
     <div class="round">
 
       <h3>
         Final
       </h3>
-
 
       <div class="match">
 
@@ -1593,14 +1167,11 @@ footer strong{
     </div>
 
 
-    <!-- CHAMPION -->
-
     <div class="round">
 
       <h3>
         🏆 Champion
       </h3>
-
 
       <div class="match">
 
@@ -1612,22 +1183,18 @@ footer strong{
 
     </div>
 
+
   </div>
 
 </section>
 
 
-<!-- =====================================================
-     DASHBOARD
-===================================================== -->
+<!-- ================= DASHBOARD ================= -->
 
 <section id="dashboard">
 
   <h2 class="section-title">
-
-    Tournament
-    <span>Dashboard</span>
-
+    Tournament <span>Dashboard</span>
   </h2>
 
 
@@ -1691,22 +1258,18 @@ footer strong{
 
     </div>
 
+
   </div>
 
 </section>
 
 
-<!-- =====================================================
-     PROFILE
-===================================================== -->
+<!-- ================= PROFILE ================= -->
 
 <section id="profile">
 
   <h2 class="section-title">
-
-    Player
-    <span>Profile</span>
-
+    Player <span>Profile</span>
   </h2>
 
 
@@ -1729,9 +1292,7 @@ footer strong{
   >
 
     <p style="color:#8993a6;">
-
       Select a player to view profile
-
     </p>
 
   </div>
@@ -1739,17 +1300,12 @@ footer strong{
 </section>
 
 
-<!-- =====================================================
-     RULES
-===================================================== -->
+<!-- ================= RULES ================= -->
 
 <section id="rules">
 
   <h2 class="section-title">
-
-    Tournament
-    <span>Rules</span>
-
+    Tournament <span>Rules</span>
   </h2>
 
 
@@ -1763,10 +1319,8 @@ footer strong{
       </h3>
 
       <p>
-
         Player must register with correct
         name, eFootball ID and team information.
-
       </p>
 
     </div>
@@ -1779,10 +1333,8 @@ footer strong{
       </h3>
 
       <p>
-
         Each player plays 3 matches
         in the group stage.
-
       </p>
 
     </div>
@@ -1795,10 +1347,8 @@ footer strong{
       </h3>
 
       <p>
-
         Top 2 players from each group
         qualify for the knockout stage.
-
       </p>
 
     </div>
@@ -1811,10 +1361,8 @@ footer strong{
       </h3>
 
       <p>
-
         Match result screenshot should
         be submitted after the match.
-
       </p>
 
     </div>
@@ -1827,10 +1375,8 @@ footer strong{
       </h3>
 
       <p>
-
         Cheats, hacks, exploits and
         unfair methods are prohibited.
-
       </p>
 
     </div>
@@ -1843,31 +1389,26 @@ footer strong{
       </h3>
 
       <p>
-
         Players must respect opponents
         and tournament organizers.
-
       </p>
 
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
   <p>
-
     © 2026
     <strong>PesRaiyan</strong>
     | eFootball Tournament
-
   </p>
 
 </footer>
@@ -1875,27 +1416,38 @@ footer strong{
 
 <script>
 
-/* =====================================================
+/* =========================================================
    GOOGLE SHEET SETTINGS
-===================================================== */
+========================================================= */
 
 const SHEET_ID =
 "1tiq4kQRs1gt4z735OrlqozPkDNQCmJpp-9i9GKVeGvE";
 
 /*
-   EXACT GOOGLE SHEET TAB NAMES
+   IMPORTANT
+
+   Players sheet:
+   Player Name
+   eFootball ID
+   Team Name
+   Photo URL
+
+   Match Results sheet:
+   Match ID
+   Player 1
+   Player 2
+   Score 1
+   Score 2
 */
 
-const PLAYERS_SHEET =
-"Players";
+const PLAYERS_SHEET = "Players";
 
-const MATCH_SHEET =
-"Match result";
+const MATCH_SHEET = "Match Results";
 
 
-/* =====================================================
-   DATA
-===================================================== */
+/* =========================================================
+   GLOBAL DATA
+========================================================= */
 
 let players = [];
 
@@ -1904,86 +1456,9 @@ let matches = [];
 let ranking = {};
 
 
-/* =====================================================
-   SAFE TEXT
-===================================================== */
-
-function safeText(value, fallback = ""){
-
-  if(
-    value === null ||
-    value === undefined
-  ){
-
-    return fallback;
-
-  }
-
-  const text =
-  String(value).trim();
-
-  return text || fallback;
-
-}
-
-
-/* =====================================================
-   SAFE NUMBER
-   IMPORTANT: THIS PREVENTS NaN
-===================================================== */
-
-function safeNumber(value){
-
-  if(
-    value === null ||
-    value === undefined ||
-    value === ""
-  ){
-
-    return 0;
-
-  }
-
-  const number =
-  Number(value);
-
-  if(
-    Number.isFinite(number)
-  ){
-
-    return number;
-
-  }
-
-  return 0;
-
-}
-
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function escapeHTML(value){
-
-  return String(value ?? "")
-
-    .replace(/&/g,"&amp;")
-
-    .replace(/</g,"&lt;")
-
-    .replace(/>/g,"&gt;")
-
-    .replace(/"/g,"&quot;")
-
-    .replace(/'/g,"&#039;");
-
-}
-
-
-/* =====================================================
-   GET GOOGLE SHEET
-===================================================== */
+/* =========================================================
+   GOOGLE SHEET FETCH
+========================================================= */
 
 async function getSheet(sheetName){
 
@@ -1991,14 +1466,14 @@ async function getSheet(sheetName){
   `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}`;
 
   const response =
-  await fetch(url);
+  await fetch(url, {
+    cache:"no-store"
+  });
 
   if(!response.ok){
-
     throw new Error(
       "Google Sheet could not be loaded."
     );
-
   }
 
   const text =
@@ -2010,10 +1485,7 @@ async function getSheet(sheetName){
   const end =
   text.lastIndexOf("}");
 
-  if(
-    start === -1 ||
-    end === -1
-  ){
+  if(start === -1 || end === -1){
 
     throw new Error(
       "Invalid Google Sheet response."
@@ -2022,18 +1494,119 @@ async function getSheet(sheetName){
   }
 
   return JSON.parse(
-    text.substring(
-      start,
-      end + 1
-    )
+    text.substring(start,end + 1)
   );
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   CELL VALUE
+========================================================= */
+
+function cellValue(cell){
+
+  if(!cell){
+    return "";
+  }
+
+  /*
+    f = formatted value
+    v = raw value
+  */
+
+  if(
+    cell.f !== undefined &&
+    cell.f !== null &&
+    String(cell.f).trim() !== ""
+  ){
+
+    return String(cell.f).trim();
+
+  }
+
+  if(
+    cell.v !== undefined &&
+    cell.v !== null
+  ){
+
+    return String(cell.v).trim();
+
+  }
+
+  return "";
+
+}
+
+
+/* =========================================================
+   NUMBER VALUE
+========================================================= */
+
+function safeNumber(value){
+
+  const number =
+  Number(value);
+
+  if(
+    !Number.isFinite(number)
+  ){
+
+    return 0;
+
+  }
+
+  return number;
+
+}
+
+
+/* =========================================================
+   HEADER NORMALIZE
+========================================================= */
+
+function normalizeHeader(value){
+
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g,"");
+
+}
+
+
+/* =========================================================
+   FIND COLUMN
+========================================================= */
+
+function findColumn(headers, names){
+
+  const normalized =
+  headers.map(normalizeHeader);
+
+  for(
+    const name of names
+  ){
+
+    const index =
+    normalized.indexOf(
+      normalizeHeader(name)
+    );
+
+    if(index !== -1){
+      return index;
+    }
+
+  }
+
+  return -1;
+
+}
+
+
+/* =========================================================
    LOAD PLAYERS
-===================================================== */
+========================================================= */
 
 async function loadPlayers(){
 
@@ -2045,7 +1618,123 @@ async function loadPlayers(){
     );
 
     const rows =
-    data?.table?.rows || [];
+    data.table.rows || [];
+
+    const cols =
+    data.table.cols || [];
+
+
+    /*
+      Try to detect headers.
+    */
+
+    const headers =
+    cols.map(col =>
+      col.label || ""
+    );
+
+
+    let nameIndex =
+    findColumn(
+      headers,
+      [
+        "Player Name",
+        "Name",
+        "Player"
+      ]
+    );
+
+    let idIndex =
+    findColumn(
+      headers,
+      [
+        "eFootball ID",
+        "eFootballID",
+        "ID"
+      ]
+    );
+
+    let teamIndex =
+    findColumn(
+      headers,
+      [
+        "Team Name",
+        "Team"
+      ]
+    );
+
+    let photoIndex =
+    findColumn(
+      headers,
+      [
+        "Photo URL",
+        "Photo",
+        "Image URL"
+      ]
+    );
+
+
+    /*
+      If headers are not available,
+      use safe default structure.
+
+      Normal Players sheet:
+      A = Name
+      B = ID
+      C = Team
+      D = Photo
+
+      Form Responses:
+      A = Timestamp
+      B = Name
+      C = ID
+      D = Team
+      E = Contact
+      F = Photo
+    */
+
+
+    if(nameIndex === -1){
+
+      if(rows.length > 0){
+
+        const firstRow =
+        rows[0].c || [];
+
+        const first =
+        cellValue(firstRow[0]);
+
+        /*
+          Detect Date/Timestamp column.
+        */
+
+        const looksLikeTimestamp =
+        first.startsWith("Date(") ||
+        first.includes("/") ||
+        first.includes(":") ||
+        first.includes("-");
+
+        if(looksLikeTimestamp){
+
+          nameIndex = 1;
+          idIndex = 2;
+          teamIndex = 3;
+          photoIndex = 5;
+
+        }
+        else{
+
+          nameIndex = 0;
+          idIndex = 1;
+          teamIndex = 2;
+          photoIndex = 3;
+
+        }
+
+      }
+
+    }
+
 
     players = [];
 
@@ -2053,98 +1742,121 @@ async function loadPlayers(){
     rows.forEach(row => {
 
       const c =
-      row?.c || [];
-
-
-      /*
-        Players sheet:
-
-        A = Player Name
-        B = eFootball ID
-        C = Team Name
-        D = Contact
-        E = Profile Picture
-        F = Goals
-        G = Win Rate
-        H = W
-        I = D
-        J = L
-        K = Points
-        L = Ranking
-      */
+      row.c || [];
 
 
       const name =
-      safeText(
-        c[0]?.v,
-        ""
+      cellValue(
+        c[nameIndex]
       );
 
+
+      /*
+        IMPORTANT:
+        Empty rows are ignored.
+      */
 
       if(!name){
         return;
       }
 
 
+      /*
+        Ignore accidental timestamp names.
+      */
+
+      if(
+        name.startsWith("Date(")
+      ){
+
+        return;
+
+      }
+
+
+      const id =
+      cellValue(
+        c[idIndex]
+      ) || "N/A";
+
+
+      const team =
+      cellValue(
+        c[teamIndex]
+      ) || "N/A";
+
+
+      const photo =
+      cellValue(
+        c[photoIndex]
+      );
+
+
       players.push({
 
         name:name,
 
-        id:safeText(
-          c[1]?.v,
-          "N/A"
-        ),
+        id:id,
 
-        team:safeText(
-          c[2]?.v,
-          "N/A"
-        ),
+        team:team,
 
-        /*
-          Contact is loaded internally
-          but NEVER displayed.
-        */
-
-        contact:safeText(
-          c[3]?.v,
-          ""
-        ),
-
-        photo:safeText(
-          c[4]?.v,
-          ""
-
-        )
+        photo:photo
 
       });
 
     });
 
 
-    updateHomeStats();
+    /*
+      Remove duplicate players
+      using eFootball ID + name.
+    */
 
-    updateGroups();
+    const unique = [];
 
-    createProfileOptions();
+    const seen = new Set();
+
+
+    players.forEach(player => {
+
+      const key =
+      `${player.name.toLowerCase()}|${player.id.toLowerCase()}`;
+
+
+      if(!seen.has(key)){
+
+        seen.add(key);
+
+        unique.push(player);
+
+      }
+
+    });
+
+
+    players = unique;
 
 
     /*
-      First load matches so ranking
-      is calculated before displaying
-      player cards.
+      Update page.
     */
 
-    await loadMatches();
-
+    calculateRanking();
 
     displayPlayers();
 
-  }
+    updateHomeStats();
 
+    createProfileOptions();
+
+    updateGroups();
+
+
+  }
   catch(error){
 
     console.error(
-      "Players error:",
+      "Player loading error:",
       error
     );
 
@@ -2153,22 +1865,14 @@ async function loadPlayers(){
       "playerGrid"
     ).innerHTML = `
 
-      <div class="error-box">
+      <div class="loading">
 
         Unable to load players.
 
         <br><br>
 
-        Please check:
-
-        <br>
-
-        1. Sheet name is exactly
-        <strong>Players</strong>
-
-        <br>
-
-        2. Google Sheet is public/viewable
+        Please check Google Sheet
+        sharing permission and sheet name.
 
       </div>
 
@@ -2179,9 +1883,9 @@ async function loadPlayers(){
 }
 
 
-/* =====================================================
+/* =========================================================
    LOAD MATCH RESULTS
-===================================================== */
+========================================================= */
 
 async function loadMatches(){
 
@@ -2192,9 +1896,126 @@ async function loadMatches(){
       MATCH_SHEET
     );
 
-
     const rows =
-    data?.table?.rows || [];
+    data.table.rows || [];
+
+    const cols =
+    data.table.cols || [];
+
+
+    const headers =
+    cols.map(col =>
+      col.label || ""
+    );
+
+
+    let idIndex =
+    findColumn(
+      headers,
+      [
+        "Match ID",
+        "Match",
+        "ID"
+      ]
+    );
+
+    let p1Index =
+    findColumn(
+      headers,
+      [
+        "Player 1",
+        "Player1",
+        "P1"
+      ]
+    );
+
+    let p2Index =
+    findColumn(
+      headers,
+      [
+        "Player 2",
+        "Player2",
+        "P2"
+      ]
+    );
+
+    let score1Index =
+    findColumn(
+      headers,
+      [
+        "Score 1",
+        "Score1",
+        "P1 Score"
+      ]
+    );
+
+    let score2Index =
+    findColumn(
+      headers,
+      [
+        "Score 2",
+        "Score2",
+        "P2 Score"
+      ]
+    );
+
+
+    /*
+      Default Match Results:
+      A Match ID
+      B Player 1
+      C Player 2
+      D Score 1
+      E Score 2
+    */
+
+
+    if(
+      idIndex === -1 ||
+      p1Index === -1 ||
+      p2Index === -1
+    ){
+
+      /*
+        Check if first column is timestamp.
+      */
+
+      if(rows.length > 0){
+
+        const first =
+        cellValue(
+          rows[0].c?.[0]
+        );
+
+
+        if(
+          first.startsWith("Date(")
+        ){
+
+          /*
+            Timestamp + Match ID + P1 + P2 + Score1 + Score2
+          */
+
+          idIndex = 1;
+          p1Index = 2;
+          p2Index = 3;
+          score1Index = 4;
+          score2Index = 5;
+
+        }
+        else{
+
+          idIndex = 0;
+          p1Index = 1;
+          p2Index = 2;
+          score1Index = 3;
+          score2Index = 4;
+
+        }
+
+      }
+
+    }
 
 
     matches = [];
@@ -2203,58 +2024,40 @@ async function loadMatches(){
     rows.forEach(row => {
 
       const c =
-      row?.c || [];
-
-
-      /*
-        Match result sheet:
-
-        A = Match ID
-        B = Player 1
-        C = Player 2
-        D = Score 1
-        E = Score 2
-      */
+      row.c || [];
 
 
       const matchId =
-      safeText(
-        c[0]?.v,
-        ""
+      cellValue(
+        c[idIndex]
       );
 
 
       const player1 =
-      safeText(
-        c[1]?.v,
-        ""
+      cellValue(
+        c[p1Index]
       );
 
 
       const player2 =
-      safeText(
-        c[2]?.v,
-        ""
+      cellValue(
+        c[p2Index]
       );
 
 
-      /*
-        IMPORTANT
-
-        Empty score = 0
-
-        Never NaN.
-      */
-
       const score1 =
       safeNumber(
-        c[3]?.v
+        cellValue(
+          c[score1Index]
+        )
       );
 
 
       const score2 =
       safeNumber(
-        c[4]?.v
+        cellValue(
+          c[score2Index]
+        )
       );
 
 
@@ -2262,6 +2065,19 @@ async function loadMatches(){
         !matchId ||
         !player1 ||
         !player2
+      ){
+
+        return;
+
+      }
+
+
+      /*
+        Ignore accidental Date rows.
+      */
+
+      if(
+        matchId.startsWith("Date(")
       ){
 
         return;
@@ -2292,12 +2108,12 @@ async function loadMatches(){
 
     updateMatchStats();
 
-  }
 
+  }
   catch(error){
 
     console.error(
-      "Match error:",
+      "Match loading error:",
       error
     );
 
@@ -2313,9 +2129,7 @@ async function loadMatches(){
     ).innerHTML = `
 
       <div class="loading">
-
         No match results yet.
-
       </div>
 
     `;
@@ -2328,9 +2142,9 @@ async function loadMatches(){
 }
 
 
-/* =====================================================
+/* =========================================================
    EMPTY STATS
-===================================================== */
+========================================================= */
 
 function emptyStats(name){
 
@@ -2357,9 +2171,9 @@ function emptyStats(name){
 }
 
 
-/* =====================================================
+/* =========================================================
    CALCULATE RANKING
-===================================================== */
+========================================================= */
 
 function calculateRanking(){
 
@@ -2367,21 +2181,19 @@ function calculateRanking(){
 
 
   /*
-    Create stats for every registered player
+    Create stats for every registered player.
   */
 
   players.forEach(player => {
 
     ranking[player.name] =
-    emptyStats(
-      player.name
-    );
+    emptyStats(player.name);
 
   });
 
 
   /*
-    Calculate from match results
+    Calculate from matches.
   */
 
   matches.forEach(match => {
@@ -2394,54 +2206,51 @@ function calculateRanking(){
 
 
     /*
-      If player is not registered,
-      ignore match.
+      If a player name in Match Results
+      does not exactly match Players sheet,
+      skip that match.
     */
 
     if(!p1 || !p2){
-
       return;
-
     }
 
 
-    const score1 =
-    safeNumber(
-      match.score1
-    );
+    p1.gf +=
+    safeNumber(match.score1);
+
+    p1.ga +=
+    safeNumber(match.score2);
 
 
-    const score2 =
-    safeNumber(
+    p2.gf +=
+    safeNumber(match.score2);
+
+    p2.ga +=
+    safeNumber(match.score1);
+
+
+    if(
+      match.score1 >
       match.score2
-    );
+    ){
 
+      p1.w++;
 
-    p1.gf += score1;
-
-    p1.ga += score2;
-
-
-    p2.gf += score2;
-
-    p2.ga += score1;
-
-
-    if(score1 > score2){
-
-      p1.w += 1;
-
-      p2.l += 1;
+      p2.l++;
 
       p1.points += 3;
 
     }
 
-    else if(score2 > score1){
+    else if(
+      match.score1 <
+      match.score2
+    ){
 
-      p2.w += 1;
+      p2.w++;
 
-      p1.l += 1;
+      p1.l++;
 
       p2.points += 3;
 
@@ -2449,9 +2258,9 @@ function calculateRanking(){
 
     else{
 
-      p1.d += 1;
+      p1.d++;
 
-      p2.d += 1;
+      p2.d++;
 
       p1.points += 1;
 
@@ -2462,34 +2271,12 @@ function calculateRanking(){
   });
 
 
-  /*
-    Calculate GD safely
-  */
-
-  Object.values(
-    ranking
-  ).forEach(player => {
-
-    player.gf =
-    safeNumber(player.gf);
-
-    player.ga =
-    safeNumber(player.ga);
+  Object.values(ranking)
+  .forEach(player => {
 
     player.gd =
-    player.gf - player.ga;
-
-    player.w =
-    safeNumber(player.w);
-
-    player.d =
-    safeNumber(player.d);
-
-    player.l =
-    safeNumber(player.l);
-
-    player.points =
-    safeNumber(player.points);
+    player.gf -
+    player.ga;
 
   });
 
@@ -2499,18 +2286,30 @@ function calculateRanking(){
 }
 
 
-/* =====================================================
-   SORT RANKING
-===================================================== */
+/* =========================================================
+   LEADERBOARD
+========================================================= */
 
-function getSortedRanking(){
+function createLeaderboard(){
 
-  return Object.values(
-    ranking
-  ).sort((a,b) => {
+  const body =
+  document.getElementById(
+    "leaderboardBody"
+  );
+
+
+  body.innerHTML = "";
+
+
+  const list =
+  Object.values(ranking);
+
+
+  list.sort((a,b) => {
 
     if(
-      b.points !== a.points
+      b.points !==
+      a.points
     ){
 
       return (
@@ -2522,7 +2321,8 @@ function getSortedRanking(){
 
 
     if(
-      b.gd !== a.gd
+      b.gd !==
+      a.gd
     ){
 
       return (
@@ -2533,52 +2333,12 @@ function getSortedRanking(){
     }
 
 
-    if(
-      b.gf !== a.gf
-    ){
-
-      return (
-        b.gf -
-        a.gf
-      );
-
-    }
-
-
-    return a.name.localeCompare(
-      b.name
+    return (
+      b.gf -
+      a.gf
     );
 
   });
-
-}
-
-
-/* =====================================================
-   LEADERBOARD DESKTOP
-===================================================== */
-
-function createLeaderboard(){
-
-  const body =
-  document.getElementById(
-    "leaderboardBody"
-  );
-
-
-  const mobile =
-  document.getElementById(
-    "mobileRanking"
-  );
-
-
-  body.innerHTML = "";
-
-  mobile.innerHTML = "";
-
-
-  const list =
-  getSortedRanking();
 
 
   if(list.length === 0){
@@ -2588,23 +2348,10 @@ function createLeaderboard(){
       <tr>
 
         <td colspan="9">
-
           No players available.
-
         </td>
 
       </tr>
-
-    `;
-
-
-    mobile.innerHTML = `
-
-      <div class="loading">
-
-        No players available.
-
-      </div>
 
     `;
 
@@ -2616,34 +2363,24 @@ function createLeaderboard(){
   list.forEach(
     (player,index) => {
 
+      const row =
+      document.createElement(
+        "tr"
+      );
 
-      /*
-        MEDALS
-      */
 
       let rank =
       index + 1;
 
 
-      if(index === 0){
+      if(index === 0)
         rank = "🥇";
-      }
 
-      else if(index === 1){
+      if(index === 1)
         rank = "🥈";
-      }
 
-      else if(index === 2){
+      if(index === 2)
         rank = "🥉";
-      }
-
-
-      /* DESKTOP */
-
-      const row =
-      document.createElement(
-        "tr"
-      );
 
 
       row.innerHTML = `
@@ -2653,11 +2390,11 @@ function createLeaderboard(){
         </td>
 
         <td>
-
           <strong>
-            ${escapeHTML(player.name)}
+            ${escapeHTML(
+              player.name
+            )}
           </strong>
-
         </td>
 
         <td>
@@ -2685,11 +2422,9 @@ function createLeaderboard(){
         </td>
 
         <td>
-
           <strong>
             ${safeNumber(player.points)}
           </strong>
-
         </td>
 
       `;
@@ -2697,125 +2432,15 @@ function createLeaderboard(){
 
       body.appendChild(row);
 
-
-      /* MOBILE */
-
-      const card =
-      document.createElement(
-        "div"
-      );
-
-
-      card.className =
-      "rank-mobile-card";
-
-
-      card.innerHTML = `
-
-        <div class="rank-mobile-top">
-
-          <div class="rank-mobile-name">
-
-            ${rank}
-            &nbsp;
-
-            ${escapeHTML(player.name)}
-
-          </div>
-
-          <div class="rank-mobile-points">
-
-            ${safeNumber(player.points)}
-            Pts
-
-          </div>
-
-        </div>
-
-
-        <div class="rank-mobile-stats">
-
-          <div class="rank-mobile-stat">
-
-            <strong>
-              ${safeNumber(player.w)}
-            </strong>
-
-            <span>
-              W
-            </span>
-
-          </div>
-
-
-          <div class="rank-mobile-stat">
-
-            <strong>
-              ${safeNumber(player.d)}
-            </strong>
-
-            <span>
-              D
-            </span>
-
-          </div>
-
-
-          <div class="rank-mobile-stat">
-
-            <strong>
-              ${safeNumber(player.l)}
-            </strong>
-
-            <span>
-              L
-            </span>
-
-          </div>
-
-
-          <div class="rank-mobile-stat">
-
-            <strong>
-              ${safeNumber(player.gf)}
-            </strong>
-
-            <span>
-              GF
-            </span>
-
-          </div>
-
-
-          <div class="rank-mobile-stat">
-
-            <strong>
-              ${safeNumber(player.gd)}
-            </strong>
-
-            <span>
-              GD
-            </span>
-
-          </div>
-
-        </div>
-
-      `;
-
-
-      mobile.appendChild(card);
-
     }
-
   );
 
 }
 
 
-/* =====================================================
+/* =========================================================
    DISPLAY MATCH RESULTS
-===================================================== */
+========================================================= */
 
 function displayMatchResults(){
 
@@ -2833,9 +2458,7 @@ function displayMatchResults(){
     box.innerHTML = `
 
       <div class="loading">
-
         No match results yet.
-
       </div>
 
     `;
@@ -2847,30 +2470,24 @@ function displayMatchResults(){
 
   matches.forEach(match => {
 
-    const score1 =
-    safeNumber(
-      match.score1
-    );
-
-
-    const score2 =
-    safeNumber(
-      match.score2
-    );
-
-
     let resultText =
     "Draw";
 
 
-    if(score1 > score2){
+    if(
+      match.score1 >
+      match.score2
+    ){
 
       resultText =
       `${match.player1} won`;
 
     }
 
-    else if(score2 > score1){
+    else if(
+      match.score2 >
+      match.score1
+    ){
 
       resultText =
       `${match.player2} won`;
@@ -2891,27 +2508,23 @@ function displayMatchResults(){
     card.innerHTML = `
 
       <h3>
-
         Match
         ${escapeHTML(match.id)}
-
       </h3>
 
 
       <div class="result-line">
 
         <span>
-
           ${escapeHTML(
             match.player1
           )}
-
         </span>
 
         <span class="score">
-
-          ${score1}
-
+          ${safeNumber(
+            match.score1
+          )}
         </span>
 
       </div>
@@ -2920,17 +2533,15 @@ function displayMatchResults(){
       <div class="result-line">
 
         <span>
-
           ${escapeHTML(
             match.player2
           )}
-
         </span>
 
         <span class="score">
-
-          ${score2}
-
+          ${safeNumber(
+            match.score2
+          )}
         </span>
 
       </div>
@@ -2942,11 +2553,9 @@ function displayMatchResults(){
           margin-top:10px;
         "
       >
-
         ${escapeHTML(
           resultText
         )}
-
       </p>
 
     `;
@@ -2959,9 +2568,9 @@ function displayMatchResults(){
 }
 
 
-/* =====================================================
+/* =========================================================
    DISPLAY PLAYERS
-===================================================== */
+========================================================= */
 
 function displayPlayers(){
 
@@ -3006,40 +2615,39 @@ function displayPlayers(){
     let photoHTML = "";
 
 
-    if(player.photo){
+    /*
+      Only allow normal image URLs.
+    */
+
+    const safePhoto =
+    isSafeImageURL(
+      player.photo
+    );
+
+
+    if(safePhoto){
 
       photoHTML = `
 
         <img
-
           class="profile-img"
-
           src="${escapeHTML(
-            player.photo
+            safePhoto
           )}"
-
           alt="${escapeHTML(
             player.name
           )}"
-
           onerror="
             this.style.display='none';
             this.nextElementSibling.style.display='flex';
           "
-
         >
-
 
         <div
-
           class="avatar"
-
           style="display:none;"
-
         >
-
           🎮
-
         </div>
 
       `;
@@ -3051,9 +2659,7 @@ function displayPlayers(){
       photoHTML = `
 
         <div class="avatar">
-
           🎮
-
         </div>
 
       `;
@@ -3074,11 +2680,9 @@ function displayPlayers(){
 
 
       <h3>
-
         ${escapeHTML(
           player.name
         )}
-
       </h3>
 
 
@@ -3164,6 +2768,7 @@ function displayPlayers(){
 
         </div>
 
+
       </div>
 
     `;
@@ -3176,9 +2781,9 @@ function displayPlayers(){
 }
 
 
-/* =====================================================
+/* =========================================================
    HOME STATS
-===================================================== */
+========================================================= */
 
 function updateHomeStats(){
 
@@ -3196,9 +2801,9 @@ function updateHomeStats(){
 }
 
 
-/* =====================================================
+/* =========================================================
    MATCH STATS
-===================================================== */
+========================================================= */
 
 function updateMatchStats(){
 
@@ -3216,9 +2821,9 @@ function updateMatchStats(){
 }
 
 
-/* =====================================================
+/* =========================================================
    GROUPS
-===================================================== */
+========================================================= */
 
 function updateGroups(){
 
@@ -3242,12 +2847,9 @@ function updateGroups(){
       document.getElementById(id);
 
 
-      if(!element){
-        return;
-      }
-
-
-      if(players[index]){
+      if(
+        players[index]
+      ){
 
         element.textContent =
         players[index].name;
@@ -3267,9 +2869,9 @@ function updateGroups(){
 }
 
 
-/* =====================================================
+/* =========================================================
    PROFILE OPTIONS
-===================================================== */
+========================================================= */
 
 function createProfileOptions(){
 
@@ -3282,9 +2884,7 @@ function createProfileOptions(){
   select.innerHTML = `
 
     <option value="">
-
       Select a player
-
     </option>
 
   `;
@@ -3317,280 +2917,376 @@ function createProfileOptions(){
 }
 
 
-/* =====================================================
-   PROFILE
-===================================================== */
+/* =========================================================
+   PROFILE DISPLAY
+========================================================= */
 
 document
-  .getElementById(
-    "profileSelect"
-  )
-  .addEventListener(
-    "change",
-    function(){
+.getElementById(
+  "profileSelect"
+)
+.addEventListener(
+  "change",
+  function(){
 
-      const index =
-      this.value;
-
-
-      const box =
-      document.getElementById(
-        "profileBox"
-      );
+    const index =
+    this.value;
 
 
-      if(index === ""){
-
-        box.innerHTML = `
-
-          <p
-            style="color:#8993a6;"
-          >
-
-            Select a player
-            to view profile
-
-          </p>
-
-        `;
-
-        return;
-
-      }
+    const box =
+    document.getElementById(
+      "profileBox"
+    );
 
 
-      const player =
-      players[
-        Number(index)
-      ];
-
-
-      if(!player){
-
-        return;
-
-      }
-
-
-      const stats =
-      ranking[player.name] ||
-      emptyStats(
-        player.name
-      );
-
-
-      let photo = "";
-
-
-      if(player.photo){
-
-        photo = `
-
-          <img
-
-            class="profile-big-img"
-
-            src="${escapeHTML(
-              player.photo
-            )}"
-
-            alt="${escapeHTML(
-              player.name
-            )}"
-
-            onerror="
-              this.style.display='none';
-              this.nextElementSibling.style.display='flex';
-            "
-
-          >
-
-
-          <div
-
-            class="avatar"
-
-            style="
-              display:none;
-              margin:0 auto 15px;
-            "
-
-          >
-
-            🎮
-
-          </div>
-
-        `;
-
-      }
-
-      else{
-
-        photo = `
-
-          <div
-
-            class="avatar"
-
-            style="
-              margin:0 auto 15px;
-            "
-
-          >
-
-            🎮
-
-          </div>
-
-        `;
-
-      }
-
+    if(index === ""){
 
       box.innerHTML = `
 
-        ${photo}
+        <p style="color:#8993a6;">
+
+          Select a player
+          to view profile
+
+        </p>
+
+      `;
+
+      return;
+
+    }
 
 
-        <h2>
+    const player =
+    players[
+      Number(index)
+    ];
 
-          ${escapeHTML(
+
+    if(!player){
+
+      return;
+
+    }
+
+
+    const stats =
+    ranking[player.name] ||
+    emptyStats(
+      player.name
+    );
+
+
+    const safePhoto =
+    isSafeImageURL(
+      player.photo
+    );
+
+
+    let photo = "";
+
+
+    if(safePhoto){
+
+      photo = `
+
+        <img
+          class="profile-big-img"
+          src="${escapeHTML(
+            safePhoto
+          )}"
+          alt="${escapeHTML(
             player.name
-          )}
+          )}"
+          onerror="
+            this.style.display='none';
+            this.nextElementSibling.style.display='flex';
+          "
+        >
 
-        </h2>
-
-
-        <div class="team">
-
-          ${escapeHTML(
-            player.team
-          )}
-
-        </div>
-
-
-        <div class="profile-stat-grid">
-
-
-          <div class="profile-stat">
-
-            <strong>
-
-              ${escapeHTML(
-                player.id
-              )}
-
-            </strong>
-
-            <span>
-              eFootball ID
-            </span>
-
-          </div>
-
-
-          <div class="profile-stat">
-
-            <strong>
-              ${safeNumber(stats.w)}
-            </strong>
-
-            <span>
-              Wins
-            </span>
-
-          </div>
-
-
-          <div class="profile-stat">
-
-            <strong>
-              ${safeNumber(stats.d)}
-            </strong>
-
-            <span>
-              Draws
-            </span>
-
-          </div>
-
-
-          <div class="profile-stat">
-
-            <strong>
-              ${safeNumber(stats.l)}
-            </strong>
-
-            <span>
-              Losses
-            </span>
-
-          </div>
-
-
-          <div class="profile-stat">
-
-            <strong>
-              ${safeNumber(stats.gf)}
-            </strong>
-
-            <span>
-              Goals For
-            </span>
-
-          </div>
-
-
-          <div class="profile-stat">
-
-            <strong>
-              ${safeNumber(stats.points)}
-            </strong>
-
-            <span>
-              Points
-            </span>
-
-          </div>
-
+        <div
+          class="avatar"
+          style="
+            display:none;
+            margin:0 auto 15px;
+          "
+        >
+          🎮
         </div>
 
       `;
 
     }
-  );
+
+    else{
+
+      photo = `
+
+        <div
+          class="avatar"
+          style="
+            margin:0 auto 15px;
+          "
+        >
+          🎮
+        </div>
+
+      `;
+
+    }
 
 
-/* =====================================================
-   START WEBSITE
-===================================================== */
+    box.innerHTML = `
 
-async function startWebsite(){
+      ${photo}
 
-  await loadPlayers();
+
+      <h2>
+
+        ${escapeHTML(
+          player.name
+        )}
+
+      </h2>
+
+
+      <div class="team">
+
+        ${escapeHTML(
+          player.team
+        )}
+
+      </div>
+
+
+      <div class="profile-stat-grid">
+
+
+        <div class="profile-stat">
+
+          <strong>
+
+            ${escapeHTML(
+              player.id
+            )}
+
+          </strong>
+
+          <span>
+            eFootball ID
+          </span>
+
+        </div>
+
+
+        <div class="profile-stat">
+
+          <strong>
+            ${safeNumber(stats.w)}
+          </strong>
+
+          <span>
+            Wins
+          </span>
+
+        </div>
+
+
+        <div class="profile-stat">
+
+          <strong>
+            ${safeNumber(stats.d)}
+          </strong>
+
+          <span>
+            Draws
+          </span>
+
+        </div>
+
+
+        <div class="profile-stat">
+
+          <strong>
+            ${safeNumber(stats.l)}
+          </strong>
+
+          <span>
+            Losses
+          </span>
+
+        </div>
+
+
+        <div class="profile-stat">
+
+          <strong>
+            ${safeNumber(stats.gf)}
+          </strong>
+
+          <span>
+            Goals For
+          </span>
+
+        </div>
+
+
+        <div class="profile-stat">
+
+          <strong>
+            ${safeNumber(stats.gd)}
+          </strong>
+
+          <span>
+            Goal Difference
+          </span>
+
+        </div>
+
+
+        <div class="profile-stat">
+
+          <strong>
+            ${safeNumber(stats.points)}
+          </strong>
+
+          <span>
+            Points
+          </span>
+
+        </div>
+
+
+      </div>
+
+    `;
+
+  }
+);
+
+
+/* =========================================================
+   IMAGE URL SECURITY
+========================================================= */
+
+function isSafeImageURL(url){
+
+  const value =
+  String(url || "").trim();
+
+
+  if(!value){
+    return "";
+  }
+
+
+  try{
+
+    const parsed =
+    new URL(value);
+
+
+    if(
+      parsed.protocol === "https:" ||
+      parsed.protocol === "http:"
+    ){
+
+      return value;
+
+    }
+
+  }
+  catch(error){
+
+    return "";
+
+  }
+
+
+  return "";
 
 }
 
 
-/* =====================================================
-   INITIAL LOAD
-===================================================== */
+/* =========================================================
+   HTML SECURITY
+========================================================= */
 
-startWebsite();
+function escapeHTML(value){
+
+  return String(value ?? "")
+
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+
+    .replace(
+      /</g,
+      "&lt;"
+    )
+
+    .replace(
+      />/g,
+      "&gt;"
+    )
+
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+
+    .replace(
+      /'/g,
+      "&#039;"
+    );
+
+}
 
 
-/* =====================================================
+/* =========================================================
+   LOAD EVERYTHING
+========================================================= */
+
+async function loadEverything(){
+
+  /*
+    First load players.
+  */
+
+  await loadPlayers();
+
+
+  /*
+    Then load matches.
+  */
+
+  await loadMatches();
+
+
+  /*
+    Refresh player cards after
+    ranking has been calculated.
+  */
+
+  displayPlayers();
+
+}
+
+
+/* =========================================================
+   START WEBSITE
+========================================================= */
+
+loadEverything();
+
+
+/* =========================================================
    AUTO REFRESH
-===================================================== */
+========================================================= */
 
 setInterval(
-  () => {
-
-    loadPlayers();
-
-  },
+  loadEverything,
   30000
 );
 
@@ -3598,4 +3294,5 @@ setInterval(
 
 
 </body>
+
 </html>
