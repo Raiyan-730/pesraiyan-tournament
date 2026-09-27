@@ -35,7 +35,7 @@ a{
     margin:auto;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav{
     position:sticky;
@@ -83,7 +83,7 @@ nav{
     background:#00e5ff15;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
     min-height:500px;
@@ -128,7 +128,7 @@ nav{
     box-shadow:0 8px 25px #00e5ff35;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 
 .section{
     padding:70px 0;
@@ -148,7 +148,7 @@ nav{
     color:#8fa1a7;
 }
 
-/* STATS */
+/* ================= STATS ================= */
 
 .stats-grid{
     display:grid;
@@ -176,7 +176,7 @@ nav{
     color:#91a3a8;
 }
 
-/* PLAYERS */
+/* ================= PLAYERS ================= */
 
 .player-grid{
     display:grid;
@@ -229,7 +229,7 @@ nav{
     color:#00e5ff;
 }
 
-/* TABLE */
+/* ================= TABLE ================= */
 
 .table-wrap{
     width:100%;
@@ -249,6 +249,7 @@ th{
     background:#00e5ff12;
     color:#00e5ff;
     padding:14px 10px;
+    text-align:center;
 }
 
 td{
@@ -258,15 +259,11 @@ td{
     color:#d6dfe2;
 }
 
-th{
-    text-align:center;
-}
-
 tbody tr:hover{
     background:#ffffff05;
 }
 
-/* MATCHES */
+/* ================= MATCHES ================= */
 
 .result-box{
     display:grid;
@@ -305,7 +302,7 @@ tbody tr:hover{
     font-weight:900;
 }
 
-/* GROUPS */
+/* ================= GROUPS ================= */
 
 .groups{
     display:grid;
@@ -337,7 +334,78 @@ tbody tr:hover{
     color:#d5dfe2;
 }
 
-/* PROFILE */
+/* ================= KNOCKOUT ================= */
+
+.knockout-info{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.knockout-rule{
+    background:#0c1a20;
+    border:1px solid #00e5ff25;
+    border-radius:10px;
+    padding:14px;
+    text-align:center;
+    color:#00e5ff;
+    font-weight:700;
+}
+
+.knockout-bracket{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    align-items:center;
+}
+
+.knockout-round{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.knockout-round h3{
+    text-align:center;
+    color:#00e5ff;
+    margin-bottom:5px;
+}
+
+.knockout-match{
+    position:relative;
+    background:#0c1a20;
+    border:1px solid #00e5ff25;
+    border-radius:12px;
+    padding:18px 12px;
+    text-align:center;
+    display:grid;
+    gap:7px;
+}
+
+.knockout-match strong{
+    color:#00e5ff;
+}
+
+.match-label{
+    font-size:11px;
+    color:#7f9298;
+    text-transform:uppercase;
+}
+
+.knockout-score{
+    color:#00e5ff;
+    font-size:18px;
+    font-weight:800;
+    margin-top:4px;
+}
+
+.final-match{
+    border-color:#00e5ff66;
+    box-shadow:0 0 20px #00e5ff10;
+}
+
+/* ================= PROFILE ================= */
 
 .profile-box{
     max-width:650px;
@@ -403,7 +471,7 @@ tbody tr:hover{
     font-size:11px;
 }
 
-/* RULES */
+/* ================= RULES ================= */
 
 .rules{
     max-width:800px;
@@ -419,7 +487,7 @@ tbody tr:hover{
     color:#c5d0d3;
 }
 
-/* STATUS */
+/* ================= STATUS ================= */
 
 .loading,
 .empty,
@@ -434,7 +502,7 @@ tbody tr:hover{
     color:#ff7373;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     text-align:center;
@@ -444,7 +512,7 @@ footer{
     font-size:13px;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:900px){
 
@@ -455,6 +523,19 @@ footer{
     .stats-grid{
         grid-template-columns:repeat(3,1fr);
     }
+
+}
+
+@media(max-width:750px){
+
+    .knockout-info{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .knockout-bracket{
+        grid-template-columns:1fr;
+    }
+
 }
 
 @media(max-width:650px){
@@ -494,13 +575,15 @@ footer{
     .section{
         padding:50px 0;
     }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
@@ -513,12 +596,21 @@ PesRaiyan
 <div class="nav-links">
 
 <a href="#home">Home</a>
+
 <a href="#tournaments">Tournaments</a>
+
 <a href="#players">Players</a>
+
 <a href="#ranking">Ranking</a>
+
 <a href="#matches">Matches</a>
+
+<a href="#knockout">Knockout</a>
+
 <a href="#dashboard">Dashboard</a>
+
 <a href="#profile">Profile</a>
+
 <a href="#rules">Rules</a>
 
 </div>
@@ -528,7 +620,7 @@ PesRaiyan
 </nav>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
 <section class="hero" id="home">
 
@@ -555,11 +647,12 @@ Register Now
 </section>
 
 
-<!-- TOP STATS -->
+<!-- ================= STATS ================= -->
 
 <div class="container">
 
 <div class="stats-grid">
+
 
 <div class="stat-card">
 
@@ -599,12 +692,13 @@ Matches Played
 
 </div>
 
-</div>
 
 </div>
 
+</div>
 
-<!-- TOURNAMENT -->
+
+<!-- ================= TOURNAMENT ================= -->
 
 <section class="section" id="tournaments">
 
@@ -640,11 +734,31 @@ Each group contains 4 players
 </li>
 
 <li>
-Group stage followed by knockout stage
+Group Stage followed by Knockout Stage
 </li>
 
 <li>
-Player and match data are updated from Google Sheets
+Group Stage: 8 minutes, Random condition
+</li>
+
+<li>
+Group Stage: Extra Time OFF
+</li>
+
+<li>
+Group Stage: Penalty Shootout OFF
+</li>
+
+<li>
+Knockout Stage: 8 minutes, Random condition
+</li>
+
+<li>
+Knockout Stage: Extra Time ON
+</li>
+
+<li>
+Knockout Stage: Penalty Shootout ON
 </li>
 
 </ul>
@@ -656,7 +770,7 @@ Player and match data are updated from Google Sheets
 </section>
 
 
-<!-- PLAYERS -->
+<!-- ================= PLAYERS ================= -->
 
 <section class="section" id="players">
 
@@ -688,7 +802,7 @@ Loading players...
 </section>
 
 
-<!-- RANKING -->
+<!-- ================= RANKING ================= -->
 
 <section class="section" id="ranking">
 
@@ -715,41 +829,23 @@ Current tournament standings
 
 <tr>
 
-<th>
-Rank
-</th>
+<th>Rank</th>
 
-<th>
-Player
-</th>
+<th>Player</th>
 
-<th>
-W
-</th>
+<th>W</th>
 
-<th>
-D
-</th>
+<th>D</th>
 
-<th>
-L
-</th>
+<th>L</th>
 
-<th>
-GF
-</th>
+<th>GF</th>
 
-<th>
-GA
-</th>
+<th>GA</th>
 
-<th>
-GD
-</th>
+<th>GD</th>
 
-<th>
-Points
-</th>
+<th>Points</th>
 
 </tr>
 
@@ -777,7 +873,7 @@ Loading ranking...
 </section>
 
 
-<!-- MATCHES -->
+<!-- ================= MATCHES ================= -->
 
 <section class="section" id="matches">
 
@@ -809,7 +905,7 @@ Loading match results...
 </section>
 
 
-<!-- GROUPS -->
+<!-- ================= GROUPS ================= -->
 
 <section class="section" id="groups">
 
@@ -840,8 +936,11 @@ Group A
 <div class="group-list">
 
 <div class="group-player" id="a1">-</div>
+
 <div class="group-player" id="a2">-</div>
+
 <div class="group-player" id="a3">-</div>
+
 <div class="group-player" id="a4">-</div>
 
 </div>
@@ -858,8 +957,11 @@ Group B
 <div class="group-list">
 
 <div class="group-player" id="b1">-</div>
+
 <div class="group-player" id="b2">-</div>
+
 <div class="group-player" id="b3">-</div>
+
 <div class="group-player" id="b4">-</div>
 
 </div>
@@ -876,8 +978,11 @@ Group C
 <div class="group-list">
 
 <div class="group-player" id="c1">-</div>
+
 <div class="group-player" id="c2">-</div>
+
 <div class="group-player" id="c3">-</div>
+
 <div class="group-player" id="c4">-</div>
 
 </div>
@@ -894,8 +999,11 @@ Group D
 <div class="group-list">
 
 <div class="group-player" id="d1">-</div>
+
 <div class="group-player" id="d2">-</div>
+
 <div class="group-player" id="d3">-</div>
+
 <div class="group-player" id="d4">-</div>
 
 </div>
@@ -910,7 +1018,265 @@ Group D
 </section>
 
 
-<!-- DASHBOARD -->
+<!-- ================= KNOCKOUT ================= -->
+
+<section class="section" id="knockout">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Knockout Stage
+</h2>
+
+<p>
+Quarter-Finals • Semi-Finals • Final
+</p>
+
+</div>
+
+
+<div class="knockout-info">
+
+<div class="knockout-rule">
+8 Minutes
+</div>
+
+<div class="knockout-rule">
+Random
+</div>
+
+<div class="knockout-rule">
+Extra Time ON
+</div>
+
+<div class="knockout-rule">
+Penalty ON
+</div>
+
+</div>
+
+
+<div class="knockout-bracket">
+
+
+<!-- QUARTER FINALS -->
+
+<div class="knockout-round">
+
+<h3>
+Quarter-Finals
+</h3>
+
+
+<div class="knockout-match">
+
+<span class="match-label">
+QF 1
+</span>
+
+<div>
+Group A 1st
+</div>
+
+<strong>
+VS
+</strong>
+
+<div>
+Group B 2nd
+</div>
+
+<div class="knockout-score">
+- : -
+</div>
+
+</div>
+
+
+<div class="knockout-match">
+
+<span class="match-label">
+QF 2
+</span>
+
+<div>
+Group B 1st
+</div>
+
+<strong>
+VS
+</strong>
+
+<div>
+Group A 2nd
+</div>
+
+<div class="knockout-score">
+- : -
+</div>
+
+</div>
+
+
+<div class="knockout-match">
+
+<span class="match-label">
+QF 3
+</span>
+
+<div>
+Group C 1st
+</div>
+
+<strong>
+VS
+</strong>
+
+<div>
+Group D 2nd
+</div>
+
+<div class="knockout-score">
+- : -
+</div>
+
+</div>
+
+
+<div class="knockout-match">
+
+<span class="match-label">
+QF 4
+</span>
+
+<div>
+Group D 1st
+</div>
+
+<strong>
+VS
+</strong>
+
+<div>
+Group C 2nd
+</div>
+
+<div class="knockout-score">
+- : -
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SEMI FINALS -->
+
+<div class="knockout-round">
+
+<h3>
+Semi-Finals
+</h3>
+
+
+<div class="knockout-match">
+
+<span class="match-label">
+SF 1
+</span>
+
+<div>
+Winner QF 1
+</div>
+
+<strong>
+VS
+</strong>
+
+<div>
+Winner QF 2
+</div>
+
+<div class="knockout-score">
+- : -
+</div>
+
+</div>
+
+
+<div class="knockout-match">
+
+<span class="match-label">
+SF 2
+</span>
+
+<div>
+Winner QF 3
+</div>
+
+<strong>
+VS
+</strong>
+
+<div>
+Winner QF 4
+</div>
+
+<div class="knockout-score">
+- : -
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FINAL -->
+
+<div class="knockout-round">
+
+<h3>
+Final
+</h3>
+
+
+<div class="knockout-match final-match">
+
+<span class="match-label">
+FINAL
+</span>
+
+<div>
+Winner SF 1
+</div>
+
+<strong>
+VS
+</strong>
+
+<div>
+Winner SF 2
+</div>
+
+<div class="knockout-score">
+- : -
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
 
 <section class="section" id="dashboard">
 
@@ -978,7 +1344,7 @@ Tournament Capacity
 </section>
 
 
-<!-- PROFILE -->
+<!-- ================= PROFILE ================= -->
 
 <section class="section" id="profile">
 
@@ -1023,7 +1389,7 @@ Select a player above.
 </section>
 
 
-<!-- RULES -->
+<!-- ================= RULES ================= -->
 
 <section class="section" id="rules">
 
@@ -1032,7 +1398,7 @@ Select a player above.
 <div class="section-title">
 
 <h2>
-Rules
+Rules & Guidelines
 </h2>
 
 <p>
@@ -1048,6 +1414,22 @@ Tournament guidelines
 
 <li>
 Every player must use their registered eFootball ID.
+</li>
+
+<li>
+Each match will be played for 8 minutes.
+</li>
+
+<li>
+Match condition will be Random.
+</li>
+
+<li>
+Group Stage matches will be played without Extra Time.
+</li>
+
+<li>
+Group Stage matches will be played without Penalty Shootout.
 </li>
 
 <li>
@@ -1067,6 +1449,14 @@ Respect all players and maintain fair play.
 </li>
 
 <li>
+In the Knockout Stage, Extra Time will be enabled.
+</li>
+
+<li>
+In the Knockout Stage, Penalty Shootout will be enabled if required.
+</li>
+
+<li>
 The tournament organizer has the final decision in disputes.
 </li>
 
@@ -1079,7 +1469,7 @@ The tournament organizer has the final decision in disputes.
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1092,7 +1482,7 @@ The tournament organizer has the final decision in disputes.
 <script>
 
 /* =========================================================
-   GOOGLE SHEET CONFIGURATION
+   GOOGLE SHEET CONFIG
 ========================================================= */
 
 const SHEET_ID =
@@ -1100,18 +1490,20 @@ const SHEET_ID =
 
 
 /*
-   IMPORTANT:
-
-   Player data is currently inside:
+   Your registered players are in:
 
    Form responses 4
-
-   NOT "Players"
 */
 
 const PLAYERS_SHEET =
 "Form responses 4";
 
+
+/*
+   Your match results are in:
+
+   Match Results
+*/
 
 const MATCH_SHEET =
 "Match Results";
@@ -1125,7 +1517,7 @@ let ranking = {};
 
 
 /* =========================================================
-   HELPERS
+   BASIC HELPERS
 ========================================================= */
 
 function cleanText(value){
@@ -1147,19 +1539,6 @@ function escapeHTML(value){
 }
 
 
-/*
-   This creates a safe comparison key.
-
-   Example:
-
-   "Hamza"
-   " hamza "
-
-   both become:
-
-   "hamza"
-*/
-
 function playerKey(name){
 
     return cleanText(name)
@@ -1168,12 +1547,6 @@ function playerKey(name){
 
 }
 
-
-/*
-   Convert score to a real number.
-
-   Never return NaN.
-*/
 
 function parseScore(value){
 
@@ -1193,7 +1566,9 @@ function parseScore(value){
 
 
     if(text === ""){
+
         return null;
+
     }
 
 
@@ -1217,7 +1592,7 @@ function parseScore(value){
 
 
 /* =========================================================
-   GOOGLE SHEET REQUEST
+   GOOGLE SHEET LOADER
 ========================================================= */
 
 async function getSheet(
@@ -1305,7 +1680,7 @@ async function getSheet(
 
 
 /* =========================================================
-   GET CELL
+   CELL VALUE
 ========================================================= */
 
 function getCell(row,index){
@@ -1355,11 +1730,11 @@ async function loadPlayers(){
           E = Contact
           F = Profile Picture
 
-          We ONLY request:
+          We request only:
 
           B,C,D,F
 
-          Therefore Contact is not loaded.
+          Contact is NOT loaded.
         */
 
         const data =
@@ -1402,10 +1777,6 @@ async function loadPlayers(){
                 );
 
 
-            /*
-              Blank player name = ignore row.
-            */
-
             if(!name){
 
                 return;
@@ -1414,7 +1785,8 @@ async function loadPlayers(){
 
 
             /*
-              Prevent exact duplicate registration rows.
+              Do not show duplicate player
+              registrations.
             */
 
             const duplicate =
@@ -1451,17 +1823,7 @@ async function loadPlayers(){
             loadedPlayers;
 
 
-        /*
-          IMPORTANT:
-
-          Ranking is created ONLY from these
-          registered players.
-
-          Match Results cannot add new players.
-        */
-
         createEmptyRanking();
-
 
         displayPlayers();
 
@@ -1473,10 +1835,6 @@ async function loadPlayers(){
 
         updateProfile();
 
-
-        /*
-          Now load matches.
-        */
 
         await loadMatches();
 
@@ -1503,7 +1861,9 @@ async function loadPlayers(){
 
                 <br><br>
 
-                ${escapeHTML(error.message)}
+                ${escapeHTML(
+                    error.message
+                )}
 
             </div>
 
@@ -1522,7 +1882,7 @@ async function loadPlayers(){
 
 
 /* =========================================================
-   CREATE EMPTY RANKING
+   EMPTY RANKING
 ========================================================= */
 
 function createEmptyRanking(){
@@ -1531,16 +1891,8 @@ function createEmptyRanking(){
 
 
     /*
-      ONLY registered players are added.
-
-      This is the important fix.
-
-      "Player 1"
-      "Player 2"
-
-      from Match Results can NEVER
-      appear in Leaderboard unless they
-      are actually registered.
+      ONLY registered players
+      are added to ranking.
     */
 
     players.forEach(player => {
@@ -1612,8 +1964,12 @@ function displayPlayers(){
                 photoHTML = `
 
                     <img
-                        src="${escapeHTML(player.photo)}"
-                        alt="${escapeHTML(player.name)}"
+                        src="${escapeHTML(
+                            player.photo
+                        )}"
+                        alt="${escapeHTML(
+                            player.name
+                        )}"
                         onerror="
                             this.style.display='none';
                             this.parentElement.innerHTML='<div class=&quot;avatar&quot;>🎮</div>';
@@ -1650,7 +2006,9 @@ function displayPlayers(){
                     <div class="player-info">
 
                         <h3>
-                            ${escapeHTML(player.name)}
+                            ${escapeHTML(
+                                player.name
+                            )}
                         </h3>
 
 
@@ -1716,10 +2074,18 @@ async function loadMatches(){
             data.table?.rows || [];
 
 
+        /*
+          Only registered players
+          are allowed in matches.
+        */
+
         const registeredPlayers =
             new Set(
                 players.map(
-                    p => playerKey(p.name)
+                    p =>
+                        playerKey(
+                            p.name
+                        )
                 )
             );
 
@@ -1759,21 +2125,6 @@ async function loadMatches(){
                 );
 
 
-            /*
-              ------------------------------------------------
-              VERY IMPORTANT FIX
-              ------------------------------------------------
-
-              If Match Results contains:
-
-              Player 1
-              Player 2
-
-              those are NOT registered players.
-
-              So this row is completely ignored.
-            */
-
             const p1Key =
                 playerKey(player1);
 
@@ -1781,6 +2132,10 @@ async function loadMatches(){
             const p2Key =
                 playerKey(player2);
 
+
+            /*
+              Empty rows are ignored.
+            */
 
             if(
                 !player1 ||
@@ -1793,13 +2148,18 @@ async function loadMatches(){
 
 
             /*
-              Both players MUST exist in
-              Form responses 4.
+              Player 1 / Player 2 placeholders
+              are ignored because they are not
+              registered players.
             */
 
             if(
-                !registeredPlayers.has(p1Key) ||
-                !registeredPlayers.has(p2Key)
+                !registeredPlayers.has(
+                    p1Key
+                ) ||
+                !registeredPlayers.has(
+                    p2Key
+                )
             ){
 
                 return;
@@ -1808,10 +2168,10 @@ async function loadMatches(){
 
 
             /*
-              Both scores MUST be valid.
+              Both scores must exist.
 
-              Therefore blank score rows are
-              not counted.
+              Therefore incomplete rows
+              do not become matches.
             */
 
             if(
@@ -1847,10 +2207,6 @@ async function loadMatches(){
             validMatches;
 
 
-        /*
-          Recalculate from valid matches only.
-        */
-
         calculateRanking();
 
         displayRanking();
@@ -1872,8 +2228,8 @@ async function loadMatches(){
 
 
         /*
-          If Match Results cannot be loaded,
-          do NOT create fake matches.
+          Error হলে fake match
+          তৈরি হবে না.
         */
 
         matches = [];
@@ -1898,28 +2254,25 @@ async function loadMatches(){
 
 function calculateRanking(){
 
-    /*
-      Start with ONLY the 9 registered players.
-    */
-
     createEmptyRanking();
 
 
     matches.forEach(match => {
 
         const key1 =
-            playerKey(match.player1);
+            playerKey(
+                match.player1
+            );
 
 
         const key2 =
-            playerKey(match.player2);
+            playerKey(
+                match.player2
+            );
 
 
         /*
-          Extra safety:
-
-          If somehow a player isn't registered,
-          ignore the match.
+          Safety check.
         */
 
         if(
@@ -2021,28 +2374,26 @@ function displayRanking(){
 
 
     /*
-      Ranking list contains ONLY registered
-      players.
+      IMPORTANT:
+
+      Ranking starts from players[].
+
+      Therefore all registered players
+      remain in leaderboard even when
+      they have 0 matches.
     */
 
     const list =
         players.map(player => {
 
             return ranking[
-                playerKey(player.name)
+                playerKey(
+                    player.name
+                )
             ];
 
         }).filter(Boolean);
 
-
-    /*
-      Sort by:
-
-      1. Points
-      2. Goal Difference
-      3. Goals For
-      4. Name
-    */
 
     list.sort((a,b) => {
 
@@ -2124,54 +2475,42 @@ function displayRanking(){
                         ${index + 1}
                     </td>
 
-
                     <td>
-
                         <strong>
                             ${escapeHTML(
                                 player.player
                             )}
                         </strong>
-
                     </td>
-
 
                     <td>
                         ${player.wins}
                     </td>
 
-
                     <td>
                         ${player.draws}
                     </td>
-
 
                     <td>
                         ${player.losses}
                     </td>
 
-
                     <td>
                         ${player.gf}
                     </td>
-
 
                     <td>
                         ${player.ga}
                     </td>
 
-
                     <td>
                         ${player.gd}
                     </td>
 
-
                     <td>
-
                         <strong>
                             ${player.points}
                         </strong>
-
                     </td>
 
                 </tr>
@@ -2184,7 +2523,7 @@ function displayRanking(){
 
 
 /* =========================================================
-   DISPLAY MATCH RESULTS
+   MATCH RESULTS DISPLAY
 ========================================================= */
 
 function displayMatchResults(){
@@ -2268,7 +2607,7 @@ function displayMatchResults(){
 
 
 /* =========================================================
-   UPDATE STATS
+   UPDATE HOME / DASHBOARD
 ========================================================= */
 
 function updateHomeStats(){
@@ -2460,8 +2799,9 @@ function createProfileOptions(){
         oldValue &&
         players.some(
             p =>
-                playerKey(p.name) ===
-                oldValue
+                playerKey(
+                    p.name
+                ) === oldValue
         )
     ){
 
@@ -2509,7 +2849,9 @@ function updateProfile(){
     const player =
         players.find(
             p =>
-                playerKey(p.name) ===
+                playerKey(
+                    p.name
+                ) ===
                 select.value
         );
 
@@ -2602,13 +2944,11 @@ function updateProfile(){
 
         ${photoHTML}
 
-
         <h3>
             ${escapeHTML(
                 player.name
             )}
         </h3>
-
 
         <p>
 
@@ -2619,7 +2959,6 @@ function updateProfile(){
             )}
 
         </p>
-
 
         <p>
 
@@ -2751,7 +3090,7 @@ function updateProfile(){
 
 
 /* =========================================================
-   PROFILE SELECT
+   PROFILE CHANGE
 ========================================================= */
 
 document
@@ -2763,15 +3102,10 @@ document
 
 
 /* =========================================================
-   START
+   START WEBSITE
 ========================================================= */
 
 async function startWebsite(){
-
-    /*
-      First load players.
-      Then matches.
-    */
 
     await loadPlayers();
 
@@ -2779,14 +3113,14 @@ async function startWebsite(){
 
 
 /*
-   Initial website load
+   First load
 */
 
 startWebsite();
 
 
 /*
-   Refresh every 30 seconds.
+   Auto refresh every 30 seconds
 */
 
 setInterval(
