@@ -271,4 +271,1732 @@ tbody tr:hover{
 }
 
 .match-card{
-    background:#0c
+    background:#0c1a20;
+    border:1px solid #00e5ff25;
+    border-radius:15px;
+    padding:20px;
+}
+
+.match-id{
+    color:#00e5ff;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.match-players{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    gap:12px;
+    text-align:center;
+}
+
+.match-player{
+    font-weight:700;
+}
+
+.score{
+    font-size:25px;
+    font-weight:900;
+    color:#00e5ff;
+    white-space:nowrap;
+}
+
+.groups{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.group{
+    background:#0c1a20;
+    border:1px solid #00e5ff25;
+    border-radius:15px;
+    padding:20px;
+}
+
+.group h3{
+    color:#00e5ff;
+    margin-bottom:15px;
+}
+
+.group-list{
+    display:grid;
+    gap:9px;
+}
+
+.group-player{
+    background:#09151a;
+    padding:10px 13px;
+    border-radius:8px;
+    color:#d9e2e5;
+}
+
+.profile-box{
+    max-width:650px;
+    margin:auto;
+    background:#0c1a20;
+    border:1px solid #00e5ff25;
+    border-radius:15px;
+    padding:25px;
+}
+
+.profile-select{
+    width:100%;
+    padding:13px;
+    border-radius:8px;
+    background:#071014;
+    color:#fff;
+    border:1px solid #00e5ff55;
+    margin-bottom:20px;
+    outline:none;
+}
+
+.profile-content{
+    text-align:center;
+}
+
+.profile-content .profile-avatar{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    border:2px solid #00e5ff;
+}
+
+.profile-content h3{
+    font-size:25px;
+    margin-bottom:5px;
+}
+
+.profile-content p{
+    color:#91a3a8;
+    margin:3px 0;
+}
+
+.profile-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:20px;
+}
+
+.profile-stat{
+    background:#09151a;
+    padding:13px 5px;
+    border-radius:8px;
+}
+
+.profile-stat strong{
+    display:block;
+    color:#00e5ff;
+    font-size:20px;
+}
+
+.profile-stat span{
+    color:#87979c;
+    font-size:11px;
+}
+
+.rules{
+    max-width:800px;
+    margin:auto;
+    background:#0c1a20;
+    border:1px solid #00e5ff25;
+    border-radius:15px;
+    padding:25px;
+}
+
+.rules li{
+    margin:10px 0 10px 20px;
+    color:#c5d0d3;
+}
+
+.loading,
+.error,
+.empty{
+    grid-column:1/-1;
+    text-align:center;
+    padding:35px;
+    color:#8ea0a6;
+}
+
+.error{
+    color:#ff7373;
+}
+
+footer{
+    padding:30px 0;
+    border-top:1px solid #00e5ff18;
+    text-align:center;
+    color:#718287;
+    font-size:13px;
+}
+
+@media(max-width:900px){
+    .player-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:650px){
+    .nav-container{
+        flex-direction:column;
+        padding:13px 0;
+    }
+
+    .nav-links{
+        gap:2px;
+    }
+
+    .nav-links a{
+        font-size:11px;
+        padding:6px 7px;
+    }
+
+    .hero{
+        min-height:430px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+        margin-top:20px;
+    }
+
+    .player-grid{
+        grid-template-columns:1fr;
+    }
+
+    .result-box,
+    .groups{
+        grid-template-columns:1fr;
+    }
+
+    .profile-stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .section{
+        padding:50px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">PesRaiyan</div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#tournaments">Tournaments</a>
+            <a href="#players">Players</a>
+            <a href="#ranking">Ranking</a>
+            <a href="#matches">Matches</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#profile">Profile</a>
+            <a href="#rules">Rules</a>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="container hero-content">
+
+        <h1>Pes<span>Raiyan</span></h1>
+
+        <p>
+            eFootball Tournament Platform
+        </p>
+
+        <a
+            class="btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSetuClRBuq-zyTimnVsYYhP4dH3N2b-1cdETD-sLGBjfMqzBg/viewform?usp=header"
+            target="_blank"
+        >
+            Register Now
+        </a>
+
+    </div>
+</section>
+
+
+<!-- DASHBOARD STATS -->
+<div class="container">
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3 id="dashPlayers">0</h3>
+            <p>Registered Players</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>16</h3>
+            <p>Player Tournament</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="dashMatches">0</h3>
+            <p>Matches Played</p>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- TOURNAMENT -->
+<section class="section" id="tournaments">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Tournament</h2>
+            <p>16 players • 4 groups • Knockout stage</p>
+        </div>
+
+        <div class="rules">
+            <ul>
+                <li>Total players: 16</li>
+                <li>4 groups: A, B, C and D</li>
+                <li>Each group contains 4 players</li>
+                <li>Group stage followed by knockout stage</li>
+                <li>Results are updated from Google Sheets</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PLAYERS -->
+<section class="section" id="players">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Registered Players</h2>
+            <p>All registered players</p>
+        </div>
+
+        <div id="playerGrid" class="player-grid">
+            <div class="loading">
+                Loading players...
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- RANKING -->
+<section class="section" id="ranking">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Leaderboard</h2>
+            <p>Current tournament standings</p>
+        </div>
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>GF</th>
+                        <th>GA</th>
+                        <th>GD</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+
+                <tbody id="rankingBody">
+
+                    <tr>
+                        <td colspan="9">
+                            Loading ranking...
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MATCH RESULTS -->
+<section class="section" id="matches">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Match Results</h2>
+            <p>Completed matches</p>
+        </div>
+
+        <div id="resultBox" class="result-box">
+
+            <div class="loading">
+                Loading match results...
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- GROUPS -->
+<section class="section" id="groups">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Groups</h2>
+            <p>Players are automatically placed in groups</p>
+        </div>
+
+        <div class="groups">
+
+            <div class="group">
+                <h3>Group A</h3>
+
+                <div class="group-list">
+                    <div class="group-player" id="a1">-</div>
+                    <div class="group-player" id="a2">-</div>
+                    <div class="group-player" id="a3">-</div>
+                    <div class="group-player" id="a4">-</div>
+                </div>
+            </div>
+
+
+            <div class="group">
+                <h3>Group B</h3>
+
+                <div class="group-list">
+                    <div class="group-player" id="b1">-</div>
+                    <div class="group-player" id="b2">-</div>
+                    <div class="group-player" id="b3">-</div>
+                    <div class="group-player" id="b4">-</div>
+                </div>
+            </div>
+
+
+            <div class="group">
+                <h3>Group C</h3>
+
+                <div class="group-list">
+                    <div class="group-player" id="c1">-</div>
+                    <div class="group-player" id="c2">-</div>
+                    <div class="group-player" id="c3">-</div>
+                    <div class="group-player" id="c4">-</div>
+                </div>
+            </div>
+
+
+            <div class="group">
+                <h3>Group D</h3>
+
+                <div class="group-list">
+                    <div class="group-player" id="d1">-</div>
+                    <div class="group-player" id="d2">-</div>
+                    <div class="group-player" id="d3">-</div>
+                    <div class="group-player" id="d4">-</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- DASHBOARD -->
+<section class="section" id="dashboard">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Dashboard</h2>
+            <p>Live tournament statistics</p>
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <h3 id="dashPlayers2">0</h3>
+                <p>Players</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="dashMatches2">0</h3>
+                <p>Matches Played</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>16</h3>
+                <p>Tournament Capacity</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PROFILE -->
+<section class="section" id="profile">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Player Profile</h2>
+            <p>Select a player to see their statistics</p>
+        </div>
+
+        <div class="profile-box">
+
+            <select id="profileSelect" class="profile-select">
+                <option value="">Select Player</option>
+            </select>
+
+            <div id="profileBox" class="profile-content">
+
+                <p>Select a player above.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- RULES -->
+<section class="section" id="rules">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Rules</h2>
+            <p>Tournament guidelines</p>
+        </div>
+
+        <div class="rules">
+
+            <ul>
+                <li>Every player must use their registered eFootball ID.</li>
+                <li>Players must complete their matches within the given deadline.</li>
+                <li>Match scores must be submitted correctly.</li>
+                <li>Fake or edited results are not allowed.</li>
+                <li>Respect all players and maintain fair play.</li>
+                <li>The tournament organizer has the final decision in disputes.</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+
+<footer>
+    © 2026 PesRaiyan | eFootball Tournament
+</footer>
+
+
+<script>
+
+/* =========================================================
+   GOOGLE SHEET SETTINGS
+   ========================================================= */
+
+const SHEET_ID =
+"1tiq4kQRs1gt4z735OrlqozPkDNQCmJpp-9i9GKVeGvE";
+
+/*
+   IMPORTANT:
+   Your screenshot shows that player data is in
+   "Form responses 4", NOT "Players".
+*/
+const PLAYERS_SHEET = "Form responses 4";
+
+const MATCH_SHEET = "Match Results";
+
+
+let players = [];
+let matches = [];
+let ranking = {};
+
+
+/* =========================================================
+   BASIC HELPERS
+   ========================================================= */
+
+function escapeHTML(value){
+
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+function cleanText(value){
+
+    return String(value ?? "").trim();
+
+}
+
+
+function normalizeHeader(value){
+
+    return String(value ?? "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g,"");
+
+}
+
+
+function toNumber(value){
+
+    if(value === null || value === undefined || value === ""){
+        return 0;
+    }
+
+    const number = Number(value);
+
+    return Number.isFinite(number) ? number : 0;
+
+}
+
+
+function playerKey(name){
+
+    return cleanText(name).toLowerCase();
+
+}
+
+
+/* =========================================================
+   GET GOOGLE SHEET DATA
+   ========================================================= */
+
+async function getSheet(sheetName, query = ""){
+
+    let url =
+        `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}`;
+
+    if(query){
+        url += `&tq=${encodeURIComponent(query)}`;
+    }
+
+    const response = await fetch(
+        url + `&cachebust=${Date.now()}`,
+        {
+            cache:"no-store"
+        }
+    );
+
+    if(!response.ok){
+
+        throw new Error(
+            "Google Sheet could not be loaded."
+        );
+
+    }
+
+    const text = await response.text();
+
+    const match =
+        text.match(
+            /google\.visualization\.Query\.setResponse\(([\s\S]+)\);?\s*$/
+        );
+
+    if(!match){
+
+        throw new Error(
+            "Invalid Google Sheets response."
+        );
+
+    }
+
+    const data = JSON.parse(match[1]);
+
+    if(data.status === "error"){
+
+        throw new Error(
+            data.errors?.[0]?.detailed_message ||
+            data.errors?.[0]?.message ||
+            "Google Sheets query error."
+        );
+
+    }
+
+    return data;
+
+}
+
+
+/* =========================================================
+   CELL VALUE
+   ========================================================= */
+
+function getCell(row,index){
+
+    if(index < 0){
+        return "";
+    }
+
+    const cell = row?.c?.[index];
+
+    if(!cell){
+        return "";
+    }
+
+    return cell.v ?? "";
+
+}
+
+
+/* =========================================================
+   LOAD PLAYERS
+   ========================================================= */
+
+async function loadPlayers(){
+
+    try{
+
+        /*
+          Form responses 4 columns:
+
+          A = Timestamp
+          B = Player Name
+          C = eFootball ID
+          D = Team Name
+          E = Contact
+          F = Profile Picture
+
+          We select only B,C,D,F.
+
+          So Contact information is NOT loaded.
+        */
+
+        const data = await getSheet(
+            PLAYERS_SHEET,
+            "select B,C,D,F where B is not null"
+        );
+
+        const table = data.table || {};
+
+        const rows = table.rows || [];
+
+        players = rows
+            .map(row => {
+
+                const name = cleanText(
+                    getCell(row,0)
+                );
+
+                const id = cleanText(
+                    getCell(row,1)
+                );
+
+                const team = cleanText(
+                    getCell(row,2)
+                );
+
+                const photo = cleanText(
+                    getCell(row,3)
+                );
+
+                if(!name){
+                    return null;
+                }
+
+                return {
+                    name,
+                    id,
+                    team,
+                    photo
+                };
+
+            })
+            .filter(Boolean);
+
+
+        displayPlayers();
+
+        updateHomeStats();
+
+        createProfileOptions();
+
+        updateGroups();
+
+        updateProfile();
+
+        await loadMatches();
+
+
+    }catch(error){
+
+        console.error(
+            "Player loading error:",
+            error
+        );
+
+        document.getElementById(
+            "playerGrid"
+        ).innerHTML = `
+            <div class="error">
+                Unable to load players.<br>
+                Please make sure your Google Sheet is public.
+                <br><br>
+                ${escapeHTML(error.message)}
+            </div>
+        `;
+
+        players = [];
+
+        updateHomeStats();
+
+        updateGroups();
+
+    }
+
+}
+
+
+/* =========================================================
+   DISPLAY PLAYERS
+   ========================================================= */
+
+function displayPlayers(){
+
+    const grid =
+        document.getElementById("playerGrid");
+
+    if(!players.length){
+
+        grid.innerHTML = `
+            <div class="empty">
+                No registered players found.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    grid.innerHTML = players.map(player => {
+
+        const photoHTML =
+            player.photo
+            ?
+            `<img
+                src="${escapeHTML(player.photo)}"
+                alt="${escapeHTML(player.name)}"
+                onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;avatar&quot;>🎮</div>';"
+            >`
+            :
+            `<div class="avatar">🎮</div>`;
+
+
+        return `
+            <div class="player-card">
+
+                <div class="player-photo">
+                    ${photoHTML}
+                </div>
+
+                <div class="player-info">
+
+                    <h3>
+                        ${escapeHTML(player.name)}
+                    </h3>
+
+                    <p>
+                        eFootball ID:
+                        <strong>
+                            ${escapeHTML(player.id || "N/A")}
+                        </strong>
+                    </p>
+
+                    <p>
+                        Team:
+                        ${escapeHTML(player.team || "N/A")}
+                    </p>
+
+                </div>
+
+            </div>
+        `;
+
+    }).join("");
+
+}
+
+
+/* =========================================================
+   HOME + DASHBOARD STATS
+   ========================================================= */
+
+function updateHomeStats(){
+
+    const playerCount =
+        players.length;
+
+
+    const matchCount =
+        matches.length;
+
+
+    const dashPlayers =
+        document.getElementById("dashPlayers");
+
+    const dashMatches =
+        document.getElementById("dashMatches");
+
+    const dashPlayers2 =
+        document.getElementById("dashPlayers2");
+
+    const dashMatches2 =
+        document.getElementById("dashMatches2");
+
+
+    if(dashPlayers){
+        dashPlayers.textContent =
+            playerCount;
+    }
+
+    if(dashMatches){
+        dashMatches.textContent =
+            matchCount;
+    }
+
+    if(dashPlayers2){
+        dashPlayers2.textContent =
+            playerCount;
+    }
+
+    if(dashMatches2){
+        dashMatches2.textContent =
+            matchCount;
+    }
+
+}
+
+
+/* =========================================================
+   LOAD MATCH RESULTS
+   ========================================================= */
+
+async function loadMatches(){
+
+    try{
+
+        /*
+          Match Results:
+
+          A = Match ID
+          B = Player 1
+          C = Player 2
+          D = Score 1
+          E = Score 2
+
+          Only completed matches are loaded.
+        */
+
+        const data = await getSheet(
+            MATCH_SHEET,
+            "select A,B,C,D,E where B is not null and C is not null and D is not null and E is not null"
+        );
+
+        const table =
+            data.table || {};
+
+        const rows =
+            table.rows || [];
+
+
+        matches = rows
+            .map((row,index) => {
+
+                const id =
+                    cleanText(
+                        getCell(row,0)
+                    ) ||
+                    `Match ${index + 1}`;
+
+
+                const player1 =
+                    cleanText(
+                        getCell(row,1)
+                    );
+
+
+                const player2 =
+                    cleanText(
+                        getCell(row,2)
+                    );
+
+
+                const rawScore1 =
+                    getCell(row,3);
+
+
+                const rawScore2 =
+                    getCell(row,4);
+
+
+                /*
+                  Do not count incomplete rows.
+                */
+
+                if(
+                    !player1 ||
+                    !player2 ||
+                    rawScore1 === "" ||
+                    rawScore1 === null ||
+                    rawScore1 === undefined ||
+                    rawScore2 === "" ||
+                    rawScore2 === null ||
+                    rawScore2 === undefined
+                ){
+
+                    return null;
+
+                }
+
+
+                return {
+
+                    id,
+
+                    player1,
+
+                    player2,
+
+                    score1:
+                        toNumber(rawScore1),
+
+                    score2:
+                        toNumber(rawScore2)
+
+                };
+
+            })
+            .filter(Boolean);
+
+
+        calculateRanking();
+
+        displayMatchResults();
+
+        displayRanking();
+
+        updateHomeStats();
+
+        updateProfile();
+
+
+    }catch(error){
+
+        console.error(
+            "Match loading error:",
+            error
+        );
+
+        matches = [];
+
+        calculateRanking();
+
+        displayMatchResults();
+
+        displayRanking();
+
+        updateHomeStats();
+
+    }
+
+}
+
+
+/* =========================================================
+   CALCULATE RANKING
+   ========================================================= */
+
+function calculateRanking(){
+
+    ranking = {};
+
+
+    /*
+      First create all registered players.
+    */
+
+    players.forEach(player => {
+
+        ranking[
+            playerKey(player.name)
+        ] = {
+
+            player:
+                player.name,
+
+            wins:0,
+
+            draws:0,
+
+            losses:0,
+
+            gf:0,
+
+            ga:0,
+
+            gd:0,
+
+            points:0
+
+        };
+
+    });
+
+
+    /*
+      Then process matches.
+    */
+
+    matches.forEach(match => {
+
+        const key1 =
+            playerKey(match.player1);
+
+        const key2 =
+            playerKey(match.player2);
+
+
+        /*
+          If a match contains a player not currently
+          found in registration, create that player
+          in ranking instead of causing errors.
+        */
+
+        if(!ranking[key1]){
+
+            ranking[key1] = {
+
+                player:
+                    match.player1,
+
+                wins:0,
+
+                draws:0,
+
+                losses:0,
+
+                gf:0,
+
+                ga:0,
+
+                gd:0,
+
+                points:0
+
+            };
+
+        }
+
+
+        if(!ranking[key2]){
+
+            ranking[key2] = {
+
+                player:
+                    match.player2,
+
+                wins:0,
+
+                draws:0,
+
+                losses:0,
+
+                gf:0,
+
+                ga:0,
+
+                gd:0,
+
+                points:0
+
+            };
+
+        }
+
+
+        const p1 =
+            ranking[key1];
+
+        const p2 =
+            ranking[key2];
+
+
+        p1.gf += match.score1;
+
+        p1.ga += match.score2;
+
+
+        p2.gf += match.score2;
+
+        p2.ga += match.score1;
+
+
+        if(match.score1 > match.score2){
+
+            p1.wins++;
+            p2.losses++;
+
+            p1.points += 3;
+
+        }
+
+        else if(match.score1 < match.score2){
+
+            p2.wins++;
+            p1.losses++;
+
+            p2.points += 3;
+
+        }
+
+        else{
+
+            p1.draws++;
+            p2.draws++;
+
+            p1.points++;
+            p2.points++;
+
+        }
+
+    });
+
+
+    Object.values(ranking).forEach(player => {
+
+        player.gd =
+            player.gf - player.ga;
+
+    });
+
+}
+
+
+/* =========================================================
+   DISPLAY RANKING
+   ========================================================= */
+
+function displayRanking(){
+
+    const body =
+        document.getElementById("rankingBody");
+
+
+    const list =
+        Object.values(ranking);
+
+
+    list.sort((a,b) => {
+
+        if(b.points !== a.points){
+
+            return b.points - a.points;
+
+        }
+
+        if(b.gd !== a.gd){
+
+            return b.gd - a.gd;
+
+        }
+
+        if(b.gf !== a.gf){
+
+            return b.gf - a.gf;
+
+        }
+
+        return a.player.localeCompare(
+            b.player
+        );
+
+    });
+
+
+    if(!list.length){
+
+        body.innerHTML = `
+            <tr>
+                <td colspan="9">
+                    No match results yet.
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+
+    body.innerHTML =
+        list.map((player,index) => {
+
+            return `
+                <tr>
+
+                    <td>
+                        ${index + 1}
+                    </td>
+
+                    <td>
+                        <strong>
+                            ${escapeHTML(player.player)}
+                        </strong>
+                    </td>
+
+                    <td>
+                        ${player.wins}
+                    </td>
+
+                    <td>
+                        ${player.draws}
+                    </td>
+
+                    <td>
+                        ${player.losses}
+                    </td>
+
+                    <td>
+                        ${player.gf}
+                    </td>
+
+                    <td>
+                        ${player.ga}
+                    </td>
+
+                    <td>
+                        ${player.gd}
+                    </td>
+
+                    <td>
+                        <strong>
+                            ${player.points}
+                        </strong>
+                    </td>
+
+                </tr>
+            `;
+
+        }).join("");
+
+}
+
+
+/* =========================================================
+   DISPLAY MATCH RESULTS
+   ========================================================= */
+
+function displayMatchResults(){
+
+    const box =
+        document.getElementById("resultBox");
+
+
+    if(!matches.length){
+
+        box.innerHTML = `
+            <div class="empty">
+                No matches played yet.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    box.innerHTML =
+        matches.map(match => {
+
+            return `
+                <div class="match-card">
+
+                    <div class="match-id">
+                        ${escapeHTML(match.id)}
+                    </div>
+
+                    <div class="match-players">
+
+                        <div class="match-player">
+                            ${escapeHTML(match.player1)}
+                        </div>
+
+                        <div class="score">
+                            ${match.score1}
+                            -
+                            ${match.score2}
+                        </div>
+
+                        <div class="match-player">
+                            ${escapeHTML(match.player2)}
+                        </div>
+
+                    </div>
+
+                </div>
+            `;
+
+        }).join("");
+
+}
+
+
+/* =========================================================
+   GROUPS
+   ========================================================= */
+
+function updateGroups(){
+
+    const groupSlots = [
+
+        ["a1","a2","a3","a4"],
+
+        ["b1","b2","b3","b4"],
+
+        ["c1","c2","c3","c4"],
+
+        ["d1","d2","d3","d4"]
+
+    ];
+
+
+    groupSlots.forEach((slots,groupIndex) => {
+
+        slots.forEach((id,position) => {
+
+            const element =
+                document.getElementById(id);
+
+            const player =
+                players[
+                    groupIndex * 4 + position
+                ];
+
+
+            if(player){
+
+                element.textContent =
+                    player.name;
+
+            }else{
+
+                element.textContent =
+                    "-";
+
+            }
+
+        });
+
+    });
+
+}
+
+
+/* =========================================================
+   PROFILE OPTIONS
+   ========================================================= */
+
+function createProfileOptions(){
+
+    const select =
+        document.getElementById(
+            "profileSelect"
+        );
+
+
+    const current =
+        select.value;
+
+
+    select.innerHTML = `
+        <option value="">
+            Select Player
+        </option>
+    `;
+
+
+    players.forEach(player => {
+
+        const option =
+            document.createElement("option");
+
+        option.value =
+            playerKey(player.name);
+
+        option.textContent =
+            player.name;
+
+        select.appendChild(option);
+
+    });
+
+
+    if(
+        current &&
+        players.some(
+            p => playerKey(p.name) === current
+        )
+    ){
+
+        select.value =
+            current;
+
+    }
+
+}
+
+
+/* =========================================================
+   PROFILE DISPLAY
+   ========================================================= */
+
+function updateProfile(){
+
+    const select =
+        document.getElementById(
+            "profileSelect"
+        );
+
+    const box =
+        document.getElementById(
+            "profileBox"
+        );
+
+
+    if(!select.value){
+
+        box.innerHTML = `
+            <p>Select a player above.</p>
+        `;
+
+        return;
+
+    }
+
+
+    const player =
+        players.find(
+            p =>
+                playerKey(p.name) ===
+                select.value
+        );
+
+
+    if(!player){
+
+        box.innerHTML = `
+            <p>Player not found.</p>
+        `;
+
+        return;
+
+    }
+
+
+    const stats =
+        ranking[
+            playerKey(player.name)
+        ] || {
+
+            wins:0,
+
+            draws:0,
+
+            losses:0,
+
+            gf:0,
+
+            ga:0,
+
+            gd:0,
+
+            points:0
+
+        };
+
+
+    const photo =
+        player.photo
+        ?
+        `<img
+            class="profile-avatar"
+            src="${escapeHTML(player.photo)}"
+            alt="${escapeHTML(player.name)}"
+            onerror="this.style.display='none';"
+        >`
+        :
+        `<div
+            class="profile-avatar"
+            style="
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:55px;
+                background:#09151a;
+            "
+        >
+            🎮
+        </div>`;
+
+
+    box.innerHTML = `
+
+        ${photo}
+
+        <h3>
+            ${escapeHTML(player.name)}
+        </h3>
+
+        <p>
+            eFootball ID:
+            ${escapeHTML(player.id || "N/A")}
+        </p>
+
+        <p>
+            Team:
+            ${escapeHTML(player.team || "N/A")}
+        </p>
+
+
+        <div class="profile-stats">
+
+            <div class="profile-stat">
+                <strong>
+                    ${stats.wins}
+                </strong>
+                <span>WINS</span>
+            </div>
+
+            <div class="profile-stat">
+                <strong>
+                    ${stats.draws}
+                </strong>
+                <span>DRAWS</span>
+            </div>
+
+            <div class="profile-stat">
+                <strong>
+                    ${stats.losses}
+                </strong>
+                <span>LOSSES</span>
+            </div>
+
+            <div class="profile-stat">
+                <strong>
+                    ${stats.points}
+                </strong>
+                <span>POINTS</span>
+            </div>
+
+            <div class="profile-stat">
+                <strong>
+                    ${stats.gf}
+                </strong>
+                <span>GF</span>
+            </div>
+
+            <div class="profile-stat">
+                <strong>
+                    ${stats.ga}
+                </strong>
+                <span>GA</span>
+            </div>
+
+            <div class="profile-stat">
+                <strong>
+                    ${stats.gd}
+                </strong>
+                <span>GD</span>
+            </div>
+
+            <div class="profile-stat">
+                <strong>
+                    ${stats.wins + stats.draws + stats.losses}
+                </strong>
+                <span>MATCHES</span>
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   PROFILE SELECT EVENT
+   ========================================================= */
+
+document
+    .getElementById("profileSelect")
+    .addEventListener(
+        "change",
+        updateProfile
+    );
+
+
+/* =========================================================
+   INITIAL LOAD
+   ========================================================= */
+
+async function initialize(){
+
+    await loadPlayers();
+
+}
+
+
+/*
+  Start website
+*/
+
+initialize();
+
+
+/* =========================================================
+   AUTO REFRESH
+   ========================================================= */
+
+setInterval(
+    initialize,
+    30000
+);
+
+</script>
+
+</body>
+</html>
